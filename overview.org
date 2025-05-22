@@ -89,6 +89,6 @@ Mission Bus SystemはユーザーがCubeSatのミッションを行うためのI
 |                                 | External I2C x 1 channel                                                                    |
 | FPGA User IO                    | User IO Group 1 x 16 pin (IO電圧可変)                                                       |
 |                                 | User IO Group 2 x 16 pin (IO電圧可変)                                                       |
-|                                 | User IO Group 4 x 6 pin, Cortex-M3 JTAG兼用 (3.3V固定)                                      |
-| Debug Port                      | ARM SWJ-DP Interface                                                                        |
+|                                 | User IO Group 4 x 6 pin, Cortex-M3 Debug Port兼用 (3.3V固定)                                |
+| Debug Port                      | ARM SW-DP (Serial Wire Debug Port) Interface                                                |
 
