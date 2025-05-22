@@ -2,7 +2,7 @@
 Space Cubics OBC FPGA(SC OBC FPGA)は Space Cubics OBCモジュール(SC-OBC-A1)のFPGAに搭載されるシステムです。
 
 Space Cubics OBCは 3U以上の CubeSatをターゲットとする On Board Computer(以下、OBC)です。
-メインプロセッサ用デバイスとして Xilinx製 Artix-7 FPGAを採用し、FPGAにインプリする ARM Cortex-M3を核としシステムを構成します。
+メインプロセッサ用デバイスとして AMD (旧 Xilinx) 製 Artix-7 FPGAを採用し、FPGAにインプリする ARM Cortex-M3を核としシステムを構成します。
 FPGAを採用する事で、インターフェースの種類や数を 柔軟にカスタマイズする事が可能です。
 
 SC OBC FPGAには、ユーザーのIPコアを実装するためのモジュールが準備されており、AXIバス規格に適合した IPコアを設計する事で、簡単にシステムに組み込む事ができます。
@@ -54,7 +54,7 @@ Mission Bus SystemはユーザーがCubeSatのミッションを行うためのI
 
 | Feature                         | Description                                                                                 |
 |---------------------------------+---------------------------------------------------------------------------------------------|
-| FPGA Device                     | Xilinx Artix-7 (XC7A200T-1FBG676I)                                                          |
+| FPGA Device                     | AMD (旧 Xilinx社) Artix-7 (XC7A200T-1FBG676I)                                               |
 |                                 | - Logic Cell 215,360                                                                        |
 |                                 | - CLB スライス数(4 LUT, 8 F/F) 33,650                                                       |
 |                                 | - CLB 最大分散RAM 2,888 Kb                                                                  |
