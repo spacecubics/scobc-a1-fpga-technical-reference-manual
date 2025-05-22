@@ -19,7 +19,7 @@ SC OBC FPGAは System Monitorが収集した FPGA内部の状態を Watchdog sig
 TRCHは FPGAが出力する FPGA_WATCHDOG信号が定期的にトグルしている間、FPGAが健全に動作していると判断します。
 
 ** SEM Controller
-SEM (Soft Error Mitigation) Controllerは、Xilinx FPGAのコンフィギュレーションメモリで発生したソフトエラーの検出 及び訂正を行う、Xilinxから提供されるソリューションです。
+SEM (Soft Error Mitigation) Controllerは、AMD (旧 Xilinx社) FPGAのコンフィギュレーションメモリで発生したソフトエラーの検出 及び訂正を行う、AMD (旧 Xilinx社) から提供されるソリューションです。
 SC OBC FPGAはこの機能をシステムに組み込み、SEM Controllerの状態を System Monitorのレジスタから読み出す機能を持っています。
 
 CPUが正常に動作している場合でも、SEM Controllerが訂正不能なエラーを検出した場合や、SEM Controller自体に障害が発生した場合には、SC OBC FPGAに深刻な障害が発生する可能性があります。
@@ -34,7 +34,7 @@ SC OBC FPGAは以下の構成でSEM Controllerを実装しています。
 | エラーモニタ機能    | 未サポート | SEM Controllerが持つモニターインタフェースは実装していません。System Monitorのレジスタから簡易的なステータスを参照することにより、SEM Controllerを管理します。 |
 | エラー挿入機能      | サポート   | ソフトウェアのテストのため、エラーを強制的に挿入する機能を持っています。                                                                                       |
 
-SEM Controllerの仕様詳細については、Xilinxドキュメント「PG036: LogicCORE IP Soft Error Mitigation Controller v4.1 製品ガイド」を参照してください。
+SEM Controllerの仕様詳細については、AMD (旧 Xilinx社) ドキュメント「PG036: LogicCORE IP Soft Error Mitigation Controller v4.1 製品ガイド」を参照してください。
 
 *** SEM Controller Interrupt
 SEM Controllerは 4つの要因の割り込みを出力します。
@@ -484,7 +484,7 @@ SEM Error Correction Count Registerは、SEM Controllerが行ったエラー訂�
 
 *** SEM Heartbeat Timeout Register (Offset 0x0048)
 SEM Heartbeat Timeout Registeは SEM Controllerが出力する Heartbeat信号の Timeout時間を設定するレジスタです。
-Xilinxの SEM Controller (v4.1)では、Heartbeat信号のアサート間隔は 150クロックと規定されており、本レジスタの値は修正する必要はありません。
+AMD (旧 Xilinx社) の SEM Controller (v4.1)では、Heartbeat信号のアサート間隔は 150クロックと規定されており、本レジスタの値は修正する必要はありません。
 
 #+CAPTION: SEM Heartbeat Timeout Registerビットフィールド
 |  bit | Symbol   | Field                   | Description                                                                                                                                                                                                                                   | R/W |
@@ -513,13 +513,13 @@ SEM Controller へのコマンド送信は、SEM Error Injection Command Registe
 |  7:0 | EINJECT2 | Error Injection 2 | SEM Controllerのエラー挿入インターフェースにコマンドを入力するためのフィールドです。このフィールドにはエラー挿入コマンドの Bit 39:32 を設定します。このフィールドをセットすると SEM Error Injection 1 の設定値と合わせ SEM Controllerにエラーコマンドが送信されます。 | R/W |
 
 *** XADC Register Window (Offset 0x1000-1FFF)
-XADC Register Fieldは、SC OBC FPGAに搭載されている Xilinxの ADCモジュールとのアクセスを行うための領域です。
+XADC Register Fieldは、SC OBC FPGAに搭載されている AMD (旧 Xilinx社) の ADCモジュールとのアクセスを行うための領域です。
 
-XADCは Xilinx 7シリーズ FPGAに搭載される ADCモジュールです。
+XADCは AMD (旧 Xilinx社) 7シリーズ FPGAに搭載される ADCモジュールです。
 XADCには 12 bit、毎秒 1 Mサンプルの ADCとオンチップセンサーが含まれています。
 SC OBC FPGAでは、XADCのレジスタを読み出す事により、FPGAのダイの温度と入力電源の監視を行う事ができます。
 
-XADCの詳細は Xilinxのドキュメント (UG480: 7シリーズ FPGAおよび Zynq-7000 All Programmable SoC XADCデュアル 12ビット 1 MPSPS アナログ-デジタルコンバーター ユーザーズガイド)を参照してください。
+XADCの詳細は AMD (旧 Xilinx社) のドキュメント (UG480: 7シリーズ FPGAおよび Zynq-7000 All Programmable SoC XADCデュアル 12ビット 1 MPSPS アナログ-デジタルコンバーター ユーザーズガイド)を参照してください。
 
 XADCのレジスタにアクセスするためには、ベースアドレスを 0x4F041000とし Bit 11:4に 対象となるXADCのレジスタアドレスを設定する事で行えます。
 Status Registerにアクセスするためのレジスタアドレスを以下に示します。
