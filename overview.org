@@ -68,7 +68,7 @@ Mission Bus SystemはユーザーがCubeSatのミッションを行うためのI
 |                                 | - ARMv7-M architecture profile                                                              |
 |                                 | - Maximum operation frequency up to 48 MHz (※)                                             |
 |                                 | ※ユーザーの回路も含めタイミング検証を行い 最高動作周波数を確認する必要があります           |
-| On Chip SRAM (ITCM for Boot)    | 8 KByte                                                                                     |
+| On Chip SRAM (ITCM for Boot)    | 32 KByte                                                                                    |
 | HRMEM [High-reliability Memory] | 4 MByte                                                                                     |
 |                                 | - ECC Memory Protection                                                                     |
 |                                 | - Memory Scrubbing                                                                          |
