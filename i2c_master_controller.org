@@ -118,7 +118,7 @@ I2C Master Interrupt Status Registerは、I2C Master Controllerの割り込み�
 |     4 | I2CM_TXFIFOUTH | I2C TX FIFO Under Threshold | TX FIFOに格納されるデータが閾値を下回ったことを示すビットです。データ量が I2C Master FIFO Threshold Level Setting Registerの I2CM_TXFIFOUTHLフィールドの設定値より少なくなった場合に本ビットが"1"にセットされます。                                                                  | R/WC |
 |   3:2 | -              | Reserved                    | Reserved                                                                                                                                                                                                                                                                             | -    |
 |     1 | I2CM_ARBLST    | I2C Arbitration Lost        | 送信中にArbitration Lostが発生した事を示すビットです。送信中に他の I2C Masterと送信が競合したことによる調停制御で送信を停止した場合、本ビットが"1"にセットされます。Arbitration Lostを検出すると、I2C Master Controllerは I2C EnableをOffにしてIdle状態に戻ります。                  | R/WC |
-|     0 | I2CM_COMP      | I2C Complite                | I2C Master ControllerによるI2C通信が正常に完了した事を示すビットです。I2C通信の正常完了で I2C BusにSTOP Conditionを送信した時、本ビットが"1”にセットされます。Arbitration LostやError検出によるSTOP Conditionの送信時には本ビットはセットされません。                               | R/WC |
+|     0 | I2CM_COMP      | I2C Complete                | I2C Master ControllerによるI2C通信が正常に完了した事を示すビットです。I2C通信の正常完了で I2C BusにSTOP Conditionを送信した時、本ビットが"1”にセットされます。Arbitration LostやError検出によるSTOP Conditionの送信時には本ビットはセットされません。                               | R/WC |
 
 *** I2C Master Interrupt Enable Register (Offset: 0x0014)
 I2C Master Interrupt Enable Registerは、I2C Master Controllerの割り込みイベントを割り込み信号に通知する設定を行うためのレジスタです。
@@ -139,7 +139,7 @@ Interrupt Enable Registerのビットが "1"にセットした時、その割り
 |     4 | I2CM_TXFIFOUTHENB | I2C TX FIFO Under Threshold Enable | I2CM_TXFIFOUTHイベントが発生した時に割り込み信号を発生させるかどうかを設定します。 | R/W |
 |   3:2 | -                 | Reserved                           | Reserved                                                                           | -   |
 |     1 | I2CM_ARBLSTENB    | I2C Arbitration Lost Enable        | I2CM_ARBLSTイベントが発生した時に割り込み信号を発生させるかどうかを設定します。    | R/W |
-|     0 | I2CM_COMPENB      | I2C Complite Enable                | I2CM_COMPイベントが発生した時に割り込み信号を発生させるかどうかを設定します。      | R/W |
+|     0 | I2CM_COMPENB      | I2C Complete Enable                | I2CM_COMPイベントが発生した時に割り込み信号を発生させるかどうかを設定します。      | R/W |
 
 *** I2C Master FIFO Status Register (Offset 0x0018)
 I2C Master FIFO Status Registerは、TX FIFO/RX FIFOに格納されているデータ量を読み出すためのレジスタです。
