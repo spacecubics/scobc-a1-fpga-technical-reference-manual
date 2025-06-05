@@ -34,6 +34,27 @@
 | - External PPB                                 | 0xE004_2000 - 0xE00F_EFFF |                   |
 | - ROM Table                                    | 0xE00F_F000 - 0xE00F_FFFF |                   |
 
+SC-OBC-A1 FPGAのメモリ空間において、0x50000000〜0x5FFFFFFFは Mission Bus Systemに予約された空間です。
+このメモリ空間は、Mission Bus Systemの設計によって任意の構成に実装することができます。
+以下に示すメモリマップは、標準イメージに実装されている Mission Bus Systemのメモリマップです。
+
+#+CAPTION: SC-OBC-A1 FPGA Mission Bus System Memory Map
+[[file:./images/MissionBusMemoryMap.svg]]
+
+| Field                           | Address Space             | Comment |
+|---------------------------------+---------------------------+---------|
+| Mission(UDL) Bus                | 0x5000_0000 - 0x5FFF_FFFF |         |
+| - UART Lite 1                   | 0x5000_0000 - 0x5000_FFFF |         |
+| - UART Lite 2                   | 0x5001_0000 - 0x5001_FFFF |         |
+| - UART Lite 3                   | 0x5002_0000 - 0x5002_FFFF |         |
+| - UART Lite 4                   | 0x5003_0000 - 0x5003_FFFF |         |
+| - UART Lite 5                   | 0x5004_0000 - 0x5004_FFFF |         |
+| - UART Lite 6                   | 0x5005_0000 - 0x5005_FFFF |         |
+| - I2C Controller 1              | 0x5006_0000 - 0x5006_FFFF |         |
+| - I2C Controller 2              | 0x5007_0000 - 0x5007_FFFF |         |
+| - AMD QSPI                      | 0x5008_0000 - 0x5008_FFFF |         |
+| - AMD GPIO                      | 0x5009_0000 - 0x5009_FFFF |         |
+
 CPUが使用する メインメモリーは アドレス 0x00000000にマッピングされています。
 メインメモリーは、ITCM (Instruction Tightly Coupled Memory)と HRMEM (High Reliability Memory)を選択する事ができます。
 ITCMと HRMEMの切り替えは Code Memory Select Registerの ITCMENビットによって行います。
