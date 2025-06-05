@@ -11,7 +11,7 @@ IRQ Bit [31:16]は、標準イメージにて実装されている割り込み�
 #+CAPTION: SC OBC FPGA割り込みリスト
 | Exception No. | IRQ Bit | Interrupt                                        | Type  |
 |---------------+---------+--------------------------------------------------+-------|
-|            16 | [0]     | AHB UART Lite(Console)                           | Pulse |
+|            16 | [0]     | UART (Console)                                   | Pulse |
 |            17 | [1]     | HRMEM (High-reliability Memory)                  | Level |
 |            18 | [2]     | QSPI Controller (Configuration Flash Memory)     | Level |
 |            19 | [3]     | QSPI Controller (Data Store Flash Memory)        | Level |
