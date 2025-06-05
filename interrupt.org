@@ -18,7 +18,7 @@ IRQ Bit [31:16]は、標準イメージにて実装されている割り込み�
 |            20 | [4]     | QSPI Controller (FRAM)                           | Level |
 |            21 | [5]     | CAN Controller                                   | Level |
 |            22 | [6]     | Reserved (OBC System Interrupt Area)             | -     |
-|            23 | [7]     | External I2C Master                              | Level |
+|            23 | [7]     | External I2C Controller                          | Level |
 |            24 | [8]     | System Monitor (Hardware Error)                  | Level |
 |            25 | [9]     | System Monitor (Board Health Monitor)            | Level |
 |            26 | [10]    | General Purpose Timer (Global Timer)             | Level |

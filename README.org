@@ -16,5 +16,5 @@ SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機�
 - [[file:./qspi_controller.org][9. QSPI Controller]]
 - [[file:./can_controller.org][10. CAN Controller]]
 - [[file:./ahb_uart_lite.org][11. AHB Uart Lite]]
-- [[file:./i2c_master_controller.org][12. I2C Master Controller]]
+- [[file:./i2c_master_controller.org][12. I2C Controller]]
 - [[file:./revision_history.org][Revision History]]
