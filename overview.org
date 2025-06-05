@@ -5,12 +5,12 @@ SC-OBC Module A1は 3U以上の CubeSatをターゲットとする On Board Comp
 メインプロセッサ用デバイスとして AMD (旧 Xilinx) 製 Artix-7 FPGAを採用し、FPGAにインプリするソフトコアの ARM Cortex-M3を核としシステムを構成します。
 FPGAを採用する事で、インターフェースの種類や数を 柔軟にカスタマイズする事が可能です。
 
-SC OBC FPGAには、ユーザーのIPコアを実装するためのモジュールが準備されており、AXIバス規格に適合した IPコアを設計する事で、簡単にシステムに組み込む事ができます。
+SC-OBC-A1 FPGAには、ユーザーのIPコアを実装するためのモジュールが準備されており、AXIバス規格に適合した IPコアを設計する事で、簡単にシステムに組み込む事ができます。
 
-#+CAPTION: SC OBC FPGA Block Diagram
+#+CAPTION: SC-OBC-A1 FPGA Block Diagram
 [[file:./images/FPGA_BlockDiagram.svg]]
 
-SC OBC FPGAのシステムは大きく 6つの機能に分割されます。
+SC-OBC-A1 FPGAのシステムは大きく 6つの機能に分割されます。
 
 *System Controller*
 
@@ -87,7 +87,7 @@ OBCの出荷時に Flash Memoryに書き込まれている標準イメージ (�
 | Space Communication Bus (SCBus) | この機能は、現在開発中です                                                                  |
 |                                 | Compliant with the USB-based communication interface proposed by Space Cubics (T.B.D.)      |
 |                                 | - Supports bit rates 12 Mbps (USB Full-Speed)                                               |
-| I2C Interface                   | SC OBC On Board I2C x 1 channel                                                             |
+| I2C Interface                   | SC-OBC Module A1 On Board I2C x 1 channel                                                   |
 |                                 | External I2C x 1 channel                                                                    |
 | FPGA User IO                    | User IO Group 1 x 16 pin (IO電圧可変)                                                       |
 |                                 | User IO Group 2 x 16 pin (IO電圧可変)                                                       |

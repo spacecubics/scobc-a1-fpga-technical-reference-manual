@@ -5,7 +5,7 @@
   :size:     0x10000
   :END:
 
-System Registerは、SC OBC FPGAのシステム制御を司るレジスタで構成されるモジュールです。
+System Registerは、SC-OBC-A1 FPGAのシステム制御を司るレジスタで構成されるモジュールです。
 
 ** レジスタ詳細
 System Registerは、Base Address 0x4F00_0000に配置されています。
@@ -48,7 +48,7 @@ ITCMENビットの変更は、ITCMに書き込まれた Boot用のソフトウ�
 *** System Clock Control Register (Offset 0x0004)
 System Clock Control Registerは、システム内部で使われるクロックの周波数を設定するためのレジスタです。
 
-このレジスタの制御により、SC OBC FPGA内部の PLLを停止させ、低消費電力動作させることが可能です。
+このレジスタの制御により、SC-OBC-A1 FPGA内部の PLLを停止させ、低消費電力動作させることが可能です。
 
 #+CAPTION: System Clock Control Register ビットフィールド
 |  bit | Symbol  | Field           | Description                                                                                                                                | R/W |
@@ -84,13 +84,13 @@ $システムクロック周波数 (MHz) = リファレンスクロック (24 MH
 
 
 *** Configuration Flash Memory Register (Offset 0x0010)
-Configuration Flash Memory Registerは SC OBC Moduleに実装される 2つの Configuration Flash Memory (NOR FLash Memory)に関する制御を行うためのレジスタです。
+Configuration Flash Memory Registerは SC-OBC-A1 Moduleに実装される 2つの Configuration Flash Memory (NOR FLash Memory)に関する制御を行うためのレジスタです。
 
 #+CAPTION: Configuration Flash Memory Register ビットフィールド
 |   bit | Symbol      | Field                              | Description                                                                                                                                                                                                                                                                                                                                                  | R/W |
 |-------+-------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----|
 | 31:13 | -           | Reserved                           | Reserved                                                                                                                                                                                                                                                                                                                                                     | -   |
-|    12 | CFGBOOTMEM  | Boot Memory                        | SC OBC FPGAが Configurationsに使用した Flash Memoryを示すビットです。このフィールドを読み出す事で、SC OBC FPGAがどちらの Flash Memoryから起動したか知る事ができます。SC OBC FPGAの Configuration後 Resetが解除される時に確定します。                                                                                                                         | RO  |
+|    12 | CFGBOOTMEM  | Boot Memory                        | SC-OBC-A1 FPGAが Configurationsに使用した Flash Memoryを示すビットです。このフィールドを読み出す事で、SC-OBC-A1 FPGAがどちらの Flash Memoryから起動したか知る事ができます。SC-OBC-A1 FPGAの Configuration後 Resetが解除される時に確定します。                                                                                                                | RO  |
 |  11:6 | -           | Reserved                           | Reserved                                                                                                                                                                                                                                                                                                                                                     | -   |
 |     5 | CFGMEMMON   | Configuration Flash Memory Monitor | 現在選択されている Configuration Flash Memoryの選択状態を示すビットです。                                                                                                                                                                                                                                                                                    | RO  |
 |     4 | CFGMEMSEL   | Configuration Flash Memory Select  | Configuration Flash Memoryを選択するためのビットです。CFGMEMOWNERフィールドが "0"にクリアされている時のみ、このビットが有効になります。0: Configuration Flash Memory 0を選択. 1: Configuration Flash Memory 1を選択                                                                                                                                          | R/W |
@@ -105,8 +105,8 @@ Configuration Flash Memoryの選択は、以下の 3つの制御状態を持っ�
 | レジスタによる選択 | TRCHが FPGAの Configuration完了を認識し、且つ CFGMEMOWNER=0の場合  |
 | QSPIコアによる選択 | TRCHが FPGAの Configuration完了を認識し、且つ CFGMEMOWNER=1の場合  |
 
-SC OBC FPGAが Configurationし TRCHが FPGAの起動完了を認識する間、Configuration Flash Memoryの選択は TRCHによって行われます。
-この仕様により、SC OBC FPGAが Configurationするための Memoryは TRCHによって選択されます。
+SC-OBC-A1 FPGAが Configurationし TRCHが FPGAの起動完了を認識する間、Configuration Flash Memoryの選択は TRCHによって行われます。
+この仕様により、SC-OBC-A1 FPGAが Configurationするための Memoryは TRCHによって選択されます。
 
 TRCHが FPGAの起動完了を認識すると、Configuration Flash Memoryの制御権は FPGAに移行します。
 FPGAは CFGMEMSELビットの設定によって、ソフトウェアによる選択を行うか、QSPIコアによる選択を行うかを決定します。
@@ -114,11 +114,11 @@ FPGAは CFGMEMSELビットの設定によって、ソフトウェアによる選
 Configuration Flash Memoryの選択を切り替える場合は、CFGMEMSELビットの値を変更後、CFGMEMMONビットを読み出し切り替えが完了した事を確認してください。
 Configuration Flash Memoryへのアクセス開始は、必ず CFGMEMMONビットが切り替わった後に開始してください。
 
-現状の SC OBC FPGAには QSPIコアによる Configuration Flash Memoryのメモリパトロール機能は実装されていません。
+現状の SC-OBC-A1 FPGAには QSPIコアによる Configuration Flash Memoryのメモリパトロール機能は実装されていません。
 CFGMEMOWNERビットは必ず "0"に設定し使用してください。
 
 *** Power Cycle Register (Offset 0x0020)
-Power Cycle Registerは SC OBC FPGAに対する Power Cycle要求を発行するためのレジスタです。
+Power Cycle Registerは SC-OBC-A1 FPGAに対する Power Cycle要求を発行するためのレジスタです。
 
 このレジスタの制御により Power Cycleを要求すると、TRCHによって Power Cycleが実行されます。
 
@@ -130,9 +130,9 @@ Power Cycle Registerは SC OBC FPGAに対する Power Cycle要求を発行する
 |     0 | PWRCYCLEREQ | Power Cycle Request         | TRCHに対し Power Cycle Requestを発行するためのビットです。このビットに "1"を書き込むと TRCHによる FPGAの Power Cycleが実行されます。このビットへの "0"の書き込みは何も影響しません。                                                | R/W |
 
 *** Power Management Register (Offset 0x0030)
-Power Management Registerは、SC OBC FPGAの低電力制御を行うためのレジスタです。
+Power Management Registerは、SC-OBC-A1 FPGAの低電力制御を行うためのレジスタです。
 
-このレジスタは、CPUが WFI (Wait For Interrupt)命令や WFE (Wait For Event)命令を実行したときに遷移する、Sleepモードにおける SC OBC FPGAの状態を決定します。
+このレジスタは、CPUが WFI (Wait For Interrupt)命令や WFE (Wait For Event)命令を実行したときに遷移する、Sleepモードにおける SC-OBC-A1 FPGAの状態を決定します。
 WFI命令や WFE命令を実行すると、CPUは 条件によって Sleepモードに遷移し 命令の実行を停止します。
 
 PWRDOWNENがセットされた状態で CPUが Sleepモードに遷移すると、システムクロックを生成する PLLは停止状態になります。
@@ -150,9 +150,9 @@ PLLが停止すると、UARTや QSPI Controllerなどのクロックも停止し
 
 *** Scratchpad 1-4 Register (Offset 0x00F0-0x00FC)
 Scratchpad 1-4 Registerは、ソフトウェアがワークスペースとして使用する為のレジスタです。
-このレジスタの書き込みは、SC OBC FPGAの機能に一切影響を与えません。
+このレジスタの書き込みは、SC-OBC-A1 FPGAの機能に一切影響を与えません。
 
-このレジスタは、SC OBC FPGAの Configuration後に一度だけ初期化されます。
+このレジスタは、SC-OBC-A1 FPGAの Configuration後に一度だけ初期化されます。
 Code Memory Select Registerの ITCMENビットが変更された時に発行されるシステムリセットでは、このレジスタはクリアされません。
 
 #+CAPTION: Scratchpad 1 Register ビットフィールド (Offset: 0x00F0)
@@ -186,7 +186,7 @@ System Registerの IPコアバージョンの管理レジスタです。
 |  15:0 | PATVER | System Register Core Patch Version | System RegisterコアのPatch Versionです。 | RO  |
 
 *** Build Information Register (Offset: 0xFF00)
-SC OBC FPGAのビルド情報を保持するレジスタです。
+SC-OBC-A1 FPGAのビルド情報を保持するレジスタです。
 現在動作しているシステムの FPGAデータが作られた Git Repositoryのハッシュ値の先頭 8文字が保持されます。
 FPGAデータが Git管理されていない環境から生成された場合、このレジスタは 0x00000000を示します。
 

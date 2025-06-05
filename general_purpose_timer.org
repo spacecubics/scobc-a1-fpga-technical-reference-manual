@@ -5,7 +5,7 @@
   :size:     0x10000
   :END:
 
-General Purpose Timerは、SC OBC FPGAの運用時間の管理や、FPGA内の CPUや IPコアへのタイミング通知を行うためのタイマーモジュールです。
+General Purpose Timerは、SC-OBC-A1 FPGAの運用時間の管理や、FPGA内の CPUや IPコアへのタイミング通知を行うためのタイマーモジュールです。
 General Purpose Timerは、Global Timer・Software Interrupt Timer・Hardware Interrupt Timerと呼ばれる、3つの32bitアップカウンターで構成されています。
 
 Global Timerは、FPGAのリセット解除から動作する Free Run Timerです。
@@ -16,7 +16,7 @@ Software Interrupt Timerと Hardware Interrupt Timerの最小時間は Prescaler
 Global Timerと Software Interrupt Timerは、CPUに割り込みを発生させるタイマーとして使用します。
 Global Timerは タイマーに対し 4つの比較チャネルを持っており、Software Timerは 8つの比較チャネルを持っています。
 
-Hardware Interrupt Timerは、SC OBC FPGAの内部のIPコアに対しイベントを通知する、Hardware Schedulerとして使用します。
+Hardware Interrupt Timerは、SC-OBC-A1 FPGAの内部のIPコアに対しイベントを通知する、Hardware Schedulerとして使用します。
 Hardware Interrupt Timerは タイマーに対し 8つの比較チャネルを持っており、そのうち 7つを IPコアへのイベントトリガに使用する事ができます。
 
 Hardware Interrupt Timerの出力チャネルと、接続されている IP Coreの対応を以下に示します。
@@ -72,7 +72,7 @@ General Purpose Timerは、Base Address 0x4F05_0000に配置されています�
 *** Global Timer Register (Offset: 0x0000)
 Global Timer Registerは、Global Timerの現在の値を示すレジスタです。
 
-Global Timerは、SC OBC FPGAの起動後に発生するシステムリセットの解除からカウントを開始するカウンターです。
+Global Timerは、SC-OBC-A1 FPGAの起動後に発生するシステムリセットの解除からカウントを開始するカウンターです。
 このタイマーの値を読み出す事で起動後の時間を知る事ができます。
 
 Global Timerの動作クロックは、FPGAに入力する原発クロックです。
