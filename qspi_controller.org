@@ -74,7 +74,7 @@ Configuration Flash Memoryのメモリ選択は、System Registerの Configurati
 | 31:18 | -         | Reserved       | Reserved                                                                                                                                                     | -   |
 | 17:16 | SPIIOMODE | SPI I/O Mode   | SPIアクセスにおけるI/Oモードを設定します。 2b00: Standard(Single)-IO SPIモード 2b01: Dual-IO SPIモード 2b10: Quad-IO SPIモード 2b11: 設定禁止                | R/W |
 |  15:2 | -         | Reserved       | Reserved                                                                                                                                                     | -   |
-|   1:0 | SPISSCTL  | SPI SS Control | SS (Slave Select)信号の制御をするためのフィールドです。0b00: SS信号をネゲート 0b01: メモリ 1の SS信号をアサート 0b10: メモリ 2の SS信号をアサート 0b11: 禁止 | R/W |
+|   1:0 | SPISSCTL  | SPI CS Control | Chip Select信号の制御をするためのフィールドです。0b00: CS信号をネゲート 0b01: メモリ 1の CS信号をアサート 0b10: メモリ 2の CS信号をアサート 0b11: 禁止       | R/W |
 
 *** QSPI TX Data Register (Offset 0x0004)
 QSPI TX Data Registerは、SPIデバイスにデータを送信するためのレジスタです。
