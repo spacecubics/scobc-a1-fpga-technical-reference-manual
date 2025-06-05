@@ -2,7 +2,7 @@
 SC-OBC Module A1 FPGA (以下 SC-OBC-A1 FPGA)は、Space Cubics製 OBC "SC-OBC Module A1"の FPGAに搭載されるシステムです。
 
 SC-OBC Module A1は 3U以上の CubeSatをターゲットとする On Board Computer(以下、OBC)です。
-メインプロセッサ用デバイスとして AMD (旧 Xilinx) 製 Artix-7 FPGAを採用し、FPGAにインプリする ARM Cortex-M3を核としシステムを構成します。
+メインプロセッサ用デバイスとして AMD (旧 Xilinx) 製 Artix-7 FPGAを採用し、FPGAにインプリするソフトコアの ARM Cortex-M3を核としシステムを構成します。
 FPGAを採用する事で、インターフェースの種類や数を 柔軟にカスタマイズする事が可能です。
 
 SC OBC FPGAには、ユーザーのIPコアを実装するためのモジュールが準備されており、AXIバス規格に適合した IPコアを設計する事で、簡単にシステムに組み込む事ができます。
