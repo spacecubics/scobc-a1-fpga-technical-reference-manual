@@ -56,7 +56,7 @@ OBCの出荷時に Flash Memoryに書き込まれている標準イメージ (�
 
 | Feature                         | Description                                                                                 |
 |---------------------------------+---------------------------------------------------------------------------------------------|
-| FPGA Device                     | AMD (旧 Xilinx) Artix-7 (XC7A200T-1FBG676I)                                                |
+| FPGA Device                     | AMD (旧 Xilinx) Artix-7 (XC7A200T-1FBG676I)                                                 |
 |                                 | - Logic Cell 215,360                                                                        |
 |                                 | - CLB スライス数(4 LUT, 8 F/F) 33,650                                                       |
 |                                 | - CLB 最大分散RAM 2,888 Kb                                                                  |
@@ -84,7 +84,7 @@ OBCの出荷時に Flash Memoryに書き込まれている標準イメージ (�
 | Data Store Flash Memory         | 32 MByte/Redundancy (S25FL256L)                                                             |
 | FRAM                            | 512 kByte x 2 (CY15B104QSN)                                                                 |
 | Control Area Network (CAN)      | Conforms to the ISO 11898-1, CAN2.0A, and CAN2.0B standards Supports bit rates up to 1 Mb/s |
-| Space Communication Bus (SCBus) | Revision Cでは実装されていません                                                            |
+| Space Communication Bus (SCBus) | この機能は、現在開発中です                                                                  |
 |                                 | Compliant with the USB-based communication interface proposed by Space Cubics (T.B.D.)      |
 |                                 | - Supports bit rates 12 Mbps (USB Full-Speed)                                               |
 | I2C Interface                   | SC OBC On Board I2C x 1 channel                                                             |
