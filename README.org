@@ -1,9 +1,9 @@
 #+TITLE: Space Cubics OBC (SC-OBC-A1) Technical Reference Manual
 #+PROPERTY: header-args:emacs-lisp :results silent
 
-このレポジトリは、Space Cubics OBCに搭載する FPGAの仕様を説明する「SC OBC FPGA Technical Reference Manual」に関するものです。
+このレポジトリは、Space Cubics OBCに搭載する FPGAの仕様を説明する「SC-OBC-A1 FPGA Technical Reference Manual」に関するものです。
 
-SC OBC FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能に関する仕様やレジスタの仕様が記載されています。
+SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能に関する仕様やレジスタの仕様が記載されています。
 
 - [[file:./overview.org][1. Overview]]
 - [[file:./pin_description.org][2. User IO Pin Description]]

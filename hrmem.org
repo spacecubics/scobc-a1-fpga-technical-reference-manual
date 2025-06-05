@@ -5,13 +5,13 @@
   :size:     0x10000
   :END:
 
-HRMEM (High-reliability Memory)は、SC-OBC-A1に実装される SRAMにアクセスを行うメモリコントローラモジュールです。
+HRMEM (High-reliability Memory)は、SC-OBC Module A1に実装される SRAMにアクセスを行うメモリコントローラモジュールです。
 
 HRMEMのメモリ空間は、Address 0x00000000をベースとする 4 MByteの領域に配置されており、CPU SubSystemの CPU Local Busを通じアクセスされます。
 また、Main AXI Bus Systemに接続されるAXIバスからアクセスが可能なミラーアドレスが、Base Address 0x60000000に配置されています。
 
-HRMEMは SC OBC FPGAのシステムにおいて、CPUが使用するメインメモリとして動作します。
-そのため、SC OBC FPGAに実装する CPUが効率的に動作できるよう、SRAMへのアクセスを最適化する機能が実装されています。
+HRMEMは SC-OBC-A1 FPGAのシステムにおいて、CPUが使用するメインメモリとして動作します。
+そのため、SC-OBC-A1 FPGAに実装する CPUが効率的に動作できるよう、SRAMへのアクセスを最適化する機能が実装されています。
 
 HRMEMは SRAMからのデータ読み出し時に 1 bit ECCエラーの発生を検出すると、エラーを修復する機能を持っています。
 また、メモリスクラビング機能を持ち、SRAMの全領域のデータに対し定期的なエラーチェックとエラーの修復を行います。

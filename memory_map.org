@@ -1,10 +1,10 @@
 * Memory Map
-以下に、SC OBC FPGAのメモリマップを示します。
+以下に、SC-OBC-A1 FPGAのメモリマップを示します。
 
-#+CAPTION: SC OBC FPGA Memory Map
+#+CAPTION: SC-OBC-A1 FPGA Memory Map
 [[file:./images/MemoryMap.svg]]
 
-#+CAPTION: SC OBC FPGA メモリマップ
+#+CAPTION: SC-OBC-A1 FPGA メモリマップ
 | Field                                          | Address Space             | Comment           |
 |------------------------------------------------+---------------------------+-------------------|
 | Instruction Tightly Coupled Memory (Block RAM) | 0x0000_0000 - 0x0000_7FFF | CFGITCMEN[0] is 1 |

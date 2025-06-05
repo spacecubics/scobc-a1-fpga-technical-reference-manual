@@ -1,14 +1,14 @@
 * Interrupt
-SC OBC FPGAは、Cortex-M3に組み込まれる割り込みコントローラの外部割り込みを使用し、IPコアの割り込みをCPUに伝えます。
+SC-OBC-A1 FPGAは、Cortex-M3に組み込まれる割り込みコントローラの外部割り込みを使用し、IPコアの割り込みをCPUに伝えます。
 Cortex-M3の 割り込みコントローラの仕様については、ARM Cortex-M3 Technical Reference Manualを参照してください。
 
 IRQ Bit [31:16]は、Mission Bus Systemに割り当てられた割り込みビットです。
 ユーザーが設計した回路に応じて割り当てが決定します。
 
-以下に、SC OBC FPGAの IPコアが出力する割り込みの割り当てを示します。
+以下に、SC-OBC-A1 FPGAの IPコアが出力する割り込みの割り当てを示します。
 IRQ Bit [31:16]は、標準イメージにて実装されている割り込みビットです。
 
-#+CAPTION: SC OBC FPGA割り込みリスト
+#+CAPTION: SC-OBC-A1 FPGA割り込みリスト
 | Exception No. | IRQ Bit | Interrupt                                        | Type  |
 |---------------+---------+--------------------------------------------------+-------|
 |            16 | [0]     | UART (Console)                                   | Pulse |
