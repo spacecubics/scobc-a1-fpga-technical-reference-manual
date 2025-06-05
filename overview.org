@@ -46,9 +46,11 @@ Low Performance IP Bus Systemは、CubeSat向け OBCシステムとして必須�
 
 *Mission Bus System*
 
-Mission Bus SystemはユーザーがCubeSatのミッションを行うためのIPコアを接続するシステムです。
-このシステムはバスに AXIを採用しています。
-ユーザーが設計するIPコアは全てこのバスに接続します。
+Mission Bus Systemはユーザーが CubeSatのミッションを行うための機能を実装するシステムです。
+OBCの出荷時に Flash Memoryに書き込まれている標準イメージ (以下、標準イメージ)では、このシステムには UART、I2C、SPI、GPIOコアが接続されています。
+ユーザーは、Mission Bus Systemを再設計したり、標準イメージとして実装される回路を修正したりする事により任意のシステムを実現する事ができます。
+
+このシステムは、バスとして AXIが採用されています。ユーザーはAMDが提供する IPコアを用いる事によって簡単にシステムを構築する事ができます。
 
 ** Outline
 
