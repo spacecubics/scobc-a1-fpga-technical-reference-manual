@@ -1,0 +1,122 @@
+== Memory Map
+
+以下に、SC-OBC-A1 FPGAのメモリマップを示します。
+
+.SC-OBC-A1 FPGA Memory Map
+image::./images/MemoryMap.svg[./images/MemoryMap]
+
+.SC-OBC-A1 FPGA メモリマップ
+[cols=",,",options="header",]
+|===
+|Field |Address Space |Comment
+|Instruction Tightly Coupled Memory (Block RAM) |0x0000~0000~ -
+0x0000~7FFF~ |CFGITCMEN[0] is 1
+
+|HRMEM (SRAM) |0x0000~0000~ - 0x003F~FFFF~ |CFGITCMEM[0] is 0
+
+|Main AXI Bus |0x4000~0000~ - 0x4EFF~FFFF~ |
+
+|- QSPI Controller (Configuration Flash) |0x4000~0000~ - 0x4000~FFFF~ |
+
+|- QSPI Controller (Data Store Flash) |0x4010~0000~ - 0x4010~FFFF~ |
+
+|- QSPI Controller(FRAM) |0x4020~0000~ - 0x4020~FFFF~ |
+
+|- CAN Controller |0x4040~0000~ - 0x4040~FFFF~ |
+
+|- HRMEM Register |0x4050~0000~ - 0x4050~FFFF~ |
+
+|Low Performance IP Bus |0x4F00~0000~ - 0x4FFF~FFFF~ |
+
+|- System Register |0x4F00~0000~ - 0x4F00~FFFF~ |
+
+|- UART Lite (Console Interface) |0x4F01~0000~ - 0x4F01~FFFF~ |
+
+|- External I2C Controller |0x4F03~0000~ - 0x4F03~FFFF~ |
+
+|- System Monitor |0x4F04~0000~ - 0x4F04~FFFF~ |
+
+|- General Purpose Timer |0x4F05~0000~ - 0x4F05~FFFF~ |
+
+|Mission(UDL) Bus |0x5000~0000~ - 0x5FFF~FFFF~ |
+
+|HRMEM Memory Mirror |0x6000~0000~ - 0x603F~FFFF~ |
+
+|Coretex-M3 Internal Private peripheral bus |0xE000~0000~ - 0xE003~FFFF~
+|
+
+|- ITM |0xE000~0000~ - 0xE000~0FFF~ |
+
+|- DWT |0xE000~1000~ - 0xE000~1FFF~ |
+
+|- FPB |0xE000~2000~ - 0xE000~2FFF~ |
+
+|- SCS |0xE000~E000~ - 0xE000~EFFF~ |
+
+|Coretex-M3 External Private peripheral bus |0xE004~0000~ - 0xE00F~FFFF~
+|
+
+|- TPIU |0xE004~0000~ - 0xE004~0FFF~ |
+
+|- ETM |0xE004~1000~ - 0xE004~1FFF~ |
+
+|- External PPB |0xE004~2000~ - 0xE00F~EFFF~ |
+
+|- ROM Table |0xE00F~F000~ - 0xE00F~FFFF~ |
+|===
+
+SC-OBC-A1 FPGAのメモリ空間において、0x50000000〜0x5FFFFFFFは Mission Bus
+Systemに予約された空間です。 このメモリ空間は、Mission Bus
+Systemの設計によって任意の構成に実装することができます。
+以下に示すメモリマップは、標準イメージに実装されている Mission Bus
+Systemのメモリマップです。
+
+.SC-OBC-A1 FPGA Mission Bus System Memory Map
+image::./images/MissionBusMemoryMap.svg[./images/MissionBusMemoryMap]
+
+[cols=",,",options="header",]
+|===
+|Field |Address Space |Comment
+|Mission(UDL) Bus |0x5000~0000~ - 0x5FFF~FFFF~ |
+|- UART Lite 1 |0x5000~0000~ - 0x5000~FFFF~ |
+|- UART Lite 2 |0x5001~0000~ - 0x5001~FFFF~ |
+|- UART Lite 3 |0x5002~0000~ - 0x5002~FFFF~ |
+|- UART Lite 4 |0x5003~0000~ - 0x5003~FFFF~ |
+|- UART Lite 5 |0x5004~0000~ - 0x5004~FFFF~ |
+|- UART Lite 6 |0x5005~0000~ - 0x5005~FFFF~ |
+|- I2C Controller 1 |0x5006~0000~ - 0x5006~FFFF~ |
+|- I2C Controller 2 |0x5007~0000~ - 0x5007~FFFF~ |
+|- AMD QSPI |0x5008~0000~ - 0x5008~FFFF~ |
+|- AMD GPIO |0x5009~0000~ - 0x5009~FFFF~ |
+|===
+
+CPUが使用する メインメモリーは アドレス
+0x00000000にマッピングされています。 メインメモリーは、ITCM (Instruction
+Tightly Coupled Memory)と HRMEM (High Reliability
+Memory)を選択する事ができます。 ITCMと HRMEMの切り替えは Code Memory
+Select Registerの ITCMENビットによって行います。
+
+ITCMは FPGAの Block RAMで構成されています。 このメモリは FPGAの
+Configurationデータ (Bit Streamデータ)にプログラムを格納する事で、FPGAの
+Configuration後 すぐに CPUが動作します。 HRMEMは On Boardの
+SRAMで構成されています。
+このメモリを使用する場合には、電源の投入後にデータを書き込んで使用する必要があります。
+HRMEMは IPコアの内部に
+SRAMのデータが放射線によって破壊された場合に訂正する仕組みを実装しているため、通常はこのメモリを使って動作します。
+
+.CPU Main Memory構成
+image::./images/itcm_hrmem_select.png[./images/itcm_hrmem_select]
+
+FPGAの Configuration後、アドレス 0x00000000に
+ITCMがマッピングされています。 ITCMには
+プログラムローダーを書き込んで使用します。 プログラムローダーは NOR
+Flash Memoryに書き込まれているプログラムを
+HRMEMに転送するために使用します。 HRMEMのアドレス
+0x60000000番地は、アドレス
+0x00000000番地のミラーとなっており、プログラムローダーによって
+0x60000000に書き込まれたデータは、メインメモリーを HRMEMに切り替えた時に
+0x00000000から読み出す事ができます。 プログラムローダーが
+HRMEMへのプログラムを書き込む最後の手順として、Code Memory Select
+Registerの ITCMENビットを 0に書き込みます。
+ITCMENビットの書き込みにより、メインメモリーを切り替えるとシステムにリセットがかかり、切り替えたメモリのアドレス
+0x00000000から書き込まれたデータで CPUが動作します。
