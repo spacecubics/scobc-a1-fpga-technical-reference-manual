@@ -23,7 +23,7 @@ Memoryに、2つのデータを書き込む事で、データの信頼性を確�
 以下に NOR Flash Memoryのデータパーティションを示します。
 
 .NOR Flash for Configuration Data Partition
-image::./images/NOR_Flash_for_Configuration.svg[./images/NOR_Flash_for_Configuration]
+image::NOR_Flash_for_Configuration.svg[NOR_Flash_for_Configuration]
 
 [cols=",",options="header",]
 |===
@@ -42,7 +42,7 @@ Bootを活用しています。
 Multi Bootフローを以下に示します。
 
 .NOR Flash for Configuration Data Partition
-image::./images/MultiBoot_Flow.svg[./images/MultiBoot_Flow]
+image::MultiBoot_Flow.svg[MultiBoot_Flow]
 
 TRCHによって FPGAに電源が投入されると、FPGAは NOR Flash Memoryのアドレス
 0から Goldenイメージを読み込みます。 Goldenデータの読み込み中に Multi

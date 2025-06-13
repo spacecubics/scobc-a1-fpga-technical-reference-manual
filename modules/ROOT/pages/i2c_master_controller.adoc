@@ -676,7 +676,7 @@ Controllerを使用するための、レジスタの制御手順を説明しま�
 I2C Controllerの初期設定の手順について説明します。
 
 .初期設定フロー
-image::./images/i2cm_init_config_seq.svg[./images/i2cm_init_config_seq]
+image::i2cm_init_config_seq.svg[i2cm_init_config_seq]
 
 I2C ControllerのTiming Parameterは、システムクロックが 48
 MHz、Standard-mode(ビットレート:100Kb/s)でのI2C通信に合わせて初期設定がされています。
@@ -724,10 +724,10 @@ I2Cデバイスが対応する通信レートやモードに応じ変更する�
 Controllerのタイミングを以下に示します。
 +
 .I2Cバスタイミング
-image::./images/i2cm_timing.svg[./images/i2cm_timing]
+image::i2cm_timing.svg[i2cm_timing]
 +
 .I2Cバスタイミング(Repeated Start)
-image::./images/i2cm_timing_repsta.svg[./images/i2cm_timing_repsta]
+image::i2cm_timing_repsta.svg[i2cm_timing_repsta]
 +
 I2Cクロック(SCL)のLow期間(tLOW)は、I2Cデータ(SDA)のSetup/Hold時間(I2CM~TSUDAT~,I2CM~THDDAT~)のTotal時間となります。
 I2C通信の1ビットは、I2Cクロック(SCL)のHigh期間(I2CM~THIGH~)と
@@ -837,7 +837,7 @@ Idle状態である事を前提に記載しています。
 I2Cデバイスへデータ書き込みを行う場合の I2C Busの波形を以下に示します。
 +
 .I2C書き込みアクセス波形
-image::./images/i2cm_write_acc_seq.png[./images/i2cm_write_acc_seq]
+image::i2cm_write_acc_seq.png[i2cm_write_acc_seq]
 +
 A: TX FIFO(I2C TX FIFO RegisterのI2CM~TXDATAフィールド~)の Bit7-1に
 I2Cデバイスのアドレスと Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
@@ -878,7 +878,7 @@ Conditionを使用した書き込みアクセスの手順を説明します。
 I2Cデバイスとの通信時などで使用します。
 +
 .Repeated Startを使用したI2C書き込みアクセス波形
-image::./images/i2cm_write_acc_seq_repsta.png[./images/i2cm_write_acc_seq_repsta]
+image::i2cm_write_acc_seq_repsta.png[i2cm_write_acc_seq_repsta]
 +
 A: 前の手順と同様に TX FIFOのBit7-1に
 I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
@@ -916,7 +916,7 @@ I2Cデバイスからデータ読み出しを行う場合の I2C
 Busの波形を以下に示します。
 +
 .I2C読み出しアクセス波形
-image::./images/i2cm_read_acc_seq.png[./images/i2cm_read_acc_seq]
+image::i2cm_read_acc_seq.png[i2cm_read_acc_seq]
 +
 A: TX FIFO(I2C TX FIFO RegisterのI2CM~TXDATAフィールド~)のBit7-1に
 I2Cデバイスのアドレス7と、Bit0(R/Wビット)に"1"を書き込みます。 I2C
@@ -960,7 +960,7 @@ Conditionを使用した読み出しアクセスの手順を説明します。
 I2Cデバイスとの通信時に使用します。
 +
 .Repeated Startを使用したI2C読み出しアクセス波形
-image::./images/i2cm_read_acc_seq_repsta.png[./images/i2cm_read_acc_seq_repsta]
+image::i2cm_read_acc_seq_repsta.png[i2cm_read_acc_seq_repsta]
 +
 A: 前の手順と同様に、TX FIFOのBit7-1に
 I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。

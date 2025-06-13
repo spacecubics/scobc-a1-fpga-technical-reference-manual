@@ -14,7 +14,7 @@ NOR Flashメモリ (Data Store Flash Memory)及び FRAMが搭載されていま�
 QSPI Controllerとメモリの構成を以下に示します。
 
 .QSPI Controllerと メモリの接続構成
-image::./images/qspi_controller_structure.png[./images/qspi_controller_structure]
+image::qspi_controller_structure.png[qspi_controller_structure]
 
 SC OBCモジュールに実装される メモリの型番は以下の通りです。
 各メモリの仕様については、ベンダーからリリースされている
@@ -452,7 +452,7 @@ Memoryへのデータ書き込みの手順を説明します。
 CPOL=0、CPHA=0に設定した時のSPI Interface波形と手順を以下に示します。
 
 .Quad Page Program アクセス波形
-image::./images/quad_page_program_acc_seq.png[./images/quad_page_program_acc_seq]
+image::quad_page_program_acc_seq.png[quad_page_program_acc_seq]
 
 以下の手順は、メモリ 1にアクセスする場合のレジスタ設定例を示しています。
 Configuration Flash Memoryを除き、メモリ 2にアクセスする場合は、QSPI
@@ -502,7 +502,7 @@ Memoryからのデータ読み出しの手順を説明します。
 CPOL=0、CPHA=0に設定した時のSPI Interfaceの波形と手順を以下に示します。
 
 .Quad I/O Read アクセス波形
-image::./images/quad_io_read_acc_seq.png[./images/quad_io_read_acc_seq]
+image::quad_io_read_acc_seq.png[quad_io_read_acc_seq]
 
 以下の手順は、メモリ 1にアクセスする場合のレジスタ設定例を示しています。
 Configuration Flash Memoryを除き、メモリ 2にアクセスする場合は、QSPI

@@ -15,7 +15,7 @@ FPGAには、ユーザーのIPコアを実装するためのモジュールが�
 IPコアを設計する事で、簡単にシステムに組み込む事ができます。
 
 .SC-OBC-A1 FPGA Block Diagram
-image::./images/FPGA_BlockDiagram.svg[./images/FPGA_BlockDiagram]
+image::FPGA_BlockDiagram.svg[FPGA_BlockDiagram]
 
 SC-OBC-A1 FPGAのシステムは大きく 6つの機能に分割されます。
 

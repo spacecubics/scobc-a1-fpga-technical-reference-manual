@@ -3,7 +3,7 @@
 以下に、SC-OBC-A1 FPGAのメモリマップを示します。
 
 .SC-OBC-A1 FPGA Memory Map
-image::./images/MemoryMap.svg[./images/MemoryMap]
+image::MemoryMap.svg[MemoryMap]
 
 .SC-OBC-A1 FPGA メモリマップ
 [cols=",,",options="header",]
@@ -72,7 +72,7 @@ Systemの設計によって任意の構成に実装することができます�
 Systemのメモリマップです。
 
 .SC-OBC-A1 FPGA Mission Bus System Memory Map
-image::./images/MissionBusMemoryMap.svg[./images/MissionBusMemoryMap]
+image::MissionBusMemoryMap.svg[MissionBusMemoryMap]
 
 [cols=",,",options="header",]
 |===
@@ -105,7 +105,7 @@ HRMEMは IPコアの内部に
 SRAMのデータが放射線によって破壊された場合に訂正する仕組みを実装しているため、通常はこのメモリを使って動作します。
 
 .CPU Main Memory構成
-image::./images/itcm_hrmem_select.png[./images/itcm_hrmem_select]
+image::itcm_hrmem_select.png[itcm_hrmem_select]
 
 FPGAの Configuration後、アドレス 0x00000000に
 ITCMがマッピングされています。 ITCMには
