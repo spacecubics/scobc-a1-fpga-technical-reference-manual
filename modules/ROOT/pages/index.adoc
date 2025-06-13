@@ -1,3 +1,20 @@
-:sectnums:
+:sectnum:
 
-= SC-OBC Module A1 FPGA Technical Reference Manual
+= SC-OBC Module A1 Technical Reference Manual =
+
+このドキュメントは、Space Cubics OBCに搭載するFPGAの仕様を説明する「SC-OBC-A1 FPGA Technical ReferenceManual」に関するものです。
+
+SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能に関する仕様やレジスタの仕様が記載されています。
+
+include::overview.adoc[]
+include::memory_map.adoc[]
+include::interrupt.adoc[]
+include::system_register.adoc[]
+include::system_monitor.adoc[]
+include::general_purpose_timer.adoc[]
+include::hrmem.adoc[]
+include::qspi_controller.adoc[]
+include::can_controller.adoc[]
+include::ahb_uart_lite.adoc[]
+include::i2c_master_controller.adoc[]
+include::revision_history.adoc[]
