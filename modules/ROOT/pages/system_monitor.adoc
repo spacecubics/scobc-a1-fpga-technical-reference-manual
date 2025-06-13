@@ -204,7 +204,7 @@ Timerのレジスタ仕様の詳細は「General Purpose
 Timer」の章を参照してください。
 
 .センサーデータ自動取得のためのレジスタアクセス手順
-image::./images/bhm_initilize.png[./images/bhm_initilize]
+image::bhm_initilize.png[bhm_initilize]
 
 1: BHM Prescaler Registerに I2Cの通信速度を設定します
 
@@ -285,7 +285,7 @@ Monitorの読み出しタイミングを 100 ms、温度センサーの読み出
 200 msとした場合のレジスタ設定を示します。
 
 .Hardware Interrupt Timerを 1秒周期にした時の、センサーデータ自動受信の例
-image::./images/bhm_hardware_interrupt_timing.png[./images/bhm_hardware_interrupt_timing]
+image::bhm_hardware_interrupt_timing.png[bhm_hardware_interrupt_timing]
 
 * 手順 8で行う Hardware Interrupt Timer Prescaler Registerに
 0x5DBFを設定する事で Hardware Interrupt Timerのカウントアップ時間を
@@ -315,7 +315,7 @@ BHMは、ソフトウェアからのレジスタアクセスにより、セン�
 センサーデバイスの初期化のためのレジスタアクセス手順を以下に示します。
 
 .センサーデバイスの初期化のためのレジスタアクセス手順
-image::./images/bhm_sensor_init.png[./images/bhm_sensor_init]
+image::bhm_sensor_init.png[bhm_sensor_init]
 
 1: BHM Initialization Access Control
 Registerの初期化を行うセンサーデバイスに対応する Initialization Enableと
@@ -444,7 +444,7 @@ I2Cアクセスを行いたい場合は、ソフトウェア指示によるセ�
 ソフトウェア指示によりセンサーデバイスのレジスタにデータを書き込むためのレジスタアクセスフローを以下に示します。
 
 .ソフトウェア指示によるセンサーデバイスのレジスタ書き込みフロー
-image::./images/bhm_sw_write_seq.png[./images/bhm_sw_write_seq]
+image::bhm_sw_write_seq.png[bhm_sw_write_seq]
 
 1: センサーデバイスに書き込む 2 Byteのデータを BHM Software Access Write
 Data Registerに書き込みます。
@@ -476,7 +476,7 @@ Interrupt Status Registerの BHM~SWACCERRビットに~
 ソフトウェア指示によりセンサーデバイスのレジスタからデータを読み出すためのレジスタアクセスフローを以下に示します。
 
 .ソフトウェア指示によるセンサーデバイスからのレジスタ読み出しフロー
-image::./images/bhm_sw_read_seq.png[./images/bhm_sw_read_seq]
+image::bhm_sw_read_seq.png[bhm_sw_read_seq]
 
 1:
 レジスタ読み出しを行うセンサーデバイスとレジスタアドレスを設定するため、BHM

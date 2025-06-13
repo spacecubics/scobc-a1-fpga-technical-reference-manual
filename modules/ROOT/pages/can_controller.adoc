@@ -1237,7 +1237,7 @@ Controllerの"レジスタ詳細"の章を参照してください。
 CAN Controllerの起動後に行う必要がある初期設定の手順について説明します。
 
 .初期設定フロー
-image::./images/can_init_config_seq.png[./images/can_init_config_seq]
+image::can_init_config_seq.png[can_init_config_seq]
 
 1: CAN Time Quantum Prescaler Registerに Time Quantum
 Clock周期の設定を行います。ここで設定した値に1を加算した数のクロックサイクル数が、Time
@@ -1296,7 +1296,7 @@ TS1、TS2フィールドに Tqサイクル数を設定します。 Sync Segment�
 例として、TQPSET[15:0]=0x0003、TS1[3:0]=0x5、TS2[2:0]=0x2にレジスタ設定した時に生成されるビットタイミングを以下に示します。
 +
 .ビットタイミング生成
-image::./images/can_gen_bit_timing.png[./images/can_gen_bit_timing]
+image::can_gen_bit_timing.png[can_gen_bit_timing]
 +
 SC~OBCFPGAでは~、CANクロックの周波数は24MHz固定となります。
 ビットタイミング設定値の一例として、ビットレートを
@@ -1315,7 +1315,7 @@ Processorモジュールでのフレーム処理に必要な時間として、Ti
 TX~FIFOを使用したメッセージ送信の手順について説明します~。
 
 .TX FIFOを使用するフレーム送信フロー
-image::./images/can_trans_txf_seq.png[./images/can_trans_txf_seq]
+image::can_trans_txf_seq.png[can_trans_txf_seq]
 
 1: CAN Interrupt Enable Registerの TRNSDNENBビットを
 "1"に設定します。必要に応じて使用する他の割り込みステータスのイネーブルビットもあわせて設定します。
@@ -1378,7 +1378,7 @@ FIFOに複数のメッセージが格納されている時に優先度の高い�
 Management機能の構成を以下に示します。
 +
 .TX Message Priority Management Function
-image::./images/can_tx_prio_mgmt.png[./images/can_tx_prio_mgmt]
+image::can_tx_prio_mgmt.png[can_tx_prio_mgmt]
 +
 送信メッセージの送信順序は、TX
 FIFOのメッセージ格納位置を優先順位に並べて管理する Priority Management
@@ -1421,7 +1421,7 @@ Priority Bufferに書き込まれたメッセージは、TX
 FIFO内のメッセージよりも優先して送信されます。
 
 .TX High Priority Bufferを使用するフレーム送信フロー
-image::./images/can_trans_txhb_seq.png[./images/can_trans_txhb_seq]
+image::can_trans_txhb_seq.png[can_trans_txhb_seq]
 
 CAN Status Registerの TXHBFLビットが "0"の場合は送信メッセージを TX High
 Priority Bufferに書き込むことが出来ます。 TXHBFLビットが "1"の状態の時は
@@ -1450,7 +1450,7 @@ CAN~ENビットが~ "0"の状態でも書き込む事が出来ます。
 メッセージ受信の手順について説明します。
 
 .フレーム受信フロー
-image::./images/can_rcv_rxf_seq.png[./images/can_rcv_rxf_seq]
+image::can_rcv_rxf_seq.png[can_rcv_rxf_seq]
 
 1: CAN Interrupt Enable Registerの RCVDNENBビットと RXFVALENBビットを
 "1"に設定します。
