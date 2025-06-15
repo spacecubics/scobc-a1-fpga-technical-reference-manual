@@ -7,8 +7,10 @@
 SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能に関する仕様やレジスタの仕様が記載されています。
 
 include::overview.adoc[]
+include::pin_description.adoc[]
 include::memory_map.adoc[]
 include::interrupt.adoc[]
+include::boot.adoc[]
 include::system_register.adoc[]
 include::system_monitor.adoc[]
 include::general_purpose_timer.adoc[]
