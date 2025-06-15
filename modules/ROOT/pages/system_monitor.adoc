@@ -802,63 +802,38 @@ Monitorが監視するイベントを割り込み出力信号に通知するか�
 
 ==== SEM Controller State Register (0ffset 0x0040)
 
-SEM Controller State Registerは SC-OBC-A1 FPGAに実装する、SEM
-Controllerのステートを示すレジスタです。
+SEM Controller State Registerは SC-OBC-A1 FPGAに実装する、SEM Controllerのステートを示すレジスタです。
 
-セットされているビットを確認する事により、ソフトウェアは SEM
-Controllerがどのような状況にあるか把握する事ができます。
-また、Currentステートと
-Previousステートを比較する事によって、ステートの遷移を把握する事ができます。
+セットされているビットを確認する事により、ソフトウェアは SEM Controllerがどのような状況にあるか把握する事ができます。
+また、Currentステートと Previousステートを比較する事によって、ステートの遷移を把握する事ができます。
 
-Currentステート、Previousステートの全てのビットが
-Highにセットされているとき、SEM
-Controllerに重大なエラーが起きた事を示します。 また、全てのビットが
-Lowにクリアされているとき、SEM Controllerは IDLE状態である事を示します。
+Currentステート、Previousステートの全てのビットが Highにセットされているとき、SEM Controllerに重大なエラーが起きた事を示します。
+また、全てのビットが Lowにクリアされているとき、SEM Controllerは IDLE状態である事を示します。
+
+このレジスタはPower On Resetのみでリセットされ、システムリセットでは初期化が行われません。
+そのため、Bootloaderから Flight Softwareに切り替わるタイミングでもリセットされません。
+一方、System Monitor Interrupt Status Registerはシステムリセットにより割り込みイベントがクリアされます。
+そのため、Flight Softwareが起動したときに、このレジスタの値を読み出し、SEMが正常動作している事を確認してください。
 
 .SEM Controller State Registerビットフィールド
 [cols=",,,,",options="header",]
 |===
-|bit |Symbol |Field |Description |R/W
-|31:21 |- |Reserved |Reserved |-
-
-|20 |SEM_PREINJECT |SEM Previous Injection State |SEM
-Controllerの前のステートがエラー挿入ステートだった事を示します。 |RO
-
-|19 |SEM_PRECLASSIFIC |SEM Previous Classification State |SEM
-Controllerの前のステートが分類ステートだった事を示します。 |RO
-
-|18 |SEM_PRECORRECT |SEM Previous Correction State |SEM
-Controllerの前のステートが訂正ステートだった事を示します。 |RO
-
-|17 |SEM_PREOBSERVE |SEM Previous Oveservation State |SEM
-Controllerの前のステートが監視ステートだった事を示します。 |RO
-
-|16 |SEM_PREINIT |SEM Previous Initilize State |SEM
-Controllerの前のステートが初期化ステートだった事を示します。 |RO
-
-|15:5 |- |Reserved |Reserved |-
-
-|4 |SEM_CURINJECT |SEM Current Error Injection State |SEM
-Controllerがエラー挿入ステートである事を示します。このビットのみが
-Highにセットされているとき、SEM Controllerはエラー挿入ステートです。 |RO
-
-|3 |SEM_CURCLASSIFIC |SEM Current Classification State |SEM
-Controllerが分類ステートである事を示します。このビットのみが
-Highにセットされているとき、SEM Controllerは分類ステートです。 |RO
-
-|2 |SEM_CURCORRECT |SEM Current Correction State |SEM
-Controllerが訂正ステートである事を示します。このビットのみが
-Highにセットされているとき、SEM Controllerは訂正ステートです。 |RO
-
-|1 |SEM_CUROBSERVE |SEM Current Oveservation State |SEM
-Controllerが監視ステートである事を示します。このビットのみが
-Highにセットされているとき、SEM Controllerは監視ステートです。 |RO
-
-|0 |SEM_CURINIT |SEM Current Initilize State |SEM
-Controllerが初期化ステートである事を示します。このビットのみが
-Highにセットされているとき、SEM
-Controllerは初期化ステートです。このビットは FPGAが動作を開始した後に
-1度だけ発生する初期化の間アクティブになります。 |RO
+|bit   |Symbol           |Field                             |Description                                                          |R/W
+|31:21 |-                |Reserved                          |Reserved                                                             |-
+|20    |SEM_PREINJECT    |SEM Previous Injection State      |SEM Controllerの前のステートがエラー挿入ステートだった事を示します。 |RO
+|19    |SEM_PRECLASSIFIC |SEM Previous Classification State |SEM Controllerの前のステートが分類ステートだった事を示します。       |RO
+|18    |SEM_PRECORRECT   |SEM Previous Correction State     |SEM Controllerの前のステートが訂正ステートだった事を示します。       |RO
+|17    |SEM_PREOBSERVE   |SEM Previous Oveservation State   |SEM Controllerの前のステートが監視ステートだった事を示します。       |RO
+|16    |SEM_PREINIT      |SEM Previous Initilize State      |SEM Controllerの前のステートが初期化ステートだった事を示します。     |RO
+|15:5  |-                |Reserved                          |Reserved                                                             |-
+|4     |SEM_CURINJECT    |SEM Current Error Injection State |
+SEM Controllerがエラー挿入ステートである事を示します。このビットのみが Highにセットされているとき、SEM Controllerはエラー挿入ステートです。 |RO
+|3     |SEM_CURCLASSIFIC |SEM Current Classification State  |SEM Controllerが分類ステートである事を示します。このビットのみが Highにセットされているとき、SEM Controllerは分類ステートです。 |RO
+|2     |SEM_CURCORRECT   |SEM Current Correction State      |SEM Controllerが訂正ステートである事を示します。このビットのみが Highにセットされているとき、SEM Controllerは訂正ステートです。 |RO
+|1     |SEM_CUROBSERVE   |SEM Current Oveservation State    |SEM Controllerが監視ステートである事を示します。このビットのみが Highにセットされているとき、SEM Controllerは監視ステートです。 |RO
+|0     |SEM_CURINIT      |SEM Current Initilize State       |
+SEM Controllerが初期化ステートである事を示します。このビットのみが Highにセットされているとき、SEM Controllerは初期化ステートです。
+このビットは FPGAが動作を開始した後に 1度だけ発生する初期化の間アクティブになります。 |RO
 |===
 
 ==== SEM Error Correction Count Register (Offset 0x0044)
@@ -866,15 +841,15 @@ Controllerは初期化ステートです。このビットは FPGAが動作を�
 SEM Error Correction Count Registerは、SEM
 Controllerが行ったエラー訂正数をカウントします。
 
+このレジスタはPower On Resetのみでリセットされ、システムリセットでは初期化が行われません。
+そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされず、SEM Controllerのエラーは累積のエラーを示します。
+
 .SEM Error Correction Count Registerビットフィールド
 [cols=",,,,",options="header",]
 |===
-|bit |Symbol |Field |Description |R/W
-|31:16 |- |Reserved |Reserved |-
-
-|15:0 |SEMCCOUNT |SEM Correction Count |SEM
-Controllerが訂正したエラーの数を保持します。このレジスタに書き込みを行うと、書き込む値によらずカウント値が
-0にクリアされます。 |R/WC
+|bit   |Symbol    |Field                |Description                                                                                                                        |R/W
+|31:16 |-         |Reserved             |Reserved                                                                                                                           |-
+|15:0  |SEMCCOUNT |SEM Correction Count |SEM Controllerが訂正したエラーの数を保持します。このレジスタに書き込みを行うと、書き込む値によらずカウント値が 0にクリアされます。 |R/WC
 |===
 
 ==== SEM Heartbeat Timeout Register (Offset 0x0048)
@@ -883,6 +858,9 @@ SEM Heartbeat Timeout Registeは SEM Controllerが出力する Heartbeat信号�
 Timeout時間を設定するレジスタです。 AMD (旧 Xilinx) の SEM Controller
 (v4.1)では、Heartbeat信号のアサート間隔は
 150クロックと規定されており、本レジスタの値は修正する必要はありません。
+
+このレジスタはPower On Resetのみでリセットされ、システムリセットでは初期化が行われません。
+そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされません。
 
 .SEM Heartbeat Timeout Registerビットフィールド
 [cols=",,,,",options="header",]
@@ -911,6 +889,9 @@ SEM Controller へのコマンド送信は、SEM Error Injection Command Registe
 2 への書き込みをきっかけに行われます。 そのため、SEM Error Injection
 Command Register 1 への書き込みは、必ず SEM Error Injection Command
 Register 2 の書き込み前に行ってください。
+
+このレジスタはPower On Resetのみでリセットされ、システムリセットでは初期化が行われません。
+そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされません。
 
 .SEM Error Injection Command Register 1ビットフィールド
 [cols=",,,,",options="header",]
