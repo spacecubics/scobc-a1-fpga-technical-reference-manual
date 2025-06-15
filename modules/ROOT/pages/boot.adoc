@@ -62,3 +62,4 @@ SC-OBC Module A1は電源が投入されると以下の順序で Bootします�
 . TRCHによる FPGA Power On
 . FPGA Configuration
 . Bootloader起動、Flight Softwareロード
+

@@ -1495,3 +1495,4 @@ FIFOに格納されていることを示します。 RX FIFOは最大
 CAN RX Message Register 1～4は、CAN Enable Registerの CAN~ENビットが~
 "0"の状態でも読み出す事が出来ます。
 但し、この時は新しいメッセージの受信は行われません。
+

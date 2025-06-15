@@ -549,3 +549,4 @@ F::
 Data Write
 Operation時と同様、CからD時を除いた全てのフェーズの切り替わり時には、QSPI
 Controllerの実行ステータスを確認し、必ずIdle状態となってから次の操作を実行する必要があります。
+
