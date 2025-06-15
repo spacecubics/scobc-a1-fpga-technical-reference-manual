@@ -15,6 +15,7 @@ System Registerは、Base Address 0x4F00_0000に配置されています。
 |0x0004 |SYSREG_SYSCLKCTL |System Clock Control Register       |0x00000001
 |0x0008 |SYSREG_PLLINFO   |PLL Infomation Register             |0x00280014
 |0x0010 |SYSREG_CFGMEMCTL |Configuration Flash Memory Register |0x000x0000
+|0x0014 |SYSREG_BOOTSTS   |Boot Status Register                |-
 |0x0020 |SYSREG_PWRCYCLE  |Power Cycle Register                |0x00000000
 |0x0030 |SYSREG_PWRMANAGE |Power Management Register           |0x00000000
 |0x00F0 |SYSREG_SPAD1     |Scratchpad 1 Register               |0x00000000
@@ -153,6 +154,58 @@ Configuration Flash Memoryへのアクセス開始は、必ず CFGMEMMONビッ�
 
 現状の SC-OBC-A1 FPGAには QSPIコアによる Configuration Flash Memoryのメモリパトロール機能は実装されていません。
 CFGMEMOWNERビットは必ず "0"に設定し使用してください。
+
+
+==== Boot Status Register (Offset 0x0014)
+
+SC-OBC-A1 FPGAのBoot Statusを示すレジスタです。
+このレジスタは 7シリーズ FPGAデバイスに実装されている Configuration Regsiterの Boot History Status Registerの値を読み出すことができます。
+起動後に このレジスタを読み出す事で、マルチブート機能によって Configurationした FPGAの起動状態を読み出す事ができます。
+
+.Boot Status Register ビットフィールド
+[cols=",,,,",options="header",]
+|===
+|bit    |Symbol       |Field                      |Description |R/W
+| 31:14 | Reserved    | Reserved                  |-           |-
+| 13    | CRC_ERROR_1 | Status 1 CRC Error        | Status 1に CRC Errorが発生した事を示します。                                                        |RO
+| 12    | ID_ERROR_1  | Status 1 ID Error         | Status 1に ID Code Errorが発生した事を示します。                                                    |RO
+| 11    | WTO_ERROR_1 | Status 1 WTO Error        | Status 0に Watchdog Errorが発生した事を示します。                                                   |RO
+| 10    | IPROG_1     | Status 1 IPROG            | 内部 PROGで開始したコンフィギュレーションである事を示します。Fallbackしたとき このビットはされます。|RO
+| 9     | FALLBACK_1  | Status 1 Fallback         |
+最新の Configuration Statusを示します。 +
+0: 通常のコンフィギュレーション
+1: Fallback コンフィギュレーション                | RO
+
+| 8     | VALID_1     | Status 1 Valid            |
+Boot Status 0が有効である事を示します。Fallbackしたとき、このビットはセットされます。
+0: Status 0 無効 +
+1: Status 0 有効                                   |RO
+
+| 7:6   | Reserved    | Reserved                  | -          |-
+
+| 5     | CRC_ERROR_0 | Status 0 CRC Error        | Status 0に CRC Errorが発生した事を示します。このビットは基本的にセットされる事はありません        |RO
+| 4     | ID_ERROR_0  | Status 0 ID Error         | Status 0に ID Code Errorが発生した事を示します。このビットは基本的にセットされる事はありません。  |RO
+| 3     | WTO_ERROR_0 | Status 0 WTO Error        | Status 0に Watchdog Errorが発生した事を示します。このビットは基本的にセットされる事はありません。 |RO
+| 2     | IPROG_0     | Status 0 IPROG            | 内部 PROGで開始したコンフィギュレーションである事を示します。このビットは常にセットされます。     |RO
+
+| 1     | FALLBACK_0  | Status 0 Fallback         |
+最新の Configuration Statusを示します。 +
+0: 通常のコンフィギュレーション
+1: Fallback コンフィギュレーション                | RO
+
+| 0     | VALID_0     | Status 0 Valid            |
+Boot Status 0が有効である事を示す +
+0: Status 0 無効 +
+1: Status 0 有効                                   | RO
+|===
+
+Boot Statusの Bit0は Status 0が有効である事を示すステータスビットです。
+Boot Statusの Bit1は Fallbackステータスが格納されています。
+Bit0が "1"で 且つ Bit 1が "0"の場合、Update Imageから起動した事を示します。
+Bit0が "1"で 且つ Bit 1が "1"の場合、Configurationデータの読み込み時にFallbackした事を示し、Golden Imageから起動した事を示します。
+
+Updata Imageで起動したとき、このレジスタは 0x00000005 を示します。
+Golden Imageで起動したとき、このレジスタは 0x00004007 に加え Status 1のいずれかの Errorビットがセットされます。
 
 ==== Power Cycle Register (Offset 0x0020)
 
