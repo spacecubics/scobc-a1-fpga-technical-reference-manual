@@ -1,11 +1,25 @@
 == AHB UART Lite
 
-AHU UART Liteは、UART通信を行うためのモジュールです。
-このモジュールはソフトウェア開発時のコンソール出力を目的としているため、フロー制御を行う機能などは持っていません。
+AHB UART Liteは、UART通信を行うためのモジュールです。
+このモジュールはコンソール出力など簡易なシリアルデータの送受信を行うことを目的としているため、フロー制御を行う機能は持っていません。
 
 === レジスタ詳細
 
-AHB UART Liteは、Base Address 0x4F010000に配置されています。
+AHB UARTコアは、システムに 7個実装されています。
+このうち 6個は、標準イメージにおいて、ユーザーが設計する Mission Bus Systemに実装されています。
+
+.AHB UART Lite Base Address
+[cols=",,",options="header",]
+|===
+|IP Core                 | Base Address | Comment
+|UART Lite (Console I/F) | 0x4F01_0000  |
+|UART Lite 1             | 0x5000_0000  | Implemented in Mission Bus System
+|UART Lite 2             | 0x5001_0000  | Implemented in Mission Bus System
+|UART Lite 3             | 0x5002_0000  | Implemented in Mission Bus System
+|UART Lite 4             | 0x5003_0000  | Implemented in Mission Bus System
+|UART Lite 5             | 0x5004_0000  | Implemented in Mission Bus System
+|UART Lite 6             | 0x5005_0000  | Implemented in Mission Bus System
+|===
 
 .AHB UART Lite Registerメモリマップ
 [cols=",,,",options="header",]
