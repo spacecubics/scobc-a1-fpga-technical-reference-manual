@@ -5,91 +5,91 @@ IPコアです。 1 Mbpsのビットレートをサポートしています。
 
 === レジスタ詳細
 
-CAN Controllerは、Base Address 0x4040~0000に配置されています~。
+CAN Controllerは、Base Address 0x4040_0000に配置されています。
 
 .CAN Controller Register メモリマップ
 [cols=",,,",options="header",]
 |===
 |Offset |Symbol |Register |Initial
-|0x0000 |CAN~ENR~ |CAN Enable Register |0x00000000
+|0x0000 |CAN_ENR |CAN Enable Register |0x00000000
 
-|0x0008 |CAN~TQPR~ |CAN Time Quantum Prescaler Register |0x00000000
+|0x0008 |CAN_TQPR |CAN Time Quantum Prescaler Register |0x00000000
 
-|0x000C |CAN~BTSR~ |CAN Bit Timing Setting Register |0x00000000
+|0x000C |CAN_BTSR |CAN Bit Timing Setting Register |0x00000000
 
-|0x0010 |CAN~ECNTR~ |CAN Error Count Register |0x00000000
+|0x0010 |CAN_ECNTR |CAN Error Count Register |0x00000000
 
-|0x0018 |CAN~STSR~ |CAN Status Register |0x00000000
+|0x0018 |CAN_STSR |CAN Status Register |0x00000000
 
-|0x0020 |CAN~ISR~ |CAN Interrupt Status Register |0x00000000
+|0x0020 |CAN_ISR |CAN Interrupt Status Register |0x00000000
 
-|0x0024 |CAN~IER~ |CAN Interrupt Enable Register |0x00000000
+|0x0024 |CAN_IER |CAN Interrupt Enable Register |0x00000000
 
-|0x0030 |CAN~TMR1~ |CAN TX Message Register1 |0x00000000
+|0x0030 |CAN_TMR1 |CAN TX Message Register1 |0x00000000
 
-|0x0034 |CAN~TMR2~ |CAN TX Message Register2 |0x00000000
+|0x0034 |CAN_TMR2 |CAN TX Message Register2 |0x00000000
 
-|0x0038 |CAN~TMR3~ |CAN TX Message Register3 |0x00000000
+|0x0038 |CAN_TMR3 |CAN TX Message Register3 |0x00000000
 
-|0x003C |CAN~TMR4~ |CAN TX Message Register4 |0x00000000
+|0x003C |CAN_TMR4 |CAN TX Message Register4 |0x00000000
 
-|0x0040 |CAN~THPMR1~ |CAN TX High Priority Message Register1 |0x00000000
+|0x0040 |CAN_THPMR1 |CAN TX High Priority Message Register1 |0x00000000
 
-|0x0044 |CAN~THPMR2~ |CAN TX High Priority Message Register2 |0x00000000
+|0x0044 |CAN_THPMR2 |CAN TX High Priority Message Register2 |0x00000000
 
-|0x0048 |CAN~THPMR3~ |CAN TX High Priority Message Register3 |0x00000000
+|0x0048 |CAN_THPMR3 |CAN TX High Priority Message Register3 |0x00000000
 
-|0x004C |CAN~THPMR4~ |CAN TX High Priority Message Register4 |0x00000000
+|0x004C |CAN_THPMR4 |CAN TX High Priority Message Register4 |0x00000000
 
-|0x0050 |CAN~RMR1~ |CAN RX Message Register1 |0x00000000
+|0x0050 |CAN_RMR1 |CAN RX Message Register1 |0x00000000
 
-|0x0054 |CAN~RMR2~ |CAN RX Message Register2 |0x00000000
+|0x0054 |CAN_RMR2 |CAN RX Message Register2 |0x00000000
 
-|0x0058 |CAN~RMR3~ |CAN RX Message Register3 |0x00000000
+|0x0058 |CAN_RMR3 |CAN RX Message Register3 |0x00000000
 
-|0x005C |CAN~RMR4~ |CAN RX Message Register4 |0x00000000
+|0x005C |CAN_RMR4 |CAN RX Message Register4 |0x00000000
 
-|0x0060 |CAN~AFER~ |CAN Acceptance Filter Enable Register |0x00000000
+|0x0060 |CAN_AFER |CAN Acceptance Filter Enable Register |0x00000000
 
-|0x0070 |CAN~AFIMR1~ |CAN Acceptance Filter ID Mask Register1
+|0x0070 |CAN_AFIMR1 |CAN Acceptance Filter ID Mask Register1
 |0x00000000
 
-|0x0074 |CAN~AFIVR1~ |CAN Acceptance Filter ID Value Register1
+|0x0074 |CAN_AFIVR1 |CAN Acceptance Filter ID Value Register1
 |0x00000000
 
-|0x0090 |CAN~AFIMR2~ |CAN Acceptance Filter ID Mask Register2
+|0x0090 |CAN_AFIMR2 |CAN Acceptance Filter ID Mask Register2
 |0x00000000
 
-|0x0094 |CAN~AFIVR2~ |CAN Acceptance Filter ID Value Register2
+|0x0094 |CAN_AFIVR2 |CAN Acceptance Filter ID Value Register2
 |0x00000000
 
-|0x00B0 |CAN~AFIMR3~ |CAN Acceptance Filter ID Mask Register3
+|0x00B0 |CAN_AFIMR3 |CAN Acceptance Filter ID Mask Register3
 |0x00000000
 
-|0x00B4 |CAN~AFIVR3~ |CAN Acceptance Filter ID Value Register3
+|0x00B4 |CAN_AFIVR3 |CAN Acceptance Filter ID Value Register3
 |0x00000000
 
-|0x00D0 |CAN~AFIMR4~ |CAN Acceptance Filter ID Mask Register4
+|0x00D0 |CAN_AFIMR4 |CAN Acceptance Filter ID Mask Register4
 |0x00000000
 
-|0x00D4 |CAN~AFIVR4~ |CAN Acceptance Filter ID Value Register4
+|0x00D4 |CAN_AFIVR4 |CAN Acceptance Filter ID Value Register4
 |0x00000000
 
-|0x00F0 |CAN~FIFORR~ |CAN FIFO and Buffer Reset Register |0x00000000
+|0x00F0 |CAN_FIFORR |CAN FIFO and Buffer Reset Register |0x00000000
 
-|0x0100 |CAN~STMCR~ |CAN Self Test Mode Control Register |0x00000000
+|0x0100 |CAN_STMCR |CAN Self Test Mode Control Register |0x00000000
 
-|0x0200 |CAN~PSLMCR~ |CAN PHY Sleep Mode Control Register |0x00000000
+|0x0200 |CAN_PSLMCR |CAN PHY Sleep Mode Control Register |0x00000000
 
-|0xF000 |CAN~VER~ |CAN Controller IP Version Register |-
+|0xF000 |CAN_VER |CAN Controller IP Version Register |-
 |===
 
 ==== CAN Enable Register (Offset 0x0000)
 
 CAN Enable Registerは、CAN通信におけるEnable設定を行うレジスタです。
 
-CAN~ENが~ Disableの時、CAN Controllerは CANバスに Recessive (High
-level)を出力し、メッセージの送受信を行いません。 CAN~ENが~
+CAN_ENが Disableの時、CAN Controllerは CANバスに Recessive (High
+level)を出力し、メッセージの送受信を行いません。 CAN_ENが
 Enableになると、CANバス上に連続する 11bitの Recessiveを
 1回検出した後にエラーアクティブ状態となり、メッセージの送受信が可能となります。
 
@@ -99,7 +99,7 @@ Enableになると、CANバス上に連続する 11bitの Recessiveを
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
 
-|0 |CAN~EN~ |CAN Enable |CAN通信のEnableを設定します。0: Disable 1:
+|0 |CAN_EN |CAN Enable |CAN通信のEnableを設定します。0: Disable 1:
 Enable |R/W
 |===
 
@@ -107,7 +107,7 @@ Enable |R/W
 
 CAN Time Quantum Prescaler Registerは、Time Quantum
 Clock周期の設定を行うレジスタです。 このレジスタは、CAN Enable
-Registerの CAN~ENビットが~ "0"の時のみ書き込みが可能です。
+Registerの CAN_ENビットが "0"の時のみ書き込みが可能です。
 
 .CAN Time Quantum Prescaler Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -115,7 +115,7 @@ Registerの CAN~ENビットが~ "0"の時のみ書き込みが可能です。
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
 
-|15:0 |CAN~TQPSET~ |Time Quantum Cycle |Time Quantum
+|15:0 |CAN_TQPSET |Time Quantum Cycle |Time Quantum
 Clockの時間(Tq)を設定します。この設定は、CANクロックのサイクル数を設定します。CANクロックは
 システムクロックの周波数によらず、常に 24 MHzです。 |R/W
 |===
@@ -130,7 +130,7 @@ ____
 
 CAN Bit Timing Setting
 Registerは、サンプリングや同期制御に必要なビット時間の設定を行うレジスタです。
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Bit Timing Setting Register ビットフィールド
@@ -139,15 +139,15 @@ Registerは、サンプリングや同期制御に必要なビット時間の設
 |bit |Symbol |Field |Description |R/W
 |31:9 |- |Reserved |Reserved |-
 
-|8:7 |CAN~SJW~ |Synchronization Jump Width
+|8:7 |CAN_SJW |Synchronization Jump Width
 |同期ジャンプ幅の最大時間(Tsjw)を設定します。このフィールドには、Tqのサイクル数を設定します。
 |R/W
 
-|6:4 |CAN~TS2~ |Time Segment 2 |Phase
+|6:4 |CAN_TS2 |Time Segment 2 |Phase
 Segment2の時間(Tts2)を設定します。このフィールドには、Tqのサイクル数を設定します。
 |R/W
 
-|3:0 |CAN~TS1~ |Time Segment 1 |Phase
+|3:0 |CAN_TS1 |Time Segment 1 |Phase
 Segment1の時間(Tts1)を設定します。このフィールドには、Tqのサイクル数を設定します。
 |R/W
 |===
@@ -176,7 +176,7 @@ Registerは、CAN通信におけるエラーの検出回数を表示するレジ
 Transmit Error Counter 及び Receive Error
 Counterは、以下の条件でリセットされます。
 
-* CAN Enable Registerの CAN~ENビットに~ "0"が書き込まれた時
+* CAN Enable Registerの CAN_ENビットに "0"が書き込まれた時
 * CAN Controllerが Bus OFF状態になってから 11Bitの Recessiveビットを
 128回検出した時
 
@@ -186,10 +186,10 @@ Counterは、以下の条件でリセットされます。
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
 
-|15:8 |CAN~RXECNT~ |Receive Error Counter |受信エラーをカウントする
+|15:8 |CAN_RXECNT |Receive Error Counter |受信エラーをカウントする
 8bitのカウンタです。 |RO
 
-|7:0 |CAN~TXECNT~ |Transmit Error Counter |送信エラーをカウントする
+|7:0 |CAN_TXECNT |Transmit Error Counter |送信エラーをカウントする
 8bitのカウンタです。 |RO
 |===
 
@@ -204,31 +204,31 @@ Controllerのステータスを表示するレジスタです。
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
 
-|7 |CAN~RXFFL~ |RX FIFO Full |RX FIFOの Full状態を示すビットです。0: RX
+|7 |CAN_RXFFL |RX FIFO Full |RX FIFOの Full状態を示すビットです。0: RX
 FIFOは Not Full状態 1: RX FIFOは Full状態 |RO
 
-|6 |CAN~TXFFL~ |TX FIFO Full |TX FIFOの Full状態を示すビットです。0: TX
+|6 |CAN_TXFFL |TX FIFO Full |TX FIFOの Full状態を示すビットです。0: TX
 FIFOは Not Full状態 1: TX FIFOが Full状態 |RO
 
-|5 |CAN~TXHBFL~ |TX High Priority Buffer Full |TX High Priority Bufferの
+|5 |CAN_TXHBFL |TX High Priority Buffer Full |TX High Priority Bufferの
 Full状態を示すビットです。0: TX High Priority Bufferは Not Full状態 1:
 TX High Priority BufferはFull状態 |RO
 
-|4 |CAN~TXFNEP~ |TX FIFO Not Empty |TX FIFOの
+|4 |CAN_TXFNEP |TX FIFO Not Empty |TX FIFOの
 Empty状態を示すビットです。0: TX FIFOは Empty状態 1: TX FIFOは Not
 Empty状態 |RO
 
-|3:2 |CAN~ESTS~ |Error Status |Errorステータスを示すビットです。0b00:
-CAN~EN~ Disable 0b01: Error Active状態 0b10: Error Passive状態 0b11: Bus
+|3:2 |CAN_ESTS |Error Status |Errorステータスを示すビットです。0b00:
+CAN_EN Disable 0b01: Error Active状態 0b10: Error Passive状態 0b11: Bus
 OFF状態 |RO
 
-|1 |CAN~EWRN~ |Error Warning |Error
+|1 |CAN_EWRN |Error Warning |Error
 Warningステータスを示すビットです。Transmit Error Counterまたは Receive
 Error Counterが 96以上の値を示すとき、Error Warning状態と認識します。0:
 非Error Warning状態 1: Error Warning状態 |RO
 
-|0 |CAN~BBUSY~ |Bus Busy |CANバスのステータスを示すビットです。0: Bus
-Idle状態 または CAN~ENが~ Disable状態 1: Bus Busy状態
+|0 |CAN_BBUSY |Bus Busy |CANバスのステータスを示すビットです。0: Bus
+Idle状態 または CAN_ENが Disable状態 1: Bus Busy状態
 (CANバスの通信が行われている状態) |RO
 |===
 
@@ -245,42 +245,42 @@ Controllerの動作における割り込みステータスレジスタです。
 |bit |Symbol |Field |Description |R/W
 |31:14 |- |Reserved |Reserved |-
 
-|13 |CAN~BUSOFF~ |Bus Off |Bus
+|13 |CAN_BUSOFF |Bus Off |Bus
 Offが発生したことを示すビットです。送信エラーカウント値が
 255を超える状態を検出した場合に本ビットが "1"にセットされます。 |R/WC
 
-|12 |CAN~ACKER~ |ACK Error |ACK
+|12 |CAN_ACKER |ACK Error |ACK
 Errorが発生したことを示すビットです。データフレーム、リモートフレームの送信中に
 ACK Slotビットで Recessive ("1")を検出した場合に本ビットが
 "1"にセットされます。 |R/WC
 
-|11 |CAN~BITER~ |BIT Error |BIT
+|11 |CAN_BITER |BIT Error |BIT
 Errorが発生したことを示すビットです。送信中の値と異なる受信値を検出した場合に本ビットが
 "1"にセットされます。 |R/WC
 
-|10 |CAN~STFER~ |Stuff Error |Stuff
+|10 |CAN_STFER |Stuff Error |Stuff
 Errorが発生したことを示すビットです。受信中に CANバス上で同一の値を連続
 6回検出した場合に本ビットが "1"にセットされます。 |R/WC
 
-|9 |CAN~FMER~ |Form Error |Form
+|9 |CAN_FMER |Form Error |Form
 Errorが発生したことを示すビットです。受信中フレームの固定フィールド内で異なる
 Formatを検出した場合に本ビットが "1"にセットされます。 |R/WC
 
-|8 |CAN~CRCER~ |CRC Error |CRC
+|8 |CAN_CRCER |CRC Error |CRC
 Errorが発生したことを示すビットです。受信したデータフレーム、リモートフレームの
 CRC値の期待不一致を検出した場合に本ビットが "1"にセットされます。 |R/WC
 
-|7 |CAN~RXFOVF~ |RX FIFO Overflow |RX FIFOの
+|7 |CAN_RXFOVF |RX FIFO Overflow |RX FIFOの
 Overflowが発生したことを示すビットです。RX
 FIFO容量を超えるメッセージを受信した場合に本ビットが
 "1"にセットされます。 |R/WC
 
-|6 |CAN~RXFUDF~ |RX FIFO Underflow |RX FIFOの
+|6 |CAN_RXFUDF |RX FIFO Underflow |RX FIFOの
 Underflowが発生したことを示すビットです。RX FIFOが Empty状態の時に、CAN
 RX Message Registerから読み出しを行った場合に本ビットが
 "1"にセットされます。 |R/WC
 
-|5 |CAN~RXFVAL~ |RX FIFO Data Valid |RX
+|5 |CAN_RXFVAL |RX FIFO Data Valid |RX
 FIFOにデータが格納されていることを示すビットです。RX FIFOが Not
 Empty状態となった場合に本ビットが
 "1"にセットされます。本ビットはクリアしても RX FIFOが
@@ -288,27 +288,27 @@ Empty状態になるまで、セットされます。RX
 FIFOに複数のメッセージが格納されている場合、CAN RX Message
 Registerを読み出した時に、このビットがセットされます。 |R/WC
 
-|4 |CAN~RCVDN~ |CAN Message Receive Done
+|4 |CAN_RCVDN |CAN Message Receive Done
 |新しいメッセージを受信した事を示すビットです。データフレームまたはリモートフレームを正常に受信し、RX
 FIFOへの受信メッセージの格納が完了した時、本ビットが
 "1"にセットされます。 |R/WC
 
-|3 |CAN~TXFOVF~ |TX FIFO Overflow |TX FIFOの
+|3 |CAN_TXFOVF |TX FIFO Overflow |TX FIFOの
 Overflowが発生したことを示すビットです。TX FIFO容量を超えるメッセージを
 CAN TX Message Registerにメッセージを書き込んだ場合、本ビットが
 "1"にセットされます。 |R/WC
 
-|2 |CAN~TXHBOVF~ |TX High Priority Buffer Overflow |TX High Priority
+|2 |CAN_TXHBOVF |TX High Priority Buffer Overflow |TX High Priority
 Bufferの Overflowが発生したことを示すビットです。TX High Priority
 Bufferにメッセージが格納されている状態で CAN TX High Priority Message
 Registerにメッセージを書き込んだ場合、本ビットが "1"にセットされます。
 |R/WC
 
-|1 |CAN~ARBLST~ |CAN Arbitration Lost |送信メッセージの Arbitration
+|1 |CAN_ARBLST |CAN Arbitration Lost |送信メッセージの Arbitration
 Lostが発生した事を示すビットです。データフレーム、リモートフレームの送信中に他ノードとの送信競合が発生し、調停制御により送信を停止した時、本ビットが
 "1"にセットされます。 |R/WC
 
-|0 |CAN~TRNSDN~ |CAN Message Transmit Done
+|0 |CAN_TRNSDN |CAN Message Transmit Done
 |メッセージを送信した事を示すビットです。データフレームまたはリモートフレームの送信が正常に完了した時、本ビットが
 "1"にセットされます。 |R/WC
 |===
@@ -324,60 +324,60 @@ Controllerの動作において発生した割り込みイベントを割り込�
 |bit |Symbol |Field |Description |R/W
 |31:14 |- |Reserved |Reserved |-
 
-|13 |CAN~BUSOFFENB~ |Bus Off Enable |CAN
-Controllerの動作においてCAN~BUSOFFイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|13 |CAN_BUSOFFENB |Bus Off Enable |CAN
+Controllerの動作においてCAN_BUSOFFイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|12 |CAN~ACKERENB~ |ACK Error Enable |CAN
-Controllerの動作においてCAN~ACKERイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|12 |CAN_ACKERENB |ACK Error Enable |CAN
+Controllerの動作においてCAN_ACKERイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|11 |CAN~BITERENB~ |BIT Error Enable |CAN
-Controllerの動作においてCAN~BITERイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|11 |CAN_BITERENB |BIT Error Enable |CAN
+Controllerの動作においてCAN_BITERイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|10 |CAN~STFERENB~ |Stuff Error Enable |CAN
-Controllerの動作においてCAN~STFERイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|10 |CAN_STFERENB |Stuff Error Enable |CAN
+Controllerの動作においてCAN_STFERイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|9 |CAN~FMERENB~ |Form Error Enable |CAN
-Controllerの動作においてCAN~FMERイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|9 |CAN_FMERENB |Form Error Enable |CAN
+Controllerの動作においてCAN_FMERイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|8 |CAN~CRCERENB~ |CRC Error Enable |CAN
-Controllerの動作においてCAN~CRCERイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|8 |CAN_CRCERENB |CRC Error Enable |CAN
+Controllerの動作においてCAN_CRCERイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|7 |CAN~RXFOVFENB~ |RX FIFO Overflow Enable |CAN
-Controllerの動作においてCAN~RXFOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|7 |CAN_RXFOVFENB |RX FIFO Overflow Enable |CAN
+Controllerの動作においてCAN_RXFOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|6 |CAN~RXFUDFENB~ |RX FIFO Underflow Enable |CAN
-Controllerの動作においてCAN~RXFUDFイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|6 |CAN_RXFUDFENB |RX FIFO Underflow Enable |CAN
+Controllerの動作においてCAN_RXFUDFイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|5 |CAN~RXFVALENB~ |RX FIFO Data Valid Enable |CAN
-Controllerの動作においてCAN~RXFVALイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|5 |CAN_RXFVALENB |RX FIFO Data Valid Enable |CAN
+Controllerの動作においてCAN_RXFVALイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|4 |CAN~RCVDNENB~ |CAN Message Receive Done Enable |CAN
-Controllerの動作においてCAN~RCVDNイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|4 |CAN_RCVDNENB |CAN Message Receive Done Enable |CAN
+Controllerの動作においてCAN_RCVDNイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|3 |CAN~TXFOVFENB~ |TX FIFO Overflow Enable |CAN
-Controllerの動作においてCAN~TXFOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|3 |CAN_TXFOVFENB |TX FIFO Overflow Enable |CAN
+Controllerの動作においてCAN_TXFOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|2 |CAN~TXHBOVFENB~ |TX High Priority Buffer Overflow Enable |CAN
-Controllerの動作においてCAN~TXHBOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|2 |CAN_TXHBOVFENB |TX High Priority Buffer Overflow Enable |CAN
+Controllerの動作においてCAN_TXHBOVFイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|1 |CAN~ARBLSTENB~ |CAN Arbitration Lost Enable |CAN
-Controllerの動作においてCAN~ARBLSTイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|1 |CAN_ARBLSTENB |CAN Arbitration Lost Enable |CAN
+Controllerの動作においてCAN_ARBLSTイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 
-|0 |CAN~TRNSDNENB~ |CAN Message Transmit Done Enable |CAN
-Controllerの動作においてCAN~TRNSDNイベントが発生した時に割り込み信号を発生させるかどうかを設定します~。
+|0 |CAN_TRNSDNENB |CAN Message Transmit Done Enable |CAN
+Controllerの動作においてCAN_TRNSDNイベントが発生した時に割り込み信号を発生させるかどうかを設定します。
 |R/W
 |===
 
@@ -390,29 +390,29 @@ CAN TX Message Register 1は、送信する CANフレームのメッセージ識
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~TXID1~ |TX Standard Message ID |ID[28:18]を TX
+|31:21 |CAN_TXID1 |TX Standard Message ID |ID[28:18]を TX
 FIFOに書き込むためのフィールドです。標準フレーム、拡張フレームの両方の送信時に使用されます。
 |WO
 
-|20 |CAN~TXSRTR~ |TX Standard Remote Transmission Request
+|20 |CAN_TXSRTR |TX Standard Remote Transmission Request
 |RTR、SRRビットを TX
 FIFOに書き込むためのビットです。標準フレーム、拡張フレームの両方の送信時に使用されます。-
 RTR(標準フレーム): 0: データフレーム 1: リモートフレーム -
 SRR(拡張フレーム): 1に設定する必要があります。 |WO
 
-|19 |CAN~TXIDE~ |TX Identifier Extension |IDEビットを TX
+|19 |CAN_TXIDE |TX Identifier Extension |IDEビットを TX
 FIFOに書き込むためのビットです。標準フレーム、拡張フレームの両方の送信時に使用されます。0:
 標準フレーム 1: 拡張フレーム |WO
 
-|18:1 |CAN~TXID2~ |TX Extended Message ID |ID[17:0]を TX
-FIFOに書き込むためのフィールドです。拡張フレーム送信時のみ使用されます。CAN~TXIDEビットを~
+|18:1 |CAN_TXID2 |TX Extended Message ID |ID[17:0]を TX
+FIFOに書き込むためのフィールドです。拡張フレーム送信時のみ使用されます。CAN_TXIDEビットを
 "0"に設定した場合、このフィールドに書き込んだデータは使用されません。
 |WO
 
-|0 |CAN~TXERTR~ |TX Extended Remote Transmission Request
+|0 |CAN_TXERTR |TX Extended Remote Transmission Request
 |拡張フレーム送信でのみ使用されるRTRビット値を設定します。0:
 データフレーム 1: リモートフレーム
-CAN~TXIDEビットを0に設定した場合は~、このビットの書き込み値は使用されません。
+CAN_TXIDEビットを0に設定した場合は、このビットの書き込み値は使用されません。
 |WO
 |===
 
@@ -427,7 +427,7 @@ CAN TX Message Register 2は、送信する CANフレームのデータ長コー
 |bit |Symbol |Field |Description |R/W
 |31:4 |- |Reserved |Reserved |-
 
-|3:0 |CAN~TXDLC~ |TX Data Length Code |DCL[3:0]を TX
+|3:0 |CAN_TXDLC |TX Data Length Code |DCL[3:0]を TX
 FIFOに書き込むためのフィールドです。標準フレーム、拡張フレームの両方の送信時に使用されます。このフィールドには
 データフレームの送信 Byte数や リモートフレームの送信時に要求するデータの
 Byte数を設定します。設定可能な値は 0〜8です。 |WO
@@ -445,25 +445,25 @@ CAN TX Message Register
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~TXDB0~ |TX Data Byte 0 |データフィールドの Byte 0を TX
+|31:24 |CAN_TXDB0 |TX Data Byte 0 |データフィールドの Byte 0を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 1以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|23:16 |CAN~TXDB1~ |TX Data Byte 1 |データフィールドの Byte 1を TX
+|23:16 |CAN_TXDB1 |TX Data Byte 1 |データフィールドの Byte 1を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 2以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|15:8 |CAN~TXDB2~ |TX Data Byte 2 |データフィールドの Byte 2を TX
+|15:8 |CAN_TXDB2 |TX Data Byte 2 |データフィールドの Byte 2を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 3以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|7:0 |CAN~TXDB3~ |TX Data Byte 3 |データフィールドの Byte 3を TX
+|7:0 |CAN_TXDB3 |TX Data Byte 3 |データフィールドの Byte 3を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 4以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
@@ -482,25 +482,25 @@ CAN TX Message Register
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~TXDB4~ |TX Data Byte 4 |データフィールドの Byte 4を TX
+|31:24 |CAN_TXDB4 |TX Data Byte 4 |データフィールドの Byte 4を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 5以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|23:16 |CAN~TXDB5~ |TX Data Byte 5 |データフィールドの Byte 5を TX
+|23:16 |CAN_TXDB5 |TX Data Byte 5 |データフィールドの Byte 5を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 6以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|15:8 |CAN~TXDB6~ |TX Data Byte 6 |データフィールドの Byte 6を TX
+|15:8 |CAN_TXDB6 |TX Data Byte 6 |データフィールドの Byte 6を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 7以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|7:0 |CAN~TXDB7~ |TX Data Byte 7 |データフィールドの Byte 7を TX
+|7:0 |CAN_TXDB7 |TX Data Byte 7 |データフィールドの Byte 7を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX Message Register 2の DLCフィールドを
 8以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
@@ -523,30 +523,30 @@ Register 1と同じです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~TXHPID1~ |TX High Priority Standard Message ID |ID[28:18]を
+|31:21 |CAN_TXHPID1 |TX High Priority Standard Message ID |ID[28:18]を
 TX
 FIFOに書き込むためのフィールドです。標準フレーム、拡張フレームの両方の送信時に使用されます。
 |WO
 
-|20 |CAN~TXHPSRTR~ |TX High Priority Standard Remote Transmission
+|20 |CAN_TXHPSRTR |TX High Priority Standard Remote Transmission
 Request |RTR、SRRビットを TX
 FIFOに書き込むためのビットです。標準フレーム、拡張フレームの両方の送信時に使用されます。-
 RTR(標準フレーム): 0: データフレーム 1: リモートフレーム -
 SRR(拡張フレーム): 1に設定する必要があります。 |WO
 
-|19 |CAN~TXHPIDE~ |TX High Priority Identifier Extension |IDEビットを TX
+|19 |CAN_TXHPIDE |TX High Priority Identifier Extension |IDEビットを TX
 FIFOに書き込むためのビットです。標準フレーム、拡張フレームの両方の送信時に使用されます。0:
 標準フレーム 1: 拡張フレーム |WO
 
-|18:1 |CAN~TXHPID2~ |TX High Priority Extended Message ID |ID[17:0]を TX
-FIFOに書き込むためのフィールドです。拡張フレーム送信時のみ使用されます。CAN~TXIDEビットを~
+|18:1 |CAN_TXHPID2 |TX High Priority Extended Message ID |ID[17:0]を TX
+FIFOに書き込むためのフィールドです。拡張フレーム送信時のみ使用されます。CAN_TXIDEビットを
 "0"に設定した場合、このフィールドに書き込んだデータは使用されません。
 |WO
 
-|0 |CAN~TXHPERTR~ |TX High Priority Extended Remote Transmission Request
+|0 |CAN_TXHPERTR |TX High Priority Extended Remote Transmission Request
 |拡張フレーム送信でのみ使用されるRTRビット値を設定します。0:
 データフレーム 1: リモートフレーム
-CAN~TXIDEビットを0に設定した場合は~、このビットの書き込み値は使用されません。
+CAN_TXIDEビットを0に設定した場合は、このビットの書き込み値は使用されません。
 |WO
 |===
 
@@ -568,7 +568,7 @@ Register 2と同じです。
 |bit |Symbol |Field |Description |R/W
 |31:4 |- |Reserved |Reserved |-
 
-|3:0 |CAN~TXHPDLC~ |TX High Priority Data Length Code |DCL[3:0]を TX
+|3:0 |CAN_TXHPDLC |TX High Priority Data Length Code |DCL[3:0]を TX
 FIFOに書き込むためのフィールドです。標準フレーム、拡張フレームの両方の送信時に使用されます。このフィールドには
 データフレームの送信 Byte数や リモートフレームの送信時に要求するデータの
 Byte数を設定します。設定可能な値は 0〜8です。 |WO
@@ -593,28 +593,28 @@ Register 3と同じです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~TXHPDB0~ |TX High Priority Data Byte 0 |データフィールドの
+|31:24 |CAN_TXHPDB0 |TX High Priority Data Byte 0 |データフィールドの
 Byte 0を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 1以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|23:16 |CAN~TXHPDB1~ |TX High Priority Data Byte 1 |データフィールドの
+|23:16 |CAN_TXHPDB1 |TX High Priority Data Byte 1 |データフィールドの
 Byte 1を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 2以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|15:8 |CAN~TXHPDB2~ |TX High Priority Data Byte 2 |データフィールドの
+|15:8 |CAN_TXHPDB2 |TX High Priority Data Byte 2 |データフィールドの
 Byte 2を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 3以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|7:0 |CAN~TXHPDB3~ |TX High Priority Data Byte 3 |データフィールドの
+|7:0 |CAN_TXHPDB3 |TX High Priority Data Byte 3 |データフィールドの
 Byte 3を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
@@ -641,28 +641,28 @@ Register 4と同じです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~TXHPDB4~ |TX High Priority Data Byte 4 |データフィールドの
+|31:24 |CAN_TXHPDB4 |TX High Priority Data Byte 4 |データフィールドの
 Byte 4を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 5以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|23:16 |CAN~TXHPDB5~ |TX High Priority Data Byte 5 |データフィールドの
+|23:16 |CAN_TXHPDB5 |TX High Priority Data Byte 5 |データフィールドの
 Byte 5を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 6以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|15:8 |CAN~TXHPDB6~ |TX High Priority Data Byte 6 |データフィールドの
+|15:8 |CAN_TXHPDB6 |TX High Priority Data Byte 6 |データフィールドの
 Byte 6を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
 7以上に設定した場合、このフィールドに書き込んだデータがデータフレームとして送信されます。
 |WO
 
-|7:0 |CAN~TXHPDB7~ |TX High Priority Data Byte 7 |データフィールドの
+|7:0 |CAN_TXHPDB7 |TX High Priority Data Byte 7 |データフィールドの
 Byte 7を TX
 FIFOに書き込むためのフィールドです。データフレームを送信する場合で
 且つ、CAN TX High Priority Message Register 2の DLCフィールドを
@@ -679,25 +679,25 @@ CAN RX Message Register 1は、受信した CANフレームのメッセージ識
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~RXID1~ |RX Standard Message ID |受信した標準フレーム
+|31:21 |CAN_RXID1 |RX Standard Message ID |受信した標準フレーム
 または、拡張フレームの ID[28:18]フィールドを RX
 FIFOから読み出すためのフィールドです。 |RO
 
-|20 |CAN~RXSRTR~ |RX Standard Remote Transmission Request
+|20 |CAN_RXSRTR |RX Standard Remote Transmission Request
 |受信した標準フレームの RTRビット または、拡張フレームの　SRRビットを RX
 FIFOから読み出すためのビットです。- 標準フレーム 0: データフレーム 1:
 リモートフレーム - 拡張フレーム: 1が読み出されます |RO
 
-|19 |CAN~RXIDE~ |RX Identifier Extension |受信した標準フレーム
+|19 |CAN_RXIDE |RX Identifier Extension |受信した標準フレーム
 または、拡張フレームの IDEビットを RX
 FIFOから読み出すためのビットです。0: 標準フレーム 1: 拡張フレーム |RO
 
-|18:1 |CAN~RXID2~ |RX Extended Message ID |受信した拡張フレームの
+|18:1 |CAN_RXID2 |RX Extended Message ID |受信した拡張フレームの
 ID[17:0]フィールドを RX
 FIFOから読み出すためのフィールドです。標準フレームの場合は、0が読み出されます。
 |RO
 
-|0 |CAN~RXERTR~ |RX Extended Remote Transmission Request
+|0 |CAN_RXERTR |RX Extended Remote Transmission Request
 |受信した拡張フレームの RTRビットを RX
 FIFOから読み出すためのビットです。0: データフレーム 1: リモートフレーム
 標準フレームの場合は、0が読み出されます。 |RO
@@ -714,7 +714,7 @@ CAN RX Message Register 2は、受信した CANフレームの受信データ長
 |bit |Symbol |Field |Description |R/W
 |31:4 |- |Reserved |Reserved |-
 
-|3:0 |CAN~RXDLC~ |RX Data Length Code |受信した標準フレーム
+|3:0 |CAN_RXDLC |RX Data Length Code |受信した標準フレーム
 または、拡張フレームの DLC[3:0]フィールドを RX
 FIFOから読み出すためのフィールドです。このフィールドから読み出される値は、リモートフレームの受信時を除き
 CAN RX Message Register 3、4に格納されたデータの有効 Byte数を示します。
@@ -735,24 +735,24 @@ FIFOから読み出すためのレジスタです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~RXDB0~ |RX Data Byte 0 |データフィールドの Byte 0を RX
+|31:24 |CAN_RXDB0 |RX Data Byte 0 |データフィールドの Byte 0を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 1以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|23:16 |CAN~RXDB1~ |RX Data Byte 1 |データフィールドの Byte 1を RX
+|23:16 |CAN_RXDB1 |RX Data Byte 1 |データフィールドの Byte 1を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 2以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|15:8 |CAN~RXDB2~ |RX Data Byte 2 |データフィールドの Byte 2を RX
+|15:8 |CAN_RXDB2 |RX Data Byte 2 |データフィールドの Byte 2を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 3以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|7:0 |CAN~RXDB3~ |RX Data Byte 3 |データフィールドの Byte 3を RX
+|7:0 |CAN_RXDB3 |RX Data Byte 3 |データフィールドの Byte 3を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 4以上を示す時、このフィールドのデータは有効データとなります。 |RO
 |===
 
@@ -770,24 +770,24 @@ FIFOから読み出すためのレジスタです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~RXDB4~ |RX Data Byte 4 |データフィールドの Byte 4を RX
+|31:24 |CAN_RXDB4 |RX Data Byte 4 |データフィールドの Byte 4を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 5以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|23:16 |CAN~RXDB5~ |RX Data Byte 5 |データフィールドの Byte 5を RX
+|23:16 |CAN_RXDB5 |RX Data Byte 5 |データフィールドの Byte 5を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 6以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|15:8 |CAN~RXDB6~ |RX Data Byte 6 |データフィールドの Byte 6を RX
+|15:8 |CAN_RXDB6 |RX Data Byte 6 |データフィールドの Byte 6を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 7以上を示す時、このフィールドのデータは有効データとなります。 |RO
 
-|7:0 |CAN~RXDB7~ |RX Data Byte 7 |データフィールドの Byte 7を RX
+|7:0 |CAN_RXDB7 |RX Data Byte 7 |データフィールドの Byte 7を RX
 FIFOから読み出すためのフィールドです。受信データがデータフレームで
-且つ、CAN RX Message Register 2の CAN~RXDLCフィールドが~
+且つ、CAN RX Message Register 2の CAN_RXDLCフィールドが
 8以上を示す時、このフィールドのデータは有効データとなります。 |RO
 |===
 
@@ -795,7 +795,7 @@ FIFOから読み出すためのフィールドです。受信データがデー�
 
 CAN Acceptance Filter Enable Registerは、CAN Acceptance
 Filterの設定を行うレジスタです。 このレジスタは、CAN Enable Registerの
-CAN~ENビットが~ "0"の時のみ書き込みが可能です。
+CAN_ENビットが "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter Enable Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -803,25 +803,25 @@ CAN~ENビットが~ "0"の時のみ書き込みが可能です。
 |bit |Symbol |Field |Description |R/W
 |31:4 |- |Reserved |Reserved |-
 
-|3 |CAN~UAF4~ |Use Acceptance Filter4 |Acceptance Filter
+|3 |CAN_UAF4 |Use Acceptance Filter4 |Acceptance Filter
 4の使用有無を設定するためのビットです。このビットが
 "1"に設定されている時、CAN Acceptance Filter ID Value Register 4と CAN
 Acceptance Filter ID Mask Register 4の設定値が Acceptance
 Filterとして使用されます。 |R/W
 
-|2 |CAN~UAF3~ |Use Acceptance Filter3 |Acceptance Filter
+|2 |CAN_UAF3 |Use Acceptance Filter3 |Acceptance Filter
 3の使用有無を設定するためのビットです。このビットが
 "1"に設定されている時、CAN Acceptance Filter ID Value Register 3と CAN
 Acceptance Filter ID Mask Register 3の設定値が Acceptance
 Filterとして使用されます。 |R/W
 
-|1 |CAN~UAF2~ |Use Acceptance Filter2 |Acceptance Filter
+|1 |CAN_UAF2 |Use Acceptance Filter2 |Acceptance Filter
 2の使用有無を設定するためのビットです。このビットが
 "1"に設定されている時、CAN Acceptance Filter ID Value Register 2と CAN
 Acceptance Filter ID Mask Register 2の設定値が Acceptance
 Filterとして使用されます。 |R/W
 
-|0 |CAN~UAF1~ |Use Acceptance Filter1 |Acceptance Filter
+|0 |CAN_UAF1 |Use Acceptance Filter1 |Acceptance Filter
 1の使用有無を設定するためのビットです。このビットが
 "1"に設定されている時、CAN Acceptance Filter ID Value Register 1と CAN
 Acceptance Filter ID Mask Register 1の設定値が Acceptance
@@ -835,33 +835,33 @@ CAN Acceptance Filter ID Mask Register 1は、CAN Acceptance Filter
 このレジスタで
 "1"がセットされたビットは、受信フレームとの比較対象となります。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Mask Register1 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFM1~ |Standard Message ID Mask 1 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFM1 |Standard Message ID Mask 1 |CAN Acceptance Filter
 1において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|20 |CAN~SRTRAFM1~ |Standard Remote Transmission Request Mask 1 |CAN
+|20 |CAN_SRTRAFM1 |Standard Remote Transmission Request Mask 1 |CAN
 Acceptance Filter 1において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFM1~ |Identifier Extension Mask 1 |CAN Acceptance Filter
+|19 |CAN_IDEAFM1 |Identifier Extension Mask 1 |CAN Acceptance Filter
 1において、標準フレーム または、拡張フレームの
 IDEビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFM1~ |Extended Message ID Mask 1 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFM1 |Extended Message ID Mask 1 |CAN Acceptance Filter
 1において、拡張フレームの
 ID[17:0]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|0 |CAN~ERTRAFM1~ |Extended Remote Transmission Request Mask 1 |CAN
+|0 |CAN_ERTRAFM1 |Extended Remote Transmission Request Mask 1 |CAN
 Acceptance Filter 1において、拡張フレームの
 RTRビットを比較に使用するかを設定するためのビットです。 |R/W
 |===
@@ -876,31 +876,31 @@ Value Register 1の間で一致した場合、その受信フレームが RX
 FIFOに格納されます。 従って、CAN Acceptance Filter ID Mask Register
 1でセットされていないビットは、フィルターの対象となりません。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Value Register1 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFV1~ |Standard Message ID Value 1 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFV1 |Standard Message ID Value 1 |CAN Acceptance Filter
 1において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|20 |CAN~SRTRAFV1~ |Standard Remote Transmission Request Value 1 |CAN
+|20 |CAN_SRTRAFV1 |Standard Remote Transmission Request Value 1 |CAN
 Acceptance Filter 1において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットのフィルター値を設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFV1~ |Identifier Extension Value 1 |CAN Acceptance Filter
+|19 |CAN_IDEAFV1 |Identifier Extension Value 1 |CAN Acceptance Filter
 1において、標準フレーム または、拡張フレームの
 IDEビットのフィルター値を設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFV1~ |Extended Message ID Value 1 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFV1 |Extended Message ID Value 1 |CAN Acceptance Filter
 1において、拡張フレームの
 ID[17:0]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|0 |CAN~ERTRAFV1~ |Extended Remote Transmission Request Value 1 |CAN
+|0 |CAN_ERTRAFV1 |Extended Remote Transmission Request Value 1 |CAN
 Acceptance Filter 1において、拡張フレームの
 RTRビットのフィルター値を設定するためのビットです。 |R/W
 |===
@@ -912,33 +912,33 @@ CAN Acceptance Filter ID Mask Register 2は、CAN Acceptance Filter
 このレジスタで
 "1"がセットされたビットは、受信フレームとの比較対象となります。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Mask Register 2 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFM2~ |Standard Message ID Mask 2 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFM2 |Standard Message ID Mask 2 |CAN Acceptance Filter
 2において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|20 |CAN~SRTRAFM2~ |Standard Remote Transmission Request Mask 2 |CAN
+|20 |CAN_SRTRAFM2 |Standard Remote Transmission Request Mask 2 |CAN
 Acceptance Filter 2において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFM2~ |Identifier Extension Mask 2 |CAN Acceptance Filter
+|19 |CAN_IDEAFM2 |Identifier Extension Mask 2 |CAN Acceptance Filter
 2において、標準フレーム または、拡張フレームの
 IDEビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFM2~ |Extended Message ID Mask 2 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFM2 |Extended Message ID Mask 2 |CAN Acceptance Filter
 2において、拡張フレームの
 ID[17:0]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|0 |CAN~ERTRAFM2~ |Extended Remote Transmission Request Mask 2 |CAN
+|0 |CAN_ERTRAFM2 |Extended Remote Transmission Request Mask 2 |CAN
 Acceptance Filter 2において、拡張フレームの
 RTRビットを比較に使用するかを設定するためのビットです。 |R/W
 |===
@@ -953,31 +953,31 @@ Value Register 2の間で一致した場合、その受信フレームが RX
 FIFOに格納されます。 従って、CAN Acceptance Filter ID Mask Register
 2でセットされていないビットは、フィルターの対象となりません。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Value Register 2 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFV2~ |Standard Message ID Value 2 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFV2 |Standard Message ID Value 2 |CAN Acceptance Filter
 2において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|20 |CAN~SRTRAFV2~ |Standard Remote Transmission Request Value 2 |CAN
+|20 |CAN_SRTRAFV2 |Standard Remote Transmission Request Value 2 |CAN
 Acceptance Filter 2において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットのフィルター値を設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFV2~ |Identifier Extension Value 2 |CAN Acceptance Filter
+|19 |CAN_IDEAFV2 |Identifier Extension Value 2 |CAN Acceptance Filter
 2において、標準フレーム または、拡張フレームの
 IDEビットのフィルター値を設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFV2~ |Extended Message ID Value 2 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFV2 |Extended Message ID Value 2 |CAN Acceptance Filter
 2において、拡張フレームの
 ID[17:0]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|0 |CAN~ERTRAFV2~ |Extended Remote Transmission Request Value 2 |CAN
+|0 |CAN_ERTRAFV2 |Extended Remote Transmission Request Value 2 |CAN
 Acceptance Filter 2において、拡張フレームの
 RTRビットのフィルター値を設定するためのビットです。 |R/W
 |===
@@ -989,33 +989,33 @@ CAN Acceptance Filter ID Mask Register 3は、CAN Acceptance Filter
 このレジスタで
 "1"がセットされたビットは、受信フレームとの比較対象となります。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Mask Register 3 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFM3~ |Standard Message ID Mask 3 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFM3 |Standard Message ID Mask 3 |CAN Acceptance Filter
 3において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|20 |CAN~SRTRAFM3~ |Standard Remote Transmission Request Mask 3 |CAN
+|20 |CAN_SRTRAFM3 |Standard Remote Transmission Request Mask 3 |CAN
 Acceptance Filter 3において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFM3~ |Identifier Extension Mask 3 |CAN Acceptance Filter
+|19 |CAN_IDEAFM3 |Identifier Extension Mask 3 |CAN Acceptance Filter
 3において、標準フレーム または、拡張フレームの
 IDEビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFM3~ |Extended Message ID Mask 3 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFM3 |Extended Message ID Mask 3 |CAN Acceptance Filter
 3において、拡張フレームの
 ID[17:0]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|0 |CAN~ERTRAFM3~ |Extended Remote Transmission Request Mask 3 |CAN
+|0 |CAN_ERTRAFM3 |Extended Remote Transmission Request Mask 3 |CAN
 Acceptance Filter 3において、拡張フレームの
 RTRビットを比較に使用するかを設定するためのビットです。 |R/W
 |===
@@ -1030,31 +1030,31 @@ Value Register 3の間で一致した場合、その受信フレームが RX
 FIFOに格納されます。 従って、CAN Acceptance Filter ID Mask Register
 3でセットされていないビットは、フィルターの対象となりません。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Value Register 3 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFV3~ |Standard Message ID Value 3 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFV3 |Standard Message ID Value 3 |CAN Acceptance Filter
 3において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|20 |CAN~SRTRAFV3~ |Standard Remote Transmission Request Value 3 |CAN
+|20 |CAN_SRTRAFV3 |Standard Remote Transmission Request Value 3 |CAN
 Acceptance Filter 3において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットのフィルター値を設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFV3~ |Identifier Extension Value 3 |CAN Acceptance Filter
+|19 |CAN_IDEAFV3 |Identifier Extension Value 3 |CAN Acceptance Filter
 3において、標準フレーム または、拡張フレームの
 IDEビットのフィルター値を設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFV3~ |Extended Message ID Value 3 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFV3 |Extended Message ID Value 3 |CAN Acceptance Filter
 3において、拡張フレームの
 ID[17:0]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|0 |CAN~ERTRAFV3~ |Extended Remote Transmission Request Value 3 |CAN
+|0 |CAN_ERTRAFV3 |Extended Remote Transmission Request Value 3 |CAN
 Acceptance Filter 3において、拡張フレームの
 RTRビットのフィルター値を設定するためのビットです。 |R/W
 |===
@@ -1066,33 +1066,33 @@ CAN Acceptance Filter ID Mask Register 4は、CAN Acceptance Filter
 このレジスタで
 "1"がセットされたビットは、受信フレームとの比較対象となります。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Mask Register 4 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFM3~ |Standard Message ID Mask 4 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFM3 |Standard Message ID Mask 4 |CAN Acceptance Filter
 4において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|20 |CAN~SRTRAFM3~ |Standard Remote Transmission Request Mask 4 |CAN
+|20 |CAN_SRTRAFM3 |Standard Remote Transmission Request Mask 4 |CAN
 Acceptance Filter 4において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFM3~ |Identifier Extension Mask 4 |CAN Acceptance Filter
+|19 |CAN_IDEAFM3 |Identifier Extension Mask 4 |CAN Acceptance Filter
 4において、標準フレーム または、拡張フレームの
 IDEビットを比較に使用するかを設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFM3~ |Extended Message ID Mask 4 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFM3 |Extended Message ID Mask 4 |CAN Acceptance Filter
 4において、拡張フレームの
 ID[17:0]フィールドのうち比較に使用するビットを設定するためのフィールドです。
 |R/W
 
-|0 |CAN~ERTRAFM3~ |Extended Remote Transmission Request Mask 4 |CAN
+|0 |CAN_ERTRAFM3 |Extended Remote Transmission Request Mask 4 |CAN
 Acceptance Filter 4において、拡張フレームの
 RTRビットを比較に使用するかを設定するためのビットです。 |R/W
 |===
@@ -1107,31 +1107,31 @@ Value Register 3の間で一致した場合、その受信フレームが RX
 FIFOに格納されます。 従って、CAN Acceptance Filter ID Mask Register
 4でセットされていないビットは、フィルターの対象となりません。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Acceptance Filter ID Value Register 4 ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:21 |CAN~ID1AFV4~ |Standard Message ID Value 4 |CAN Acceptance Filter
+|31:21 |CAN_ID1AFV4 |Standard Message ID Value 4 |CAN Acceptance Filter
 4において、標準フレーム または、拡張フレームの
 ID[28:18]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|20 |CAN~SRTRAFV4~ |Standard Remote Transmission Request Value 3 |CAN
+|20 |CAN_SRTRAFV4 |Standard Remote Transmission Request Value 3 |CAN
 Acceptance Filter 4において、標準フレームの RTRビット
 または、拡張フレームから受信する
 SRRビットのフィルター値を設定するためのビットです。 |R/W
 
-|19 |CAN~IDEAFV4~ |Identifier Extension Value 4 |CAN Acceptance Filter
+|19 |CAN_IDEAFV4 |Identifier Extension Value 4 |CAN Acceptance Filter
 4において、標準フレーム または、拡張フレームの
 IDEビットのフィルター値を設定するためのビットです。 |R/W
 
-|18:1 |CAN~ID2AFV4~ |Extended Message ID Value 4 |CAN Acceptance Filter
+|18:1 |CAN_ID2AFV4 |Extended Message ID Value 4 |CAN Acceptance Filter
 4において、拡張フレームの
 ID[17:0]フィールドのフィルター値を設定するためのフィールドです。 |R/W
 
-|0 |CAN~ERTRAFV4~ |Extended Remote Transmission Request Value 4 |CAN
+|0 |CAN_ERTRAFV4 |Extended Remote Transmission Request Value 4 |CAN
 Acceptance Filter 4において、拡張フレームの
 RTRビットのフィルター値を設定するためのビットです。 |R/W
 |===
@@ -1148,17 +1148,17 @@ Bufferのクリアを行いたい場合にこのレジスタを使用します�
 |bit |Symbol |Field |Description |R/W
 |31:18 |- |Reserved |Reserved |-
 
-|17 |CAN~TXHPBRST~ |TX High Priority Buffer Reset |TX High Priority
+|17 |CAN_TXHPBRST |TX High Priority Buffer Reset |TX High Priority
 Bufferをリセットするためのビットです。本ビットに "1"をセットすると TX
 High Priority Bufferをリセットします。 |WO
 
-|16 |CAN~TXFIFORST~ |TX FIFO Reset |TX
+|16 |CAN_TXFIFORST |TX FIFO Reset |TX
 FIFOをリセットするためのビットです。本ビットに "1"をセットすると TX
 FIFOをリセットします。 |WO
 
 |15:1 |- |Reserved |Reserved |-
 
-|0 |CAN~RXFIFORST~ |RX FIFO Reset |RX
+|0 |CAN_RXFIFORST |RX FIFO Reset |RX
 FIFOをリセットするためのビットです。本ビットに "1"をセットすると RX
 FIFOをリセットします。 |WO
 |===
@@ -1173,7 +1173,7 @@ Enableにすることで、自送信フレームに対する受信動作の有�
 ACK確認の停止制御が行われ、CANバスを使用した
 Loopback動作が可能となります。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN Self Test Mode Control Register ビットフィールド
@@ -1182,7 +1182,7 @@ Loopback動作が可能となります。
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
 
-|0 |CAN~STM~ |Self Test Mode |CAN通信の Self Test Modeを設定します。0:
+|0 |CAN_STM |Self Test Mode |CAN通信の Self Test Modeを設定します。0:
 Self Test Mode Disable 1: Self Test Mode Enable |R/W
 |===
 
@@ -1194,7 +1194,7 @@ Tranceverの動作を制御するためのレジスタです。
 Sleep Modeを Enableにすると、CAN Transceiverの送受信回路を OFF
 (低消費電力状態)にすることができます。
 
-このレジスタは、CAN Enable Registerの CAN~ENビットが~
+このレジスタは、CAN Enable Registerの CAN_ENビットが
 "0"の時のみ書き込みが可能です。
 
 .CAN PHY Sleep Mode Control Register ビットフィールド
@@ -1203,7 +1203,7 @@ Sleep Modeを Enableにすると、CAN Transceiverの送受信回路を OFF
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
 
-|0 |CAN~PSLM~ |PHY Sleep Mode |CAN Transceiverの Sleep
+|0 |CAN_PSLM |PHY Sleep Mode |CAN Transceiverの Sleep
 Modeを設定します。0: Sleep Mode Disable 1: Sleep Mode Enable |R/W
 |===
 
@@ -1215,13 +1215,13 @@ CAN Controller IPのバージョン管理用レジスタです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |CAN~MAJVER~ |CAN Controller IP Major Version |CAN Controller
+|31:24 |CAN_MAJVER |CAN Controller IP Major Version |CAN Controller
 IPの Major Versionを示します。 |RO
 
-|23:16 |CAN~MINVER~ |CAN Controller IP Minor Version |CAN Controller
+|23:16 |CAN_MINVER |CAN Controller IP Minor Version |CAN Controller
 IPの Minor Versionを示します。 |RO
 
-|15:0 |CAN~PATVER~ |CAN Controller IP Patch Version |CAN Controller IPの
+|15:0 |CAN_PATVER |CAN Controller IP Patch Version |CAN Controller IPの
 Patch Versionを示します。 |RO
 |===
 
@@ -1264,16 +1264,16 @@ FIFOへ格納しません。
 
 5: CAN Acceptance Filter Enable Registerに使用する Acceptance
 Filterを設定します。CAN Acceptance Filter ID Register
-1の設定を使用する場合は CAN~UAF1ビット~、CAN Acceptance Filter ID
-Register 2の設定を使用する場合は CAN~UAF2ビット~、CAN Acceptance Filter
-ID Register 3の設定を使用する場合は CAN~UAF3ビット~、CAN Acceptance
-Filter ID Register 4の設定を使用する場合は CAN~UAF4ビットを~
+1の設定を使用する場合は CAN_UAF1ビット_、CAN Acceptance Filter ID
+Register 2の設定を使用する場合は CAN_UAF2ビット_、CAN Acceptance Filter
+ID Register 3の設定を使用する場合は CAN_UAF3ビット_、CAN Acceptance
+Filter ID Register 4の設定を使用する場合は CAN_UAF4ビットを_
 "1"に設定します。
 
 6: 必要に応じて CAN Interrupt Enable
 Registerの割り込みステータスのイネーブルビットを "1"に設定します。
 
-7: CAN Enable Registerの CAN~ENビットを~ "1"に設定し、CAN通信を開始(CAN
+7: CAN Enable Registerの CAN_ENビットを_ "1"に設定し、CAN通信を開始(CAN
 Busへ接続)します。
 
 . ビットタイミングの設定
@@ -1298,12 +1298,12 @@ TS1、TS2フィールドに Tqサイクル数を設定します。 Sync Segment�
 .ビットタイミング生成
 image::can_gen_bit_timing.png[can_gen_bit_timing]
 +
-SC~OBCFPGAでは~、CANクロックの周波数は24MHz固定となります。
+SC_OBCFPGAでは_、CANクロックの周波数は24MHz固定となります。
 ビットタイミング設定値の一例として、ビットレートを
 1Mbps、サンプリングポイントを 75%、同期ジャンプ幅の最大時間を
 4Tqサイクルする場合の各レジスタの設定値は、CAN Time Quantum Prescaler
-Registerが 0x0000~0001~ (TQPSET=0x1)、CAN Bit Timing Setting Registerが
-0x0000~01A7~ (TS1=0x7, TS2=0x2, SWJ=0x3)となります。
+Registerが 0x0000_0001_ (TQPSET=0x1)、CAN Bit Timing Setting Registerが
+0x0000_01A7_ (TS1=0x7, TS2=0x2, SWJ=0x3)となります。
 +
 制限事項：Bit Stream
 Processorモジュールでのフレーム処理に必要な時間として、Time segment
@@ -1312,7 +1312,7 @@ Processorモジュールでのフレーム処理に必要な時間として、Ti
 
 ==== TX FIFOを使用するフレーム送信操作手順例
 
-TX~FIFOを使用したメッセージ送信の手順について説明します~。
+TX_FIFOを使用したメッセージ送信の手順について説明します_。
 
 .TX FIFOを使用するフレーム送信フロー
 image::can_trans_txf_seq.png[can_trans_txf_seq]
@@ -1352,7 +1352,7 @@ Idle状態の時にメッセージの送信を開始します。 TX FIFOは最�
 64のメッセージを格納することができ、FIFOが
 Fullになるまで送信するメッセージを続けて書き込む事が出来ます。
 
-7: 割り込み信号 CAN~INTがアサートした後~、CAN Interrupt Status
+7: 割り込み信号 CAN_INTがアサートした後_、CAN Interrupt Status
 Registerの TRNSDNビットが
 "1"にセットされていることを確認することで、メッセージ送信が完了したことを知ることができます。
 
@@ -1361,13 +1361,13 @@ TRNSDNビットに
 "1"を書き込んでから、TRNSDNビットがクリアされたことを確認します。
 
 他の送信メッセージを
-TX~FIFOに設定した場合は~、同様の手順でメッセ―ジ送信の完了の度に繰り返し割り込みの確認を行うことで、全てのメッセージの送信が完了したことを知ることができます。
-TX~FIFOに未送信のメッセージが残っていないかは~、CAN Status Registerの
+TX_FIFOに設定した場合は_、同様の手順でメッセ―ジ送信の完了の度に繰り返し割り込みの確認を行うことで、全てのメッセージの送信が完了したことを知ることができます。
+TX_FIFOに未送信のメッセージが残っていないかは_、CAN Status Registerの
 TXFNEPビットが "0"になっていることで確認することができます。
 
-CAN TX Message Register 1～4は、CAN Enable Registerの CAN~ENビットが~
+CAN TX Message Register 1～4は、CAN Enable Registerの CAN_ENビットが_
 "0"の状態でも書き込む事が出来ます。この場合、メッセージの送信は
-CAN~ENビットに~ "1"が書き込まれた後に行われます。
+CAN_ENビットに_ "1"が書き込まれた後に行われます。
 
 . TX Message Priority Management
 +
@@ -1400,7 +1400,7 @@ C. Aの読み出し値と Bの読み出し値の比較を行います。
 D.
 比較した結果、Aの読み出し値の方がBの読み出し値より小さかった場合は、Priority
 Management Tableへ、Bのメッセージの一つ上の優先位置に Aのメッセージの
-TX~FIFO格納位置の~ Entryを行い、Priority検索を終了します。
+TX_FIFO格納位置の_ Entryを行い、Priority検索を終了します。
 逆に、Aの読み出し値の方が
 Bの読み出し値より大きかった場合は、Bで読み出したデータの一つ下の優先度の送信メッセージの
 IDR Fieldのデータを TX
@@ -1432,17 +1432,17 @@ Priority Bufferは 1つのメッセージのみ格納することができます
 
 TX High Priority Bufferを使用する場合は、CAN TX High Priority Message
 Register 1～4へメッセージを書き込みます。
-書き込みを行う手順やフォーマットは TX~FIFO~ (CAN TX Message Register
+書き込みを行う手順やフォーマットは TX_FIFO_ (CAN TX Message Register
 1～4)と同様です。
 
 メッセージの送信完了も TX
 FIFOのメッセージ送信時と同様、TRNSDNビットの割り込みにより知ることができます。
 他の送信メッセージを
-TX~FIFOに設定した場合も~、同様の手順でメッセ―ジ送信の完了の度に繰り返し割り込みの確認を行うことで、全てのメッセージの送信が完了したことを知ることができます。
+TX_FIFOに設定した場合も_、同様の手順でメッセ―ジ送信の完了の度に繰り返し割り込みの確認を行うことで、全てのメッセージの送信が完了したことを知ることができます。
 
 CAN TX High Priority Message Register 1～4は、CAN Enable Registerの
-CAN~ENビットが~ "0"の状態でも書き込む事が出来ます。
-この場合、メッセージの送信は CAN~ENビットに~
+CAN_ENビットが_ "0"の状態でも書き込む事が出来ます。
+この場合、メッセージの送信は CAN_ENビットに_
 "1"が書き込まれた後に行われます。
 
 ==== フレーム受信操作手順例
@@ -1456,7 +1456,7 @@ image::can_rcv_rxf_seq.png[can_rcv_rxf_seq]
 "1"に設定します。
 必要に応じて使用する他の割り込みステータスのイネーブルビットもあわせて設定します。
 
-2: メッセージの受信が完了すると、割り込み信号 CAN~INTがアサートし~、CAN
+2: メッセージの受信が完了すると、割り込み信号 CAN_INTがアサートし_、CAN
 Interrupt Status Registerの RCVDNビットと
 RXFVALビットが"1"にセットされます。
 
@@ -1492,7 +1492,7 @@ FIFOに格納されていることを示します。 RX FIFOは最大
 
 新しいメッセージの受信を待つ場合は、RCVDNビットの割り込みによりメッセージを受信したことを知ることができます。
 
-CAN RX Message Register 1～4は、CAN Enable Registerの CAN~ENビットが~
+CAN RX Message Register 1～4は、CAN Enable Registerの CAN_ENビットが_
 "0"の状態でも読み出す事が出来ます。
 但し、この時は新しいメッセージの受信は行われません。
 
