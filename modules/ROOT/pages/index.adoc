@@ -2,9 +2,9 @@
 
 = SC-OBC Module A1 Technical Reference Manual =
 
-このドキュメントは、Space Cubics OBCに搭載するFPGAの仕様を説明する「SC-OBC-A1 FPGA Technical ReferenceManual」に関するものです。
+このドキュメントは、Space Cubics製 OBC SC-OBC Module A1に搭載するFPGAの仕様を説明する「SC-OBC-A1 FPGA Technical Reference Manual」です。
 
-SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能に関する仕様やレジスタの仕様が記載されています。
+SC-OBC-A1 FPGAの開発や、ソフトウェアの開発に必要な、FPGA機能やレジスタの仕様が記載されています。
 
 include::overview.adoc[]
 include::pin_description.adoc[]
