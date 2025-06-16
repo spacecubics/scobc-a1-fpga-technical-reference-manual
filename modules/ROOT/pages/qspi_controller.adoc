@@ -357,9 +357,10 @@ Clockはシステムクロックを2分周した周波数で動作します。 |
 SPIクロックの周波数(fSCLK)は、システムクロック(fSYS)と
 SCKDIVの設定により以下のように計算されます。
 
-____
-latexmath:[fSCLK[MHz] = \frac{fSYS[MHz]}{2(SCKDIV+1)}]
-____
+[stem]
+++++
+fSCLK[MHz] = \frac{fSYS[MHz]}{2(SCKDIV+1)}
+++++
 
 ==== QSPI Data Capture Mode Setting Register (Offset 0x0034)
 
@@ -536,4 +537,3 @@ F::
 Data Write
 Operation時と同様、CからD時を除いた全てのフェーズの切り替わり時には、QSPI
 Controllerの実行ステータスを確認し、必ずIdle状態となってから次の操作を実行する必要があります。
-

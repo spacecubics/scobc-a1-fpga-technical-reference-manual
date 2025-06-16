@@ -1,4 +1,5 @@
 :sectnum:
+:stem: latexmath
 
 = SC-OBC Module A1 Technical Reference Manual =
 

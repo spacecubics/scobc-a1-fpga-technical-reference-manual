@@ -102,9 +102,10 @@ PLL Infomation Registerは、システムクロックの設定状況を示すレ
 
 システムクロック周波数は PLL Infomation Registerから読み出した値を使い以下の式で計算する事ができます。
 
-____
-latexmath:[システムクロック周波数 (MHz) = リファレンスクロック (24 MHz) \times \frac{PLL\_MULT}{PLL\_DIV}]
-____
+[stem]
+++++
+システムクロック周波数 (MHz) = リファレンスクロック (24 MHz) \times \frac{PLL\_MULT}{PLL\_DIV}
+++++
 
 ==== Configuration Flash Memory Register (Offset 0x0010)
 

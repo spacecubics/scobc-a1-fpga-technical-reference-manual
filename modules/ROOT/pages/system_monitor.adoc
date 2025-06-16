@@ -601,9 +601,10 @@ Lowレベルとなるクロックサイクル数を規定します。Watchdog
 Signalのカウンタは 24
 MHzで動作するため、以下の式で設定値を求める事ができます。
 
-____
-latexmath:[WDOG\_SIVAL設定値 = \frac{FPGA\_WATCHDOG\ High/Lowレベル幅 [s]}{\frac{1}{24 \times 10^{6}}} - 1]
-____
+[stem]
+++++
+WDOG\_SIVAL設定値 = \frac{FPGA\_WATCHDOG\ High/Lowレベル幅 [s]}{\frac{1}{24 \times 10^{6}}} - 1
+++++
 
 .Watchdig Signal Interval Registerビットフィールド
 [cols="1,3,3,12,1",options="header",]
@@ -1685,9 +1686,10 @@ OBC Module上のセンサーとの通信は I2Cの Standard mode (100
 Kbps)で行います。
 このレジスタには、以下の計算値で設定される値を設定してください。
 
-____
-latexmath:[BHM\_CLKPSC = \frac{System\ Clock\ frequency [MHz]}{0.1} - 1]
-____
+[stem]
+++++
+BHM\_CLKPSC = \frac{System\ Clock\ frequency [MHz]}{0.1} - 1
+++++
 
 .BHM Prescale Setting Register ビットフィールド
 [cols="1,3,3,12,1",options="header",]
@@ -1702,37 +1704,45 @@ I2Cの 1周期を生成するカウント数を設定します。 |R/W
 BHM_CLKPDCの設定による
 I2C通信の各タイミングは、以下の式で計算できます。
 
-____
-latexmath:[START\ Hold\ Time(tHDSTA)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}]
-____
+[stem]
+++++
+START\ Hold\ Time(tHDSTA)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}
+++++
 
-____
-latexmath:[STOP\ Setup\ Time(tSUSTO)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}]
-____
+[stem]
+++++
+STOP\ Setup\ Time(tSUSTO)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}
+++++
 
-____
-latexmath:[Repeated\ START\ Setup\ Time(tSUSTA)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}]
-____
+[stem]
+++++
+Repeated\ START\ Setup\ Time(tSUSTA)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}
+++++
 
-____
-latexmath:[SCL\ High\ Time(tHIGH)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}-5]
-____
+[stem]
+++++
+SCL\ High\ Time(tHIGH)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}-5
+++++
 
-____
-latexmath:[Data\ Hold\ Time(tHDDAT)[s] = System\ Clock\ period[s] \times 5]
-____
+[stem]
+++++
+Data\ Hold\ Time(tHDDAT)[s] = System\ Clock\ period[s] \times 5
+++++
 
-____
-latexmath:[Data\ Setup\ Time(tSUDAT)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}]
-____
+[stem]
+++++
+Data\ Setup\ Time(tSUDAT)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}
+++++
 
-____
-latexmath:[SCL\ Low\ Time(tLOW)[s] = tHDDAT[s] + tSUDAT[s]]
-____
+[stem]
+++++
+SCL\ Low\ Time(tLOW)[s] = tHDDAT[s] + tSUDAT[s]
+++++
 
-____
-latexmath:[Bus\ Free\ Time(tBUF)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}+5]
-____
+[stem]
+++++
+Bus\ Free\ Time(tBUF)[s] = System\ Clock\ period[s] \times \frac{BHM\_CLKPSC+1}{2}+5
+++++
 
 システムクロックが 48MHz, 24MHzの場合において、I2Cを 100
 kbpsに設定する場合の設定値と、I2Cのタイミングを以下に示します。

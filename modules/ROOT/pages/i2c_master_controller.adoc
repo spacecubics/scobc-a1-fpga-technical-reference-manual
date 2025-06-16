@@ -423,9 +423,10 @@ ConditionのHold時間を設定するフィールドです。このフィール�
 
 レジスタ設定によるSTART Hold Time(tHDSTA)は、次の式で計算できます。
 
-____
-latexmath:[tHDSTA [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THDSTA +1\right)]
-____
+[stem]
+++++
+tHDSTA [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THDSTA +1\right)
+++++
 
 このレジスタの設定を行う場合は「I2Cタイミングパラメータの設定」も参照してください。
 
@@ -448,9 +449,10 @@ ConditionのSetup時間を設定するフィールドです。このフィール
 
 レジスタ設定によるSTOP Setup Time(tSUSTO)は、次の式で計算できます。
 
-____
-latexmath:[tSUSTO [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUSTO +1\right)]
-____
+[stem]
+++++
+tSUSTO [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUSTO +1\right)
+++++
 
 マルチマスター構成となる場合、または、クロックストレッチ機能を持った
 I2Cデバイスと接続して通信する場合、このレジスタは"0x3"以上に設定してください。
@@ -478,9 +480,10 @@ ConditionのSetup時間を設定するフィールドです。このフィール
 レジスタ設定によるRepeated START Setup
 Time(tSUSTA)は、次の式で計算できます。
 
-____
-latexmath:[tSUSTA [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUSTA +1\right)]
-____
+[stem]
+++++
+tSUSTA [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUSTA +1\right)
+++++
 
 マルチマスター構成となる場合、または、クロックストレッチ機能を持った
 I2Cデバイスと接続して通信する場合、このレジスタは
@@ -507,9 +510,10 @@ RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 レジスタ設定によるSCLのHigh時間(tHIGH)は、次の式で計算できます。
 
-____
-latexmath:[tHIGH\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THIGH +1\right)]
-____
+[stem]
+++++
+tHIGH\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THIGH +1\right)
+++++
 
 このレジスタは必ず"0x4"以上に設定する必要があります。
 
@@ -534,9 +538,10 @@ Enable RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です�
 
 レジスタ設定によるData Hold Time(tHDDAT)は、次の式で計算できます。
 
-____
-latexmath:[tHDDAT\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THDDAT +1\right)]
-____
+[stem]
+++++
+tHDDAT\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_THDDAT +1\right)
+++++
 
 マルチマスター構成となる場合、または、クロックストレッチ機能を持った
 I2Cデバイスと接続して通信する場合、このレジスタは"0x3"以上に設定してください。
@@ -562,16 +567,18 @@ Enable RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です�
 
 レジスタ設定によるData Setup Time(tSUDAT)は、次の式で計算できます。
 
-____
-latexmath:[tSUDAT\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUDAT +1\right)]
-____
+[stem]
+++++
+tSUDAT\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TSUDAT +1\right)
+++++
 
 また、SCLのLow時間(tLOW)は、Data Hold TimeとData Setup
 Timeの和により決定されます。
 
-____
-latexmath:[tLOW\ [s] = tHDDAT\ [s] + tSUDAT\ [s]]
-____
+[stem]
+++++
+tLOW\ [s] = tHDDAT\ [s] + tSUDAT\ [s]
+++++
 
 このレジスタの設定を行う場合は「I2Cタイミングパラメータの設定」も参照してください。
 
@@ -595,9 +602,10 @@ Busの開放時間を設定するフィールドです。このフィールド�
 
 レジスタ設定によるBus Free Time(tBUF)は、次の式で計算できます。
 
-____
-latexmath:[tBUF\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TBUF +1\right)]
-____
+[stem]
+++++
+tBUF\ [s] = System\ Clock\ period\ [s] \times \left(I2CM\_TBUF +1\right)
+++++
 
 このレジスタの設定を行う場合は「I2Cタイミングパラメータの設定」も参照してください。
 
@@ -623,9 +631,10 @@ RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 レジスタ設定によるSDAのサンプリング遅延時間は、次の式で計算できます。
 
-____
-latexmath:[SDA Sampling Delay\ [s] = System\ Clock\ period\ [s] \times I2CM\_SMPLDLY]
-____
+[stem]
+++++
+SDA Sampling Delay\ [s] = System\ Clock\ period\ [s] \times I2CM\_SMPLDLY
+++++
 
 ==== I2C Bus Filter Setting Register (Offset 0x0050)
 
@@ -651,9 +660,10 @@ Busから入力される信号は、このレジスタで設定された値で�
 I2CM_FLTCYCの値は、以下の計算で算出される値を設定します。
 計算結果の小数点以下は切り上げた値を設定してください。
 
-____
-latexmath:[I2CM\_FLTCYC = System Clock Frequency [MHz] \times Filter Timing [us] - 1]
-____
+[stem]
+++++
+I2CM\_FLTCYC = System Clock Frequency [MHz] \times Filter Timing [us] - 1
+++++
 
 このレジスタの設定を行う場合は「I2Cタイミングパラメータの設定」も参照してください。
 
@@ -994,4 +1004,3 @@ Registerに以下の書き込みを行います。
 .. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
 .. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
 .. Register Write, Address Offset: 0x0004, Write Data: 0x00000104
-

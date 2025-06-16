@@ -83,9 +83,10 @@ Clockの時間(Tq)を設定します。この設定は、CANクロックのサ�
 
 Time Quantum Clock(Tq)に設定する値は、次の式で計算できます。
 
-____
-latexmath:[Tq[s] = CANクロック\ period[s] \times \left(CAN\_TQPSET+1\right)]
-____
+[stem]
+++++
+Tq[s] = CANクロック\ period[s] \times \left(CAN\_TQPSET+1\right)
+++++
 
 ==== CAN Bit Timing Setting Register (Offset 0x000C)
 
@@ -116,17 +117,20 @@ Segment1の時間(Tts1)を設定します。このフィールドには、Tqの�
 Phase Segment1(Tts1)、Phase
 Segment2(Tts2)、同期ジャンプ幅(Tsjw)に設定する値は、次の式で計算できます。
 
-____
-latexmath:[Tts1[s] = Tq[s] \times \left(CAN\_TS1+1\right)]
-____
+[stem]
+++++
+Tts1[s] = Tq[s] \times \left(CAN\_TS1+1\right)
+++++
 
-____
-latexmath:[Tts2[s] = Tq[s] \times \left(CAN\_TS2+1\right)]
-____
+[stem]
+++++
+Tts2[s] = Tq[s] \times \left(CAN\_TS2+1\right)
+++++
 
-____
-latexmath:[Tsjw[s] = Tq[s] \times \left(CAN\_SJW+1\right)]
-____
+[stem]
+++++
+Tsjw[s] = Tq[s] \times \left(CAN\_SJW+1\right)
+++++
 
 ==== CAN Error Count Register (Offset: 0x0010)
 
@@ -1456,4 +1460,3 @@ FIFOに格納されていることを示します。 RX FIFOは最大
 CAN RX Message Register 1～4は、CAN Enable Registerの CAN_ENビットが_
 "0"の状態でも読み出す事が出来ます。
 但し、この時は新しいメッセージの受信は行われません。
-

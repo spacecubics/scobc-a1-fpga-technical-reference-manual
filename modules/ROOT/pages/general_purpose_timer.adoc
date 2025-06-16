@@ -439,9 +439,10 @@ GPTMR_SITPSCに設定する値は、Software Interrupt
 Timerの動作クロック周波数 (24
 MHz)とカウンターのカウントアップ間隔から、以下の計算で算出することができます。
 
-____
-latexmath:[GPTMR\_SITPSC = 24 \times 10^6 \times Software\ Interrupt\ Timer\ Countup\ Interval[s] -1]
-____
+[stem]
+++++
+GPTMR\_SITPSC = 24 \times 10^6 \times Software\ Interrupt\ Timer\ Countup\ Interval[s] -1
+++++
 
 ==== Software Interrupt Timer Status Register (Offset: 0x0108)
 
@@ -805,9 +806,10 @@ GPTMR_HITPSCに設定する値は、Hardware Interrupt
 Timerの動作クロック周波数 (24
 MHz)とカウンターのカウントアップ間隔から、以下の計算で算出することができます。
 
-____
-latexmath:[GPTMR\_HITPSC = 24 \times 10^6 \times Hardware\ Interrupt\ Timer\ Countup\ Interval[s] -1]
-____
+[stem]
+++++
+GPTMR\_HITPSC = 24 \times 10^6 \times Hardware\ Interrupt\ Timer\ Countup\ Interval[s] -1
+++++
 
 ==== Hardware Interrupt Timer Output Compare Register 1-8 (Offset: 0x0210-0x022C)
 

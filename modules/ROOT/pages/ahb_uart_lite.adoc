@@ -162,7 +162,10 @@ Registerは、UART通信のボーレートを設定するためのレジスタ�
 
 レジスタの設定値はシステムクロックの周期と、設定するボーレートから以下のように計算することができます。
 
-latexmath:[ UDIVSET= \frac{1}{baudrate\[bps\] \times SYSCLK period\[s\]} -1 ]
+[stem]
+++++
+ UDIVSET= \frac{1}{baudrate\[bps\] \times SYSCLK period\[s\]} -1
+++++
 
 .UART Baudrate Setting Register ビットフィールド
 [cols="1,3,3,12,1",options="header",]
