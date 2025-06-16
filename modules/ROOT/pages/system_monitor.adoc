@@ -573,7 +573,7 @@ Timeフィールドを適切な値に変更する事で
 異常検知のタイミングを設定する事ができます。
 
 .Watchdog Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:19 |- |Reserved |Reserved |-
@@ -606,7 +606,7 @@ latexmath:[WDOG\_SIVAL設定値 = \frac{FPGA\_WATCHDOG\ High/Lowレベル幅 [s]
 ____
 
 .Watchdig Signal Interval Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:24 |- |Reserved |Reserved |-
@@ -622,7 +622,7 @@ Clock Monitor Registerは、SC-OBC-A1
 FPGAのクロック状態を示すレジスタです。
 
 .Clock Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -677,14 +677,14 @@ ITCMENビットがセットされた時に発行されるシステムリセッ�
 このレジスタのフィールドの詳細は未定です。
 
 .Hardware Status 1 Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |HWARE_STATUS1 |Hardware Status 1 |T.B.D. |R/W
 |===
 
 .Hardware Status 2 Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |HWARE_STATUS2 |Hardware Status 2 |T.B.D. |R/W
@@ -701,7 +701,7 @@ SEM Controllerの異常を示すビット (bit 9、bit 10、bit 11)
 Controllerの異常が取り除かれるわけではないため、システムの再起動を行う必要があります。
 
 .System Monitor Interrupt Status Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:5 |- |Reserved |Reserved |-
@@ -752,7 +752,7 @@ System Monitor Interrupt Enable Registerは、System
 Monitorが監視するイベントを割り込み出力信号に通知するか設定するためのレジスタです。
 
 .System Monitor Interrupt Enable Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:5 |- |Reserved |Reserved |-
@@ -816,7 +816,7 @@ Currentステート、Previousステートの全てのビットが Highにセッ
 そのため、Flight Softwareが起動したときに、このレジスタの値を読み出し、SEMが正常動作している事を確認してください。
 
 .SEM Controller State Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol           |Field                             |Description                                                          |R/W
 |31:21 |-                |Reserved                          |Reserved                                                             |-
@@ -845,7 +845,7 @@ Controllerが行ったエラー訂正数をカウントします。
 そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされず、SEM Controllerのエラーは累積のエラーを示します。
 
 .SEM Error Correction Count Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol    |Field                |Description                                                                                                                        |R/W
 |31:16 |-         |Reserved             |Reserved                                                                                                                           |-
@@ -863,7 +863,7 @@ Timeout時間を設定するレジスタです。 AMD (旧 Xilinx) の SEM Contr
 そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされません。
 
 .SEM Heartbeat Timeout Registerビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
@@ -894,7 +894,7 @@ Register 2 の書き込み前に行ってください。
 そのため、Bootloaderから Flight Softwareに切り替わる時にはリセットされません。
 
 .SEM Error Injection Command Register 1ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |EINJECT1 |Error Injection 1 |SEM
@@ -903,7 +903,7 @@ Bit 31:0 を設定します。 |R/W
 |===
 
 .SEM Error Injection Command Register 2ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
@@ -994,7 +994,7 @@ Enableビットは、同時にセットすることができます。
 センサーに設定する初期値は、RTL設計時にVerilogパラメータで指定する事ができます。
 
 .BHM Initialization Access Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -1042,7 +1042,7 @@ Moduleに実装するセンサーからのセンサーデータの自動読み�
 タイミングパルスを受信するたびに、対応するセンサーからデータを読み出します。
 
 .BHM Access Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:5 |- |Reserved |Reserved |-
@@ -1102,7 +1102,7 @@ Monitorの割り込みステータスレジスタです。 それぞれのビッ
 "1"をセットすると、割り込みをクリアする事ができます。
 
 .BHM Interrupt Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:19 |- |Reserved |Reserved |-
@@ -1190,7 +1190,7 @@ Interrupt Status Registerのビットが
 "1"にセットされると、割り込み信号がアサートします。
 
 .Board Health Interrupt Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:19 |- |Reserved |Reserved |-
@@ -1262,7 +1262,7 @@ Voltageの実効データは Bit 15:3に格納されます。 Bit 2:0は ALL
 0が格納されます。
 
 .BHM VDD_1V0 Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_1V0SNTVNUPD |VDD_1V0 Shunt Voltage Not Updated
@@ -1290,7 +1290,7 @@ Voltageの実効データは Bit 15:3に格納されます。 Bit 2:0は ALL
 0が格納されます。
 
 .BHM VDD_1V0 Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_1V0BUSVNUPD |VDD_1V0 Bus Voltage Not Updated
@@ -1313,7 +1313,7 @@ BHM VDD_1V8 Shunt Voltage Monitor Registerは、VDD_1V8 電源ドメインの
 Shunt Voltageを読み出すためのレジスタです。
 
 .BHM VDD_1V8 Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_1V8SNTVNUPD |VDD_1V8 Shunt Voltage Not Updated
@@ -1336,7 +1336,7 @@ BHM VDD_1V8 Bus Voltage Monitor Registerは、VDD_1V8 電源ドメインの Bus
 Voltageを読み出すためのレジスタです。
 
 .BHM VDD_1V8 Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_1V8BUSVNUPD |VDD_1V8 Bus Voltage Not Updated
@@ -1359,7 +1359,7 @@ BHM VDD_3V3 Shunt Voltage Monitor Registerは、VDD_3V3 電源ドメインの
 Shunt Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3 Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3SNTVNUPD |VDD_3V3 Shunt Voltage Not Updated
@@ -1382,7 +1382,7 @@ BHM VDD_3V3 Bus Voltage Monitor Registerは、VDD_3V3 電源ドメインの Bus
 Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3 Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3BUSVNUPD |VDD_3V3 Bus Voltage Not Updated
@@ -1405,7 +1405,7 @@ BHM VDD_3V3SYSA Shunt Voltage Monitor Registerは、VDD_3V3SYSA
 電源ドメインの Shunt Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3SYSA Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3SYSASNTVNUPD |VDD_3V3SYSA Shunt Voltage Not Updated
@@ -1429,7 +1429,7 @@ BHM VDD_3V3SYSA Bus Voltage Monitor Registerは、VDD_3V3SYSA
 電源ドメインの Bus Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3SYSA Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3SYSABUSVNUPD |VDD_3V3SYSA Bus Voltage Not Updated
@@ -1452,7 +1452,7 @@ BHM VDD_3V3SYSB Shunt Voltage Monitor Registerは、VDD_3V3SYSB
 電源ドメインの Shunt Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3SYSB Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3SYSBSNTVNUPD |VDD_3V3SYSB Shunt Voltage Not Updated
@@ -1476,7 +1476,7 @@ BHM VDD_3V3SYSB Bus Voltage Monitor Registerは、VDD_3V3SYSB
 電源ドメインの Bus Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3SYSB Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3SYSBBUSVNUPD |VDD_3V3SYSB Bus Voltage Not Updated
@@ -1499,7 +1499,7 @@ BHM VDD_3V3IO Shunt Voltage Monitor Registerは、VDD_3V3IO
 電源ドメインの Shunt Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3IO Shunt Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3IOSNTVNUPD |VDD_3V3IO Shunt Voltage Not Updated
@@ -1522,7 +1522,7 @@ BHM VDD_3V3IO Bus Voltage Monitor Registerは、VDD_3V3IO 電源ドメインの
 Bus Voltageを読み出すためのレジスタです。
 
 .BHM VDD_3V3IO Bus Voltage Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_3V3IOBUSVNUPD |VDD_3V3IO Bus Voltage Not Updated
@@ -1550,7 +1550,7 @@ TMP175-Q1の Temperature Registerからの取得データです。
 0が格納されます。
 
 .BHM Temperature 1 Monitor Register ビットフィールド (Offset 0x2050)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_TEMP1NUPD |Temperature 1 Not Updated
@@ -1568,7 +1568,7 @@ Bit 15:4に格納されます。 |RO
 |===
 
 .BHM Temperature 2 Monitor Register ビットフィールド (Offset 0x2054)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_TEMP2NUPD |Temperature 2 Not Updated
@@ -1586,7 +1586,7 @@ Bit 15:4に格納されます。 |RO
 |===
 
 .BHM Temperature 3 Monitor Register ビットフィールド (Offset 0x2058)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31 |BHM_TEMP3NUPD |Temperature 3 Not Updated
@@ -1617,7 +1617,7 @@ BHM Software Access Write Data
 Registerにライトデータを書き込んでおく必要があります。
 
 .BHM Software Access Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:25 |- |Reserved |Reserved |-
@@ -1652,7 +1652,7 @@ BHM Software Access Write Data Registerは、ソフトウェア指示による
 I2Cアクセスにおいて、センサーに送信するデータを書き込むためのレジスタです。
 
 .BHM Software Access Write Data Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -1667,7 +1667,7 @@ BHM Software Access Read Data Registerは、ソフトウェア指示による
 I2Cアクセスによってセンサーから受信したデータを読み出すためのレジスタです。
 
 .BHM Software Access Write Data Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -1690,7 +1690,7 @@ latexmath:[BHM\_CLKPSC = \frac{System\ Clock\ frequency [MHz]}{0.1} - 1]
 ____
 
 .BHM Prescale Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -1779,7 +1779,7 @@ Interrupt Status Registerの対象のセンサーの I2C Access
 Errorビットをセットし、割り込みを発生します。
 
 .BHM Retry Count Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
@@ -1797,7 +1797,7 @@ I2Cバスの状態を示すレジスタです。
 Idle状態であることを示します。
 
 .BHM Access Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:6 |- |Reserved |Reserved |-
@@ -1838,7 +1838,7 @@ System Monitor IP Version Registerは、System Monitorの
 IPコアバージョンを示すレジスタです。
 
 .System Monitor IP Version Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:24 |SYSMON_MAJVER |System Monitor IP Major Version |System

@@ -50,7 +50,7 @@ ECCエラー検出時にメモリの修復のため訂正データの書き戻�
 このレジスタのEnableにすると、訂正データの書き戻し機能が有効になります。
 
 .ECC Error Collect Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
@@ -78,7 +78,7 @@ MEMSCRCYCはメモリスクラビングのための
 1分でメモリの全領域を検査できる設計値になっています。
 
 .Memory Scrubing Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |MEMSCRCYC |Memory Scrubing Cycle
@@ -111,7 +111,7 @@ Registerは、HRMEMの割り込みステータスレジスタです。
 それぞれのビットは"1"をセットすると、割り込みをクリアする事ができます。
 
 .HRMEM Interrupt Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:18 |- |Reserved |Reserved |-
@@ -145,7 +145,7 @@ HRMEM Interrupt Enable
 Registerは、HRMEMの動作において発生した割り込みイベントを割り込み出力信号に通知するか設定するためのレジスタです。
 
 .HRMEM Interrupt Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:9 |- |Reserved |Reserved |-
@@ -171,7 +171,7 @@ ECCエラーを検出するたびに該当するカウンターをインクリ�
 このカウンターのクリアは、Error Count Clear Registerによって行います。
 
 .1Bit ECC Error Count Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |ATRDE1ERRCNT |Auto Read Access 1bit ECC Error Counter
@@ -193,7 +193,7 @@ Registerは、エラー修復データの破棄回数を表示するカウンタ
 このカウンターのクリアは、Error Count Clear Registerによって行います。
 
 .ECC Correct Data Discard Count Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -208,7 +208,7 @@ Error Count Clear Registerは、1 Bit ECC Errorカウンター、ECC Correct
 Data Discardカウンターをクリアするためのレジスタです。
 
 .Error Count Clear Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
@@ -233,7 +233,7 @@ Busからの読み出しにおいて、ECC Errorを検出した場合、ミラ�
 0x00xxxxxxのアドレスで表示されます。
 
 .ECC Error Address Monitor Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:22 |- |Reserved |Reserved |-
@@ -257,7 +257,7 @@ SRAMへのデータアクセスは行わず Prefetch
 Bufferに格納されたデータを返す事でメモリアクセスのパフォーマンスを向上します。
 
 .Prefetch Mode Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:2 |- |Reserved |Reserved |-
@@ -297,7 +297,7 @@ Bufferのデータはフラッシュされてしまうため、書き込みが�
 2'b00に設定されている場合、本レジスタの設定は無効となります。
 
 .Special Prefetch Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:2 |- |Reserved |Reserved |-
@@ -317,7 +317,7 @@ Special Prefetch Enable Registerの SPPFENB[0]ビットが
 1に設定されている場合、本レジスタの設定が有効となります。
 
 .Special Prefetch Address Setting Register 1 ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:22 |- |Reserved |Reserved |-
@@ -337,7 +337,7 @@ Special Prefetch Enable Registerの SPPFENB[1]ビットが
 1に設定されている場合、本レジスタの設定が有効となります。
 
 .Special Prefetch Address Setting Register 2 ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:22 |- |Reserved |Reserved |-
@@ -353,7 +353,7 @@ Buffer2にPrefetchするデータのベースアドレスを設定します。 |
 HRMEM IP Version Registerは、HRMEM IPコアのバージョン管理レジスタです。
 
 .HRMEM IP Version Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:24 |HRMEMMAJVER |HRMEM IP Major Version |HRMEMコアのMajor

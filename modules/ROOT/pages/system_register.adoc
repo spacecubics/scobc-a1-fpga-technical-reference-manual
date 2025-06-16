@@ -40,7 +40,7 @@ ITCMENビットの設定値が変更された時、システム全体にリセ�
 ITCMENビットの変更は、ITCMに書き込まれた Boot用のソフトウェアから HRMEMに書き込まれたメインのソフトウェアに遷移する時に 1度だけ制御する事を想定しています。
 
 .Code Memory Select Regsiter ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol    |Field           |Description |R/W
 |31:16 |ITCMENPKC |Protect Keycode |
@@ -63,7 +63,7 @@ System Clock Control Registerは、システム内部で使われるクロック
 尚、CPUとして Cortex-M3を採用するシステムでは CLKMODE = 0b10 (SYS_CLK 96 MHz)の設定は禁止です。
 
 .System Clock Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol  |Field            |Description |R/W
 |31:2 |-       |Reserved         |Reserved    |-
@@ -75,7 +75,7 @@ System Clock Control Registerは、システム内部で使われるクロック
 CLKMODE信号の設定値と、PLLの状態 及びシステムクロック周波数の関係は以下となります。
 
 .CLKMODE設定と PLL状態 及び クロック周波数の関係
-[cols=",,,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |CLKMODE[1:0]    |PLL Status       |REF_CLK                  |SYS_CLK                  |MAXI_CLK                 |USER_CLK1 / USER_CLK2
 |0b00            |PowerDown        |24 MHz (Reference Clock) |24 MHz (Reference Clock) |24 MHz (Reference Clock) |RTLパラメータにより設定 (Stop or Reference Clock)
@@ -93,7 +93,7 @@ PLL Infomation Registerは、システムクロックの設定状況を示すレ
 ソフトウェアはこのレジスタの値から、現在のシステムクロックの周波数を計算する事ができます。
 
 .System Clock Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol  |Field             |Description                                                       |R/W
 |31:16 |PLLMULT |PLL Multiple Rate |システムクロックを生成するPLLの現在の逓倍率を示すフィールドです。 |RO
@@ -111,7 +111,7 @@ ____
 Configuration Flash Memory Registerは SC-OBC-A1 Moduleに実装される 2つの Configuration Flash Memory (NOR FLash Memory)に関する制御を行うためのレジスタです。
 
 .Configuration Flash Memory Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol     |Field                              |Description |R/W
 |31:13 |-          |Reserved                           |Reserved    |-
@@ -167,7 +167,7 @@ SC-OBC-A1 FPGAのBoot Statusを示すレジスタです。
 起動後に このレジスタを読み出す事で、マルチブート機能によって Configurationした FPGAの起動状態を読み出す事ができます。
 
 .Boot Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit    |Symbol       |Field                      |Description |R/W
 | 31:14 | Reserved    | Reserved                  |-           |-
@@ -217,7 +217,7 @@ Power Cycle Registerは SC-OBC-A1 FPGAに対する Power Cycle要求を発行す
 このレジスタの制御により Power Cycleを要求すると、TRCHによって Power Cycleが実行されます。
 
 .Power Cycle Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol      |Field                       |Description |R/W
 |31:16 |PWRCYCLEPKC |Power Cycle Protect Keycode |
@@ -247,7 +247,7 @@ PLLが停止すると、UARTや QSPI Controllerなどのクロックも停止し
 したがって、低消費電力化のため PWRDOWNENをセットして WFI命令を実行する場合は、全ての Peripheralのデータ転送が完全に完了した後で、WFI命令を実行してください。
 
 .Power Management Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol     |Field                      |Description |R/W
 |31:16 |PWRDOWNPKC |Power Down Protect Keycode |
@@ -270,28 +270,28 @@ Scratchpad 1-4 Registerは、ソフトウェアがワークスペースとして
 Code Memory Select Registerの ITCMENビットが変更された時に発行されるシステムリセットでは、このレジスタはクリアされません。
 
 .Scratchpad 1 Register ビットフィールド (Offset: 0x00F0)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field        |Description                       |R/W
 |31:0 |SPAD1  |Scratchpad 1 |32bitのScratchpadフィールドです。 |R/W
 |===
 
 .Scratchpad 2 Register ビットフィールド (Offset: 0x00F4)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field        |Description                       |R/W
 |31:0 |SPAD2  |Scratchpad 2 |32bitのScratchpadフィールドです。 |R/W
 |===
 
 .Scratchpad 3 Register ビットフィールド (Offset: 0x00F8)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field        |Description                       |R/W
 |31:0 |SPAD3  |Scratchpad 3 |32bitのScratchpadフィールドです。 |R/W
 |===
 
 .Scratchpad 4 Register ビットフィールド (Offset: 0x00FC)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field        |Description                       |R/W
 |31:0 |SPAD4  |Scratchpad 4 |32bitのScratchpadフィールドです。 |R/W
@@ -302,7 +302,7 @@ Code Memory Select Registerの ITCMENビットが変更された時に発行さ�
 System Registerの IPコアバージョンの管理レジスタです。
 
 .System Register IP Version Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol |Field                              |Description                              |R/W
 |31:24 |MAJVER |System Register Core Major Version |System RegisterコアのMajor Versionです。 |RO
@@ -317,7 +317,7 @@ SC-OBC-A1 FPGAのビルド情報を保持するレジスタです。
 FPGAデータが Git管理されていない環境から生成された場合、このレジスタは 0x00000000を示します。
 
 .Build Information Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol    |Field                      |Description |R/W
 |31:0 |BUILDINFO |Build Information Register |
@@ -335,7 +335,7 @@ FPGAからは、FUSEDNAのうち 63 bitから 7 bitを、Device DNAとして読�
 ユーザーは Device DNA 1/2 Registerを読み出す事によって、Device DNAの値を知る事ができます。
 
 .Device DNA 1 Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field               |Description                                      |R/W
 |31:7 |DNALSB |Device DNA LSB side |Device DNAの bit 31:7が格納されるレジスタです。  |RO
@@ -343,7 +343,7 @@ FPGAからは、FUSEDNAのうち 63 bitから 7 bitを、Device DNAとして読�
 |===
 
 .Device DNA 2 Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit  |Symbol |Field               |Description                                      |R/W
 |31:0 |DNAMSB |Device DNA MSB side |Device DNAの bit 63:32が格納されるレジスタです。 |RO

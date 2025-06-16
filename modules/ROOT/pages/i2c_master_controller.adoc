@@ -86,7 +86,7 @@ HiZ状態とし、一切の送受信を行いません。 EnableをONにする�
 BusがIdle状態の時に送受信が可能となります。
 
 .I2C Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:1 |- |Reserved |Reserved |-
@@ -130,7 +130,7 @@ I2CM_RESTARTのどちらかのビットを"1"にセットします。
 本レジスタの設定については「I2C通信操作手順例」も参照してください。
 
 .I2C TX FIFO Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:10 |- |Reserved |Reserved |-
@@ -160,7 +160,7 @@ Byte実装されており、このレジスタを読み出す事で RX
 FIFOに格納されたデータを 1 Byteずつデータを読み出す事ができます。
 
 .I2C RX FIFO Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
@@ -177,7 +177,7 @@ I2C_SELFBUSY,I2C_OTHERBUSYビットがともに"0"を示す時、I2C
 BusがIdle状態であることを示します。
 
 .I2C Bus Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:2 |- |Reserved |Reserved |-
@@ -198,7 +198,7 @@ Controllerの割り込みステータスレジスタです。
 それぞれのビットは"1"をセットすると、割り込みをクリアする事ができます。
 
 .I2C Interrupt Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:13 |- |Reserved |Reserved |-
@@ -270,7 +270,7 @@ Interrupt Enable Registerのビットが
 Registerのビットが "1"にセットされた時、レベル割り込みが出力します。
 
 .I2C Interrupt Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:13 |- |Reserved |Reserved |-
@@ -322,7 +322,7 @@ I2C FIFO Status Registerは、TX FIFO/RX
 FIFOに格納されているデータ量を読み出すためのレジスタです。
 
 .I2C FIFO Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:21 |- |Reserved |Reserved |-
@@ -343,7 +343,7 @@ FIFOのリセットを行うためのレジスタです。
 何らかの理由によりFIFOのクリアを行いたい場合にこのレジスタを使用します。
 
 .I2C FIFO Reset Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -365,7 +365,7 @@ I2C FIFO Threshold Level Registerは、TX FIFO/RX
 FIFOのデータ量に応じた割り込み出力を行うための設定レジスタです。
 
 .I2C FIFO Threshold Level Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:21 |- |Reserved |Reserved |-
@@ -391,7 +391,7 @@ I2C SCL Timeout Setting Registerは、SCL Timeout割り込み発生させるた�
 SCL Timeout時間を設定するレジスタです。
 
 .I2C SCL Timeout Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -411,7 +411,7 @@ START Conditionの Hold時間を設定するためのレジスタです。
 RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C START Hold Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -436,7 +436,7 @@ ConditionのSetup時間を設定するためのレジスタです。 このレ�
 Enable RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C STOP Setup Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -465,7 +465,7 @@ Repeated START ConditionのSetup時間を設定するためのレジスタです
 RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Repeated START Setup Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -495,7 +495,7 @@ SCLのHigh時間を設定するレジスタです。 このレジスタは、I2C
 RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Clock High Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -522,7 +522,7 @@ I2C Data Hold Timing Setting Registerは、I2C規格における
 Enable RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Data Hold Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -550,7 +550,7 @@ I2C Data Setup Timing Setting Registerは、I2C規格における
 Enable RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Data Setup Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -583,7 +583,7 @@ Condition間のBus開放時間を設定するためのレジスタです。
 RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Bus Free Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -611,7 +611,7 @@ SDA信号のサンプリングを行います。 このレジスタは、I2C Ena
 RegisterのI2CM_ENビットが"0"の時のみ書き込みが可能です。
 
 .I2C Bus Sampling Timing Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -638,7 +638,7 @@ Busから入力される信号は、このレジスタで設定された値で�
 (tr)」、「SDA信号と SCL信号の立ち下がり時間 (tf)」値を元に設定します。
 
 .I2C Bus Filter Setting Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:8 |- |Reserved |Reserved |-
@@ -662,7 +662,7 @@ ____
 I2C Controller IPコアバージョンの管理レジスタです。
 
 .I2C Controller IP Version Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:24 |MAJVER |I2C Controller IP Major Version |I2C

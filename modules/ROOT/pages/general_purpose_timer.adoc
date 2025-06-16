@@ -159,7 +159,7 @@ Timerの最小時間は、0.0625秒であり、最大 268435455.9375秒(約
 8年186日)までカウントする事ができます。
 
 .Global Timer Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:4 |GPTMR_GTINT |Global Timer Integer Field |Global
@@ -185,7 +185,7 @@ Timer Enable Control Registerは、Software Interrupt Timerと Hardware
 Interrupt Timerの動作を制御するレジスタです。
 
 .Timer Enable Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:2 |- |Reserved |Reserved |-
@@ -208,7 +208,7 @@ Software Interrupt Timerの最小時間は、Software Interrupt Timer Prescaler
 Registerの設定値により決まります。
 
 .Software Interrupt Timer Remaining Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCNT |Software Interrupt Timer Count |Software Interrupt
@@ -224,7 +224,7 @@ Hardware Interrupt Timerの最小時間は、Hardware Interrupt Timer Prescaler
 Registerの設定値により決まります。
 
 .Hardware Interrupt Timer Remaining Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCNT |Hardware Interrupt Timer Count |Hardware Interrupt
@@ -241,7 +241,7 @@ Timerに起因する割り込みが発生した時、割り込み要因に対応
 それぞれのビットは "1"をセットすると、割り込みをクリアする事ができます。
 
 .Global Timer Interrupt Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -287,7 +287,7 @@ Interrupt Status Registerの対応する割り込みステータスビットが
 "1"にセットされた時、Global Timer割り込みを出力します。
 
 .Global Timer Interrupt Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -327,7 +327,7 @@ Timerのカウント値と、本レジスタの設定値が一致したときに
 
 .Global Timer Output Compare Register 1 ビットフィールド (Offset:
 0x0020)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_GTCOMP1 |Global Timer Output Compare Channel 1 Value
@@ -337,7 +337,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Global Timer Output Compare Register 2 ビットフィールド (Offset:
 0x0024)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_GTCOMP2 |Global Timer Output Compare Channel 2 Value
@@ -347,7 +347,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Global Timer Output Compare Register 3 ビットフィールド (Offset:
 0x0028)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_GTCOMP3 |Global Timer Output Compare Channel 3 Value
@@ -357,7 +357,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Global Timer Output Compare Register 4 ビットフィールド (Offset:
 0x002C)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_GTCOMP4 |Global Timer Output Compare Channel 4 Value
@@ -374,7 +374,7 @@ Timerの制御方法を指定するレジスタです。
 GPTMR_SITENビットをセットする前に設定する必要があります。
 
 .Software Interrupt Timer Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:5 |- |Reserved |Reserved |-
@@ -424,7 +424,7 @@ Timerをカウントアップするための、クロックサイクル数を設
 GPTMR_SITENビットをセットする前に設定する必要があります。
 
 .Software Interrupt Timer Prescaler Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -453,7 +453,7 @@ Timerに起因する割り込みが発生した時、割り込み要因に対応
 それぞれのビットは "1"をセットすると、割り込みをクリアする事ができます。
 
 .Software Interrupt Timer Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -524,7 +524,7 @@ Interrupt Timer Status Registerの対応する割り込みステータスビッ�
 "1"にセットされた時、Software Interrupt Timerの割り込みを出力します。
 
 .Software Interrupt Timer Enable Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
@@ -590,7 +590,7 @@ Timerのカウント値と、本レジスタの設定値が一致したとき、
 
 .Software Interrupt Timer Output Compare Register 1 ビットフィールド
 (Offset: 0x0110)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP1 |Software Interrupt Timer Output Compare Channel
@@ -600,7 +600,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 2 ビットフィールド
 (Offset: 0x0114)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP2 |Software Interrupt Timer Output Compare Channel
@@ -610,7 +610,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 3 ビットフィールド
 (Offset: 0x0118)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP3 |Software Interrupt Timer Output Compare Channel
@@ -620,7 +620,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 4 ビットフィールド
 (Offset: 0x011C)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP4 |Software Interrupt Timer Output Compare Channel
@@ -630,7 +630,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 5 ビットフィールド
 (Offset: 0x0120)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP5 |Software Interrupt Timer Output Compare Channel
@@ -640,7 +640,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 6 ビットフィールド
 (Offset: 0x0124)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP6 |Software Interrupt Timer Output Compare Channel
@@ -650,7 +650,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 7 ビットフィールド
 (Offset: 0x0128)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP7 |Software Interrupt Timer Output Compare Channel
@@ -660,7 +660,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Software Interrupt Timer Output Compare Register 8 ビットフィールド
 (Offset: 0x012C)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_SITCOMP8 |Software Interrupt Timer Output Compare Channel
@@ -677,7 +677,7 @@ Timerの制御方法を指定するレジスタです。
 GPTMR_HITENビットをセットする前に設定する必要があります。
 
 .Hardware Interrupt Timer Control Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:30 |GPTMR_HITOPMD8 |Hardware Interrupt Timer Output Compare Channel
@@ -790,7 +790,7 @@ Timerをカウントアップするための、クロックサイクル数を設
 GPTMR_HITENビットをセットする前に設定する必要があります。
 
 .Hardware Interrupt Timer Prescaler Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
@@ -823,7 +823,7 @@ Timerのカウント値と、本レジスタの設定値が一致したとき、
 
 .Hardware Interrupt Timer Output Compare Register 1 ビットフィールド
 (Offset: 0x0210)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP1 |Hardware Interrupt Timer Output Compare Channel
@@ -833,7 +833,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 2 ビットフィールド
 (Offset: 0x0214)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP2 |Hardware Interrupt Timer Output Compare Channel
@@ -843,7 +843,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 3 ビットフィールド
 (Offset: 0x0218)
-[cols=",,,,",options="header",]
+[cos=l",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP3 |Hardware Interrupt Timer Output Compare Channel
@@ -853,7 +853,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 4 ビットフィールド
 (Offset: 0x021C)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP4 |Hardware Interrupt Timer Output Compare Channel
@@ -863,7 +863,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 5 ビットフィールド
 (Offset: 0x0220)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP5 |Hardware Interrupt Timer Output Compare Channel
@@ -873,7 +873,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 6 ビットフィールド
 (Offset: 0x0224)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP6 |Hardware Interrupt Timer Output Compare Channel
@@ -883,7 +883,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 7 ビットフィールド
 (Offset: 0x0228)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP7 |Hardware Interrupt Timer Output Compare Channel
@@ -893,7 +893,7 @@ Timerのカウント値を設定します。 |R/W
 
 .Hardware Interrupt Timer Output Compare Register 8 ビットフィールド
 (Offset: 0x022C)
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:0 |GPTMR_HITCOMP8 |Hardware Interrupt Timer Output Compare Channel
@@ -907,7 +907,7 @@ General Purpose Timer IP Version Registerは、General Purpose Timerの
 IPコアバージョンを示すレジスタです。
 
 .General Purpose Timer IP Version Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:24 |GPTMR_MAJVER |General Purpose Timer IP Major Version |General
