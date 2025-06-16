@@ -28,10 +28,10 @@ image::NOR_Flash_for_Configuration.svg[NOR_Flash_for_Configuration]
 [cols=",",options="header",]
 |===
 |Address |Data Partision
-|0x000~0000~ - 0x07F~FFFF~ |FPGA Bitstream Data (Golden data)
-|0x080~0000~ - 0x0BF~FFFF~ |Flight Software (Golden data)
-|0x100~0000~ - 0x19F~FFFF~ |FPGA Bitstream Data (Update data)
-|0x1A0~0000~ - 0x1DF~FFFF~ |Flight Software (Update data)
+|0x000_0000_ - 0x07F_FFFF |FPGA Bitstream Data (Golden data)
+|0x080_0000_ - 0x0BF_FFFF |Flight Software (Golden data)
+|0x100_0000_ - 0x19F_FFFF |FPGA Bitstream Data (Update data)
+|0x1A0_0000_ - 0x1DF_FFFF |Flight Software (Update data)
 |===
 
 === FPGA Boot Flow
