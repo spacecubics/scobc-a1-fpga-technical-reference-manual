@@ -60,6 +60,7 @@ ITCMENビットに書き込みを行う場合は、このフィールドに0x5A5
 System Clock Control Registerは、システム内部で使われるクロックの周波数を設定するためのレジスタです。
 
 このレジスタの制御により、SC-OBC-A1 FPGA内部の PLLを停止させ、低消費電力動作させることが可能です。
+尚、CPUとして Cortex-M3を採用するシステムでは CLKMODE = 0b10 (SYS_CLK 96 MHz)の設定は禁止です。
 
 .System Clock Control Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -79,9 +80,12 @@ CLKMODE信号の設定値と、PLLの状態 及びシステムクロック周波
 |CLKMODE[1:0]    |PLL Status       |REF_CLK                  |SYS_CLK                  |MAXI_CLK                 |USER_CLK1 / USER_CLK2
 |0b00            |PowerDown        |24 MHz (Reference Clock) |24 MHz (Reference Clock) |24 MHz (Reference Clock) |RTLパラメータにより設定 (Stop or Reference Clock)
 |0b01            |Normal Operation |24 MHz (Reference Clock) |48 MHz (PLL Output)      |48 MHz (PLL Output)      |RTLパラメータにより設定 (PLL Output)
-|0b10            |Normal Operation |24 MHz (Reference Clock) |96 MHz (PLL Output)      |96 MHz (PLL Output)      |RTLパラメータにより設定 (PLL Output)
+|0b10 (footnote:[CPUとして Cortex-M3を採用するシステムでは、この設定は禁止です])
+               |Normal Operation |24 MHz (Reference Clock) |96 MHz (PLL Output)      |96 MHz (PLL Output)      |RTLパラメータにより設定 (PLL Output)
 |0b11 (設定禁止) |-                |-                        |-                        |-                        |-
 |===
+
+
 
 ==== PLL Infomation Register (Offset 0x0008)
 
