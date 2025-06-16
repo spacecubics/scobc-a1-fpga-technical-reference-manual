@@ -75,7 +75,7 @@ System Clock Control Registerは、システム内部で使われるクロック
 CLKMODE信号の設定値と、PLLの状態 及びシステムクロック周波数の関係は以下となります。
 
 .CLKMODE設定と PLL状態 及び クロック周波数の関係
-[cols="1,3,3,12,1",options="header",]
+[cols=",,,,,",options="header",]
 |===
 |CLKMODE[1:0]    |PLL Status       |REF_CLK                  |SYS_CLK                  |MAXI_CLK                 |USER_CLK1 / USER_CLK2
 |0b00            |PowerDown        |24 MHz (Reference Clock) |24 MHz (Reference Clock) |24 MHz (Reference Clock) |RTLパラメータにより設定 (Stop or Reference Clock)

@@ -201,7 +201,7 @@ Controllerの動作における割り込みステータスレジスタです。
 1をセットすると、該当の割り込みをクリアする事ができます。
 
 .CAN Interrupt Status Register ビットフィールド
-[cols=",,,,",options="header",]
+[cols="1,3,3,12,1",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
 |31:14 |- |Reserved |Reserved |-
