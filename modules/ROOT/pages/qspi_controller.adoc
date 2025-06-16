@@ -39,9 +39,9 @@ QSPI Controllerは、各メモリにアクセスするため 3個搭載されて
 [cols=",",options="header",]
 |===
 |Target |Base Address
-|Configuration Flash Memory |0x4000~0000~
-|Data Store Memory |0x4010~0000~
-|FRAM |0x4020~0000~
+|Configuration Flash Memory |0x4000_0000
+|Data Store Memory |0x4010_0000
+|FRAM |0x4020_0000
 |===
 
 === レジスタ詳細
@@ -51,32 +51,19 @@ QSPI Controllerには以下のレジスタが実装されています。
 .QSPI Controller Register メモリマップ
 [cols=",,,",options="header",]
 |===
-|Offset |Symbol |Register |Initial
-|0x0000 |QSPI~ACR~ |QSPI Access Control Register |0x00000000
-
-|0x0004 |QSPI~TDR~ |QSPI TX Data Register |0x00000000
-
-|0x0008 |QSPI~RDR~ |QSPI RX Data Register |0x00000000
-
-|0x000C |QSPI~ASR~ |QSPI Access Status Register |0x00000000
-
-|0x0010 |QSPI~FIFOSR~ |QSPI FIFO Status Register |0x00000000
-
-|0x0014 |QSPI~FIFORR~ |QSPI FIFO Reset Register |0x00000000
-
-|0x0020 |QSPI~ISR~ |QSPI Interrupt Status Register |0x00000000
-
-|0x0024 |QSPI~IER~ |QSPI Interrupt Enable Register |0x00000000
-
-|0x0030 |QSPI~CCR~ |QSPI Clock Control Register |0x00000000
-
-|0x0034 |QSPI~DCMSR~ |QSPI Data Capture Mode Setting Register
-|0x00000000
-
-|0x0038 |QSPI~FTLSR~ |QSPI FIFO Threshold Level Setting Register
-|0x00000000
-
-|0xF000 |QSPI~VER~ |QSPI Controller IP Version Register |-
+|Offset |Symbol      |Register |Initial
+|0x0000 |QSPI_ACR    |QSPI Access Control Register               |0x00000000
+|0x0004 |QSPI_TDR    |QSPI TX Data Register                      |0x00000000
+|0x0008 |QSPI_RDR    |QSPI RX Data Register                      |0x00000000
+|0x000C |QSPI_ASR    |QSPI Access Status Register                |0x00000000
+|0x0010 |QSPI_FIFOSR |QSPI FIFO Status Register                  |0x00000000
+|0x0014 |QSPI_FIFORR |QSPI FIFO Reset Register                   |0x00000000
+|0x0020 |QSPI_ISR    |QSPI Interrupt Status Register             |0x00000000
+|0x0024 |QSPI_IER    |QSPI Interrupt Enable Register             |0x00000000
+|0x0030 |QSPI_CCR    |QSPI Clock Control Register                |0x00000000
+|0x0034 |QSPI_DCMSR  |QSPI Data Capture Mode Setting Register    |0x00000000
+|0x0038 |QSPI_FTLSR  |QSPI FIFO Threshold Level Setting Register |0x00000000
+|0xF000 |QSPI_VER    |QSPI Controller IP Version Register        |-
 |===
 
 ==== QSPI Access Control Register (Offset 0x0000)
@@ -462,7 +449,7 @@ A::
   QSPI Access Control Registerを設定します。 SPI I/O Modeは
   Standard(Single)-IO SPIモード、SPI SS
   Controlは"1"とするため、0x00000001を書き込みます。
-  書き込み後、SPI~CS信号がアクティブ状態~(Low level)に変化します。
+  書き込み後、SPI_CS信号がアクティブ状態(Low level)に変化します。
 B::
   QSPI TX Data Registerに 1 ByteのInstruction(Quad Page Program: 0x32)と
   3 Byteの Addressを書き込みます。 QSPI TX Data
@@ -478,11 +465,11 @@ D::
   FIFOの容量を超えるサイズのデータを送信する場合は、TX FIFOが
   OverflowしないようQSPI TX Data
   Registerへの書き込み間隔を調整する必要があります。
-  TX~FIFOのデータ格納量のステータスは~、QSPI FIFO Status
-  RegisterやTX~FIFO関連の割り込み要因により確認することができます~。
+  TX_FIFOのデータ格納量のステータスは、QSPI FIFO Status
+  RegisterやTX_FIFO関連の割り込み要因により確認することができます。
 E::
   Dで書き込んだ全てのデータの送信完了後に、QSPI Access Control
-  Registerに0x0000~0000を書き込みSPICS信号をインアクティブ状態~(High
+  Registerに0x0000_0000を書き込みSPICS信号をインアクティブ状態(High
   level)に変化させ、SPIアクセスを終了します。
 
 CからD時の遷移を除いた全てのフェーズの切り替わりには、QSPI
@@ -512,7 +499,7 @@ A::
   QSPI Access Control Registerを設定します。 SPI I/O
   ModeはStandard(Single)-IO SPIモード、SPI SS
   Controlは1とするため、0x00000001を書き込みます。
-  書き込み後、SPI~CS信号がアクティブ状態~(Low level)に変化します。
+  書き込み後、SPI_CS信号がアクティブ状態 (Low level)に変化します。
 B::
   QSPI TX Data Registerに 1 ByteのInstruction(Quad I/O
   Read:0xEB)を書き込みます。
@@ -539,11 +526,11 @@ E::
   FIFOの容量を超えるサイズのデータを受信する場合は、RX FIFOが
   OverflowしないようQSPI TX Data
   Registerの書き込みと読み出しの順序を考慮する必要があります。
-  RX~FIFOのデータ格納量のステータスは~、QSPI FIFO Status
-  RegisterやRX~FIFO関連の割り込み要因により確認することができます~。
+  RX_FIFOのデータ格納量のステータスは、QSPI FIFO Status
+  RegisterやRX_FIFO関連の割り込み要因により確認することができます。
 F::
   Eで受信した全てのデータ読み出しの完了後に、QSPI Access Control
-  Registerに0x00000000を書き込みSPI~CS信号をインアクティブ状態~(High
+  Registerに0x00000000を書き込みSPI_CS信号をインアクティブ状態 (High
   level)に変化させ、SPIアクセスを終了します。
 
 Data Write
