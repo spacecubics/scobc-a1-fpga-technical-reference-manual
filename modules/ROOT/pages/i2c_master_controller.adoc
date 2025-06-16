@@ -687,8 +687,7 @@ ControllerコアのPatch Versionを示します。 |RO
 
 === I2Cアクセス手順
 
-この章では、I2C
-Controllerを使用するための、レジスタの制御手順を説明します。
+この章では、I2C Controllerを使用するための、レジスタの制御手順を説明します。
 
 ==== 初期設定操作手順例
 
@@ -697,65 +696,47 @@ I2C Controllerの初期設定の手順について説明します。
 .初期設定フロー
 image::i2cm_init_config_seq.svg[i2cm_init_config_seq]
 
-I2C ControllerのTiming Parameterは、システムクロックが 48
-MHz、Standard-mode(ビットレート:100Kb/s)でのI2C通信に合わせて初期設定がされています。
-システムクロックが 48
-MHz、Fast-mode(ビットレート:400Kb/s)で通信を行う場合はタイミングパラメータの設定変更を省略し、手順例8から設定を進めることが出来ます。
-それ以外の場合は、タイミングパラメータの設定変更(手順例1～7)を行う必要があります。
+I2C ControllerのTiming Parameterは、システムクロックが 48 MHz、Standard-mode(ビットレート:100Kb/s)でのI2C通信に合わせて初期設定がされています。システムクロックが 48 MHz、Fast-mode(ビットレート:400Kb/s)で通信を行う場合はタイミングパラメータの設定変更を省略し、手順例8から設定を進めることが出来ます。それ以外の場合は、タイミングパラメータの設定変更(手順例1～7)を行う必要があります。
 
-手順例
-1〜8のタイミングパラメータの設定順序に制限は無いため、この手順と異なる順序で設定しても問題ありません。
-タイミングパラメータ設定の詳細や、各モードにおける設定例については「I2Cタイミングパラメータの設定」を参照してください。
+手順例 1〜8のタイミングパラメータの設定順序に制限は無いため、この手順と異なる順序で設定しても問題ありません。タイミングパラメータ設定の詳細や、各モードにおける設定例については「I2Cタイミングパラメータの設定」を参照してください。
 
-1: I2C START Hold Timing Setting Registerの設定を行います。 2: I2C STOP
-Setup Timing Setting Registerの設定を行います。 3: I2C Repeated START
-Setup Timing Setting Registerの設定を行います。 4: I2C Clock High Timing
-Setting Registerの設定を行います。 5: I2C Data Hold Timing Setting
-Registerの設定を行います。 6: I2C Data Setup Timing Setting
-Registerの設定を行います。 7: I2C Bus Free Timing Setting
-Registerの設定を行います。 8: I2C Bus Filter Setting
-Registerの設定を行います。 9: I2C Interrupt Enable
-Registerの使用する割り込みステータスのイネーブルビットを"1"に設定します。
-10: I2C Enable RegisterのI2CM_ENビットを"1"に設定し、I2C
-Controllerを有効化します。
+. I2C START Hold Timing Setting Registerの設定を行います。
+. I2C STOPSetup Timing Setting Registerの設定を行います。
+. I2C Repeated START Setup Timing Setting Registerの設定を行います。
+. I2C Clock High Timing Setting Registerの設定を行います。
+. I2C Data Hold Timing Setting Registerの設定を行います。
+. I2C Data Setup Timing Setting Registerの設定を行います。
+. I2C Bus Free Timing Setting Registerの設定を行います。
+. I2C Bus Filter Setting Registerの設定を行います。
+. I2C Interrupt Enable Registerの使用する割り込みステータスのイネーブルビットを"1"に設定します。
+. I2C Enable RegisterのI2CM_ENビットを"1"に設定し、I2C Controllerを有効化します。
 
-. I2Cタイミングパラメータの設定
-+
-I2C
-ControllerによるI2C通信タイミングは、以下のレジスタ設定により決まります。
-* I2C START Hold Timing Setting Register: START ConditionおよびRepeated
-START ConditionのHold時間
+===== I2Cタイミングパラメータの設定
+
+I2C ControllerによるI2C通信タイミングは、以下のレジスタ設定により決まります。
+
+* I2C START Hold Timing Setting Register: START ConditionおよびRepeatedSTART ConditionのHold時間
 * I2C STOP Setup Timing Setting Register: STOP ConditionのSetup時間
-* I2C Repeated START Setup Timing Setting Register: Repeated START
-ConditionのSetup時間
+* I2C Repeated START Setup Timing Setting Register: Repeated START ConditionのSetup時間
 * I2C Clock High Timing Setting Register: I2Cクロック(SCL)のHigh期間
 * I2C Data Hold Timing Setting Register: I2Cデータ(SDA)のHold時間
 * I2C Data Setup Timing Setting Register: I2Cデータ(SDA)のSetup時間
-* I2C Bus Free Timing Setting Register: STOP ConditionからSTART
-Condition間のBus Free時間
-+
-初期状態ではシステムクロック 48
-MHz、Standard-mode(100Kb/s)で通信を行う場合のタイミングに設定されています。
-接続する
-I2Cデバイスが対応する通信レートやモードに応じ変更することが出来ます。
-+
-各タイミングパラメータの設定により生成される、I2C
-Controllerのタイミングを以下に示します。
-+
+* I2C Bus Free Timing Setting Register: STOP ConditionからSTART Condition間のBus Free時間
+
+初期状態ではシステムクロック 48 MHz、Standard-mode(100Kb/s)で通信を行う場合のタイミングに設定されています。接続する I2Cデバイスが対応する通信レートやモードに応じ変更することが出来ます。
+
+各タイミングパラメータの設定により生成される、I2C Controllerのタイミングを以下に示します。
+
 .I2Cバスタイミング
 image::i2cm_timing.svg[i2cm_timing]
-+
+
 .I2Cバスタイミング(Repeated Start)
 image::i2cm_timing_repsta.svg[i2cm_timing_repsta]
-+
-I2Cクロック(SCL)のLow期間(tLOW)は、I2Cデータ(SDA)のSetup/Hold時間(I2CM_TSUDAT,I2CM_THDDAT)のTotal時間となります。
-I2C通信の1ビットは、I2Cクロック(SCL)のHigh期間(I2CM_THIGH)と
-I2Cクロック(SCL)のLow期間(tLOW)のTotal時間となります。
-+
-システムクロックが96MHz, 48MHz,
-24MHzにおいて、Standard-mode(100Kb/s)、Fast-mode(400Kb/s)、Fast-mode
-Plus(1Mb/s)で通信する場合の、タイミングパラメータ設定値の例を以下にします。
-+
+
+I2Cクロック(SCL)のLow期間(tLOW)は、I2Cデータ(SDA)のSetup/Hold時間 (I2CM_TSUDAT, I2CM_THDDAT) の Total 時間となります。I2C通信の1ビットは、I2Cクロック(SCL)のHigh期間(I2CM_THIGH)と I2Cクロック(SCL)のLow期間(tLOW)のTotal時間となります。
+
+システムクロックが96MHz, 48MHz, 24MHzにおいて、Standard-mode(100Kb/s)、Fast-mode(400Kb/s)、Fast-mode Plus(1Mb/s)で通信する場合の、タイミングパラメータ設定値の例を以下にします。
+
 .I2C Controller タイミングパラメータの設定例 (システムクロック 96 MHz)
 [cols=",,,",options="header",]
 |===
@@ -777,7 +758,7 @@ Plus(1Mb/s)
 
 |I2CM_FLTCYC[7:0] |0x5F(1000ns) |0x1C(302ns) |0x0B(125ns)
 |===
-+
+
 .I2C Controller タイミングパラメータの設定例 (システムクロック 48 MHz)
 [cols=",,,",options="header",]
 |===
@@ -799,7 +780,7 @@ Plus(1Mb/s)
 
 |I2CM_FLTCYC[7:0] |0x2F(1000ns) |0x0E(312ns) |0x05(125ns)
 |===
-+
+
 .I2C Controller タイミングパラメータの設定例 (システムクロック 24 MHz)
 [cols=",,,",options="header",]
 |===
@@ -821,186 +802,104 @@ Plus(1Mb/s)
 
 |I2CM_FLTCYC[7:0] |0x17(1000ns) |0x07(333ns) |0x02(125us)
 |===
-+
+
 制限事項：
-.. データ処理に必要な時間として、I2C Clock High Timing Setting
-Register(I2CM_THIGH)の設定値は、必ず0x0004以上となるように設定してください。
-.. マルチマスター構成となる場合、または クロックストレッチ機能を持った
-I2Cデバイスと接続して通信する場合、以下のレジスタの設定値は、I2Cクロックの同期処理に必要な時間を確保するため
-0x0003以上となるように設定する必要があります。
-* I2C STOP Setup Timing Setting Register(I2CM_TSUSTO)
-* I2C Repeated START Setup Timing Setting Register(I2CM_TSUSTA)
-* I2C Data Hold Timing Setting Register(I2CM_THDDAT)
+
+1. データ処理に必要な時間として、I2C Clock High Timing Setting Register(I2CM_THIGH)の設定値は、必ず0x0004以上となるように設定してください。
+2. マルチマスター構成となる場合、または クロックストレッチ機能を持ったI2Cデバイスと接続して通信する場合、以下のレジスタの設定値は、I2Cクロックの同期処理に必要な時間を確保するため0x0003以上となるように設定する必要があります。
+   * I2C STOP Setup Timing Setting Register(I2CM_TSUSTO)
+   * I2C Repeated START Setup Timing Setting Register(I2CM_TSUSTA)
+   * I2C Data Hold Timing Setting Register(I2CM_THDDAT)
 
 ==== I2C通信操作手順例
 
-この章では、I2C通信を行うための I2C
-Controllerのレジスタ制御手順を説明します。
+この章では、I2C通信を行うための I2C Controllerのレジスタ制御手順を説明します。
 
-I2C Controllerは、マルチマスターに対応する実装のため、I2C Controllerと
-I2Cバスを切り離す機能と、I2C Busを監視する機能を持っています。
-この仕様により、I2C Enable RegisterのI2CM_ENビットが"1"で、且つ I2C
-BusがIdle状態の時のみ I2C通信を開始することができます。
-I2CM_ENビットが"0"、または、I2C BusがIdle状態でない場合は、I2C TX FIFO
-Registerにデータが書き込まれても
-I2C通信を開始せず、I2CM_ENビットが"1"、かつ、I2C
-BusがIdle状態になるまで Waitします。
+I2C Controllerは、マルチマスターに対応する実装のため、I2C Controllerと I2Cバスを切り離す機能と、I2C Busを監視する機能を持っています。この仕様により、I2C Enable RegisterのI2CM_ENビットが"1"で、且つ I2C BusがIdle状態の時のみ I2C通信を開始することができます。 I2CM_ENビットが"0"、または、I2C BusがIdle状態でない場合は、I2C TX FIFO Registerにデータが書き込まれても I2C通信を開始せず、I2CM_ENビットが"1"、かつ、I2C BusがIdle状態になるまで Waitします。
 
-これ以降のレジスタアクセス手順は、I2CM_ENビットが "1"で I2C Busが
-Idle状態である事を前提に記載しています。
+これ以降のレジスタアクセス手順は、I2CM_ENビットが "1"で I2C Busが Idle状態である事を前提に記載しています。
 
-. データ書き込み操作手順
-+
+===== データ書き込み操作手順
+
 本章では I2Cデバイスへのデータ書き込みを行う場合の手順を説明します。
-+
+
 I2Cデバイスへデータ書き込みを行う場合の I2C Busの波形を以下に示します。
-+
+
 .I2C書き込みアクセス波形
 image::i2cm_write_acc_seq.png[i2cm_write_acc_seq]
-+
-A: TX FIFO(I2C TX FIFO RegisterのI2CM_TXDATAフィールド)の Bit7-1に
-I2Cデバイスのアドレスと Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
-I2C ControllerはI2C書き込み動作を開始し、I2C BusにStart Condition, TX
-FIFOに書き込まれたアドレス, R/Wビットの順に送信します。
-データ送信後の次のサイクルは I2Cデバイスからの ACK受信を行います。
-+
-B: 送信するデータを送信順に 1Byte単位でTX FIFOに書き込みます。
-書き込みが完了したデータから、順次 I2C Busに送信されます。
-なお、I2Cデバイスからの ACK受信は 1 Byte毎に毎回行います。
-+
-C: 最終 Byteの送信データを TX FIFOに書き込む時、同時に I2C TX FIFO
-RegisterのI2CM_STOPビットに"1"をセットします。 I2C Controllerは、最終
-Byteのデータ送信と ACK受信の完了後に、I2C BusにSTOP
-Conditionを送信し、I2C Interrupt Status Registerの
-I2CM_COMP割り込みをセットして、書き込み動作を完了します。
-+
-具体的な例として、I2Cデバイスのアドレス 0x67に、0x89, 0xAB, 0xCD,
-0xEFのデータを書き込む場合には、I2C TX FIFO
-Registerに以下の書き込みを行います。
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000089
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000AB
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CD
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000001EF
-+
-TX FIFOの容量を超えるサイズのデータを送信する場合は、TX
-FIFOがOverflowしないよう書き込み間隔を調整する必要があります。 TX
-FIFOのデータ格納量のステータスは、I2C FIFO Status Registerや TX
-FIFO関連の割り込みにより、ソフトウェアから確認することができます。
-I2C書き込み動作中に、I2CM_STOPビットがセットされない状態でTX FIFOが
-Emptyとなった場合、I2C通信を一時停止します。 この時、TX
-FIFOに送信データが書き込まれると、I2C通信を再開します。
-+
-次にRepeated Start
-Conditionを使用した書き込みアクセスの手順を説明します。
-この手順はデバイスアドレスとは別にレジスタアドレスを持つ
-I2Cデバイスとの通信時などで使用します。
-+
+
+* A: TX FIFO(I2C TX FIFO RegisterのI2CM_TXDATAフィールド)の Bit7-1に I2Cデバイスのアドレスと Bit0(R/Wビット)に"0"(送信モード)を書き込みます。 I2C ControllerはI2C書き込み動作を開始し、I2C BusにStart Condition, TX FIFOに書き込まれたアドレス, R/Wビットの順に送信します。 データ送信後の次のサイクルは I2Cデバイスからの ACK受信を行います。
+* B: 送信するデータを送信順に 1Byte単位でTX FIFOに書き込みます。 書き込みが完了したデータから、順次 I2C Busに送信されます。 なお、I2Cデバイスからの ACK受信は 1 Byte毎に毎回行います。
+* C: 最終 Byteの送信データを TX FIFOに書き込む時、同時に I2C TX FIFO RegisterのI2CM_STOPビットに"1"をセットします。 I2C Controllerは、最終 Byteのデータ送信と ACK受信の完了後に、I2C BusにSTOP Conditionを送信し、I2C Interrupt Status Registerの I2CM_COMP割り込みをセットして、書き込み動作を完了します。
+
+具体的な例として、I2Cデバイスのアドレス 0x67に、0x89, 0xAB, 0xCD, 0xEFのデータを書き込む場合には、I2C TX FIFO Registerに以下の書き込みを行います。
+
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000089
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000AB
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CD
+. Register Write, Address Offset: 0x0004, Write Data: 0x000001EF
+
+TX FIFOの容量を超えるサイズのデータを送信する場合は、TX FIFOがOverflowしないよう書き込み間隔を調整する必要があります。 TX FIFOのデータ格納量のステータスは、I2C FIFO Status Registerや TX FIFO関連の割り込みにより、ソフトウェアから確認することができます。 I2C書き込み動作中に、I2CM_STOPビットがセットされない状態でTX FIFOが Emptyとなった場合、I2C通信を一時停止します。 この時、TX FIFOに送信データが書き込まれると、I2C通信を再開します。
+
+次にRepeated Start Conditionを使用した書き込みアクセスの手順を説明します。 この手順はデバイスアドレスとは別にレジスタアドレスを持つ I2Cデバイスとの通信時などで使用します。
+
 .Repeated Startを使用したI2C書き込みアクセス波形
 image::i2cm_write_acc_seq_repsta.png[i2cm_write_acc_seq_repsta]
-+
-A: 前の手順と同様に TX FIFOのBit7-1に
-I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
-+
-B: TX FIFOに
-送信データの書き込み(ここではI2Cデバイスのレジスタアドレスとします)と同時に、I2C
-TX FIFO RegisterのI2CM_RESTARTビットに"1"をセットします。 I2C
-Controllerはレジスタアドレスの送信後のACK受信が完了すると、Repeated
-Start Conditionを送信します。
-+
-C: Aの手順と同様、再度TX FIFOのBit7-1に
-I2Cデバイスのアドレスと、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
-+
-D: 送信するデータを 1 Byte単位で送信順にTX FIFOに書き込みます。
-+
-E: 最終 Byteの送信データを TX FIFOに書き込む時、同時にI2C TX FIFO
-Registerの I2CM_STOPビットに"1"をセットします。
-+
-具体的な例として、アドレス 0x67のI2Cデバイスのレジスタアドレス
-0xFEに、0xDC、0xBA、0x98、0x76、0x54のデータを書き込む場合には、I2C TX
+
+* A: 前の手順と同様に TX FIFOのBit7-1に I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
+* B: TX FIFOに 送信データの書き込み(ここではI2Cデバイスのレジスタアドレスとします)と同時に、I2C TX FIFO RegisterのI2CM_RESTARTビットに"1"をセットします。 I2C Controllerはレジスタアドレスの送信後のACK受信が完了すると、Repeated Start Conditionを送信します。
+* C: Aの手順と同様、再度TX FIFOのBit7-1に I2Cデバイスのアドレスと、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
+* D: 送信するデータを 1 Byte単位で送信順にTX FIFOに書き込みます。
+* E: 最終 Byteの送信データを TX FIFOに書き込む時、同時にI2C TX FIFO Registerの I2CM_STOPビットに"1"をセットします。
+
+具体的な例として、アドレス 0x67のI2Cデバイスのレジスタアドレス 0xFEに、0xDC、0xBA、0x98、0x76、0x54のデータを書き込む場合には、I2C TX
 FIFO Registerに以下の書き込みを行います。
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000DC
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000BA
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000098
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000076
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000154
-. データ読み出し操作手順
-+
+
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
+. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000DC
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000BA
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000098
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000076
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000154
+
+===== データ読み出し操作手順
+
 本章では I2Cデバイスからのデータ読み出しを行う場合の手順を説明します。
-+
-I2Cデバイスからデータ読み出しを行う場合の I2C
-Busの波形を以下に示します。
-+
+
+I2Cデバイスからデータ読み出しを行う場合の I2C Busの波形を以下に示します。
+
 .I2C読み出しアクセス波形
 image::i2cm_read_acc_seq.png[i2cm_read_acc_seq]
+
+* A: TX FIFO(I2C TX FIFO RegisterのI2CM_TXDATAフィールド)のBit7-1に I2Cデバイスのアドレス7と、Bit0(R/Wビット)に"1"を書き込みます。 I2C ControllerはI2C読み出し動作を開始し、I2C BusにStart Condition送信後、TX FIFOに書き込まれたアドレスとR/Wビットを送信します。 データ送信後の次のサイクルは I2Cデバイスからの ACK受信を行います。
+* B: 受信するデータのByte数から 1を引いた値をTX FIFOに書き込みます。 この時、同時に I2C TX FIFO RegisterのI2CM_STOPビットに"1"をセットします。 TX FIFOに設定されたByte数分のデータ受信を行い、受信データを RX FIFOへ格納します。 なお、I2Cデバイスから 1 Byteのデータを受信するたびに I2Cデバイスへの ACK送信を行います。
+* C: I2C Controllerは、最終 Byteのデータ受信後 NACKを送信し、I2C BusにStop Conditionを送信します。 また同時に、I2C Interrupt Status RegisterのI2CM_COMP割り込みをセットして、読み出し動作を完了します。
 +
-A: TX FIFO(I2C TX FIFO RegisterのI2CM_TXDATAフィールド)のBit7-1に
-I2Cデバイスのアドレス7と、Bit0(R/Wビット)に"1"を書き込みます。 I2C
-ControllerはI2C読み出し動作を開始し、I2C BusにStart Condition送信後、TX
-FIFOに書き込まれたアドレスとR/Wビットを送信します。
-データ送信後の次のサイクルは I2Cデバイスからの ACK受信を行います。
-+
-B: 受信するデータのByte数から 1を引いた値をTX FIFOに書き込みます。
-この時、同時に I2C TX FIFO
-RegisterのI2CM_STOPビットに"1"をセットします。 TX
-FIFOに設定されたByte数分のデータ受信を行い、受信データを RX
-FIFOへ格納します。 なお、I2Cデバイスから 1 Byteのデータを受信するたびに
-I2Cデバイスへの ACK送信を行います。
-+
-C: I2C Controllerは、最終 Byteのデータ受信後 NACKを送信し、I2C BusにStop
-Conditionを送信します。 また同時に、I2C Interrupt Status
-RegisterのI2CM_COMP割り込みをセットして、読み出し動作を完了します。
-+
-I2C Controllerは、最終 Byteのデータ送信と ACK受信の完了後に、I2C
-BusにSTOP Conditionを送信し、I2C Interrupt Status Registerの
-I2CM_COMP割り込みをセットして、書き込み動作を完了します。
-+
-具体的な例として、I2Cデバイスのアドレス 0x67から 4
-Byteのデータ読み出す場合は、I2C TX FIFO
-Registerに以下の書き込みを行います。
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000103
-+
-受信データはI2C RX FIFO Registerを読み出すことにより取得できます。
-I2C読み出し動作中に、設定したByte数のデータ受信が完了しない状態で RX
-FIFOが Fullとなった場合、I2C通信を一時停止します。 この時、RX
-FIFOから受信データが読み出されると、I2C通信を再開します。 RX
-FIFOの容量を超えるサイズのデータを受信する場合は、RX
-FIFOのサイズを考慮し RX FIFOから定期的にデータ読み出す必要があります。
-RX_FIFOのデータ格納量のステータスは、I2C FIFO Status Registerや
-RX_FIFO関連の割り込みにより、ソフトウェアから確認することができます。
-+
-次にRepeated Start
-Conditionを使用した読み出しアクセスの手順を説明します。
-この手順はデバイスアドレスとは別にレジスタアドレスを持つ場合や、10ビットアドレスの
-I2Cデバイスとの通信時に使用します。
-+
+I2C Controllerは、最終 Byteのデータ送信と ACK受信の完了後に、I2C BusにSTOP Conditionを送信し、I2C Interrupt Status Registerの I2CM_COMP割り込みをセットして、書き込み動作を完了します。
+
+具体的な例として、I2Cデバイスのアドレス 0x67から 4 Byteのデータ読み出す場合は、I2C TX FIFO Registerに以下の書き込みを行います。
+
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000103
+
+受信データはI2C RX FIFO Registerを読み出すことにより取得できます。 I2C読み出し動作中に、設定したByte数のデータ受信が完了しない状態で RX FIFOが Fullとなった場合、I2C通信を一時停止します。 この時、RX FIFOから受信データが読み出されると、I2C通信を再開します。 RX FIFOの容量を超えるサイズのデータを受信する場合は、RX FIFOのサイズを考慮し RX FIFOから定期的にデータ読み出す必要があります。 RX_FIFOのデータ格納量のステータスは、I2C FIFO Status Registerや RX_FIFO関連の割り込みにより、ソフトウェアから確認することができます。
+
+次にRepeated Start Conditionを使用した読み出しアクセスの手順を説明します。 この手順はデバイスアドレスとは別にレジスタアドレスを持つ場合や、10ビットアドレスの I2Cデバイスとの通信時に使用します。
+
 .Repeated Startを使用したI2C読み出しアクセス波形
 image::i2cm_read_acc_seq_repsta.png[i2cm_read_acc_seq_repsta]
-+
-A: 前の手順と同様に、TX FIFOのBit7-1に
-I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
-+
-B: TX
-FIFOに送信データの書き込み(ここではI2Cデバイスのレジスタアドレスとします)と同時に、I2C
-TX FIFO RegisterのI2CM_RESTARTビットに"1"をセットします。 I2C
-Controllerはレジスタアドレスの送信後のACK受信が完了すると、Repeated
-Start Conditionを送信します。
-+
-C: TX FIFOのBit7-1に
-I2Cデバイスのアドレスと、Bit0(R/Wビット)に"1"を書き込みます。
-+
-D: 受信するデータの Byte数から 1を引いた値のTX
-FIFOに書き込みます。この時 同時にI2C TX FIFO
-RegisterのI2CM_STOPビットに"1"をセットします。
-+
-具体的な例として、アドレス 0x67のI2Cデバイスのレジスタアドレス 0xFEから
-5 Byteのデータ読み出しを行いたい場合は、I2C TX FIFO
-Registerに以下の書き込みを行います。
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
-.. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
-.. Register Write, Address Offset: 0x0004, Write Data: 0x00000104
+
+* A: 前の手順と同様に、TX FIFOのBit7-1に I2Cデバイスのアドレス、Bit0(R/Wビット)に"0"(送信モード)を書き込みます。
+* B: TX FIFOに送信データの書き込み(ここではI2Cデバイスのレジスタアドレスとします)と同時に、I2C TX FIFO RegisterのI2CM_RESTARTビットに"1"をセットします。 I2C Controllerはレジスタアドレスの送信後のACK受信が完了すると、Repeated Start Conditionを送信します。
+* C: TX FIFOのBit7-1に I2Cデバイスのアドレスと、Bit0(R/Wビット)に"1"を書き込みます。
+* D: 受信するデータの Byte数から 1を引いた値のTX FIFOに書き込みます。この時 同時にI2C TX FIFO RegisterのI2CM_STOPビットに"1"をセットします。
+
+具体的な例として、アドレス 0x67のI2Cデバイスのレジスタアドレス 0xFEから 5 Byteのデータ読み出しを行いたい場合は、I2C TX FIFO Registerに以下の書き込みを行います。
+
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CE
+. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
+. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
+. Register Write, Address Offset: 0x0004, Write Data: 0x00000104
