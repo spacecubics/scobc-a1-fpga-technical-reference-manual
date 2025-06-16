@@ -1,19 +1,28 @@
 == I2C Controller
 
-I2C Controllerは、OBC Moduleの外部に実装される
-I2Cデバイスに通信するために使用する External I2C
-Interfaceを制御するためのモジュールです。
+I2C Controllerは、I2C通信を行うためのモジュールです。
 
-OBC Moduleは、OBC Module上のセンサーにアクセスするための I2C Interface
-(Internal I2C)と、OBC Moduleの外部の I2Cデバイスにアクセスするための I2C
-Interface (External I2C)を持っています。 Internal I2Cの制御は、System
-Monitorに搭載されている Board Health Monitor機能により行います。 Board
-Health Monitor機能に関する詳細は、「System
-Monitor」の章を参照してください。
+I2C Controllerは、システムに 4個実装されています。
+このうち 2個は、標準イメージにおいて、ユーザーが設計する Mision Bus Systemに実装されています。
+
+残りの 2個は、SC-OBC-A1 FPGAの標準機能として実装されているものです。
+
+SC-OBC-A1 FPGAは、SC-OBC Module A1の基板上に実装されるセンサーにアクセスするための I2C Interface (Internal I2C)と、基板外の I2Cデバイスにアクセスするための I2C Interface (External I2C)を持っています。
+このうち External I2Cは I2C Controllerの制御によって通信を実現します。
+Internal I2Cの制御は、System Monitorに搭載されている Board Health Monitor機能により、簡単なレジスタアクセスのみでセンサーデータを取得することができます。
+Board Health Monitor機能に関する詳細は、「System Monitor」の章を参照してください。
 
 === レジスタ詳細
+I2C Controllerは以下のベースアドレスに配置されています。
 
-I2C Controllerは、Base Address 0x4F03_0000に配置されています。
+.I2C Controller Base Address
+[cols=",,",options="header",]
+|===
+|IP Core          | Base Address | Comment
+|External I2C     | 0x4F03_0000  |
+|I2C Controller 1 | 0x5006_0000  | Implemented in Mission Bus System
+|I2C Controller 2 | 0x5007_0000  | Implemented in Mission Bus System
+|===
 
 .I2C Controller Register アドレスマップ
 [cols=",,,",options="header",]
