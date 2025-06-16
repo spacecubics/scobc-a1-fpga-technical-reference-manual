@@ -54,12 +54,3 @@ Updateイメージに CRCエラーなどの問題があった場合、FPGAは
 Fallbackプロセスにより Goldenイメージの読み込みを行い、FPGAは
 Goldenイメージで動作します。
 
-=== System Boot Flow
-
-SC-OBC Module A1は電源が投入されると以下の順序で Bootします。
-
-. TRCHによる FPGA起動設定
-. TRCHによる FPGA Power On
-. FPGA Configuration
-. Bootloader起動、Flight Softwareロード
-
