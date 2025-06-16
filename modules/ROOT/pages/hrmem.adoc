@@ -27,37 +27,20 @@ HRMEMのレジスタは、Base Address 0x40500000に配置されています。
 .HRMEM Register アドレスマップ
 [cols=",,,",options="header",]
 |===
-|Offset |Symbol |Register |Initial
-|0x0000 |HRMEM~ECCCOLENR~ |ECC Error Collect Enable Register |0x00000001
-
-|0x0008 |HRMEM~MEMSCRCTRLR~ |Memory Scrubing Control Register
-|0x06FF0001
-
-|0x0010 |HRMEM~INTSTR~ |HRMEM Interrupt Status Register |0x00000000
-
-|0x0014 |HRMEM~INTENR~ |HRMEM Interrupt Enable Register |0x00000000
-
-|0x0020 |HRMEM~ECC1ERRCNTR~ |1Bit ECC Error Count Register |0x00000000
-
-|0x0028 |HRMEM~ECDISCNTR~ |ECC Correct Data Discard Count Register
-|0x00000000
-
-|0x002C |HRMEM~ERRCNTCLRR~ |Error Count Clear Register |0x00000000
-
-|0x0030 |HRMEM~ECCERRADMR~ |ECC Error Address Monitor Register
-|0x00000000
-
-|0x0070 |HRMEM~PFEMDCTLR~ |Prefetch Mode Control Register |0x00000001
-
-|0x0074 |HRMEM~SPEPFENR~ |Special Prefetch Enable Register |0x00000000
-
-|0x0080 |HRMEM~SPEPFADRSETR1~ |Special Prefetch Address Setting Register
-1 |0x00000000
-
-|0x0084 |HRMEM~SPEPFADRSETR2~ |Special Prefetch Address Setting Register
-2 |0x00000000
-
-|0xF000 |HRMEM~VER~ |HRMEM IP Version Register |-
+|Offset |Symbol              |Register                                    |Initial
+|0x0000 |HRMEM_ECCCOLENR     |ECC Error Collect Enable Register           |0x00000001
+|0x0008 |HRMEM_MEMSCRCTRLR   |Memory Scrubing Control Register            |0x06FF0001
+|0x0010 |HRMEM_INTSTR        |HRMEM Interrupt Status Register             |0x00000000
+|0x0014 |HRMEM_INTENR        |HRMEM Interrupt Enable Register             |0x00000000
+|0x0020 |HRMEM_ECC1ERRCNTR   |1Bit ECC Error Count Register               |0x00000000
+|0x0028 |HRMEM_ECDISCNTR     |ECC Correct Data Discard Count Register     |0x00000000
+|0x002C |HRMEM_ERRCNTCLRR    |Error Count Clear Register                  |0x00000000
+|0x0030 |HRMEM_ECCERRADMR    |ECC Error Address Monitor Register          |0x00000000
+|0x0070 |HRMEM_PFEMDCTLR     |Prefetch Mode Control Register              |0x00000001
+|0x0074 |HRMEM_SPEPFENR      |Special Prefetch Enable Register            |0x00000000
+|0x0080 |HRMEM_SPEPFADRSETR1 |Special Prefetch Address Setting Register 1 |0x00000000
+|0x0084 |HRMEM_SPEPFADRSETR2 |Special Prefetch Address Setting Register 2 |0x00000000
+|0xF000 |HRMEM_VER           |HRMEM IP Version Register                   |-
 |===
 
 ==== ECC Error Collect Enable Register (Offset: 0x0000)
