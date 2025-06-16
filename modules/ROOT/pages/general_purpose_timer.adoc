@@ -43,105 +43,105 @@ Sensorからのデータ読み出しアクセス要求
 
 === レジスタ詳細
 
-General Purpose Timerは、Base Address 0x4F05~0000に配置されています~。
+General Purpose Timerは、Base Address 0x4F05_0000に配置されています。
 
 .General Purpose Timer メモリマップ
 [cols=",,,",options="header",]
 |===
 |Offset |Symbol |Register |Initial
-|0x0000 |GPTMR~GTR~ |Global Timer Register |0x00000000
+|0x0000 |GPTMR_GTR |Global Timer Register |0x00000000
 
-|0x0004 |GPTMR~TECR~ |Timer Enable Control Register |0x00000000
+|0x0004 |GPTMR_TECR |Timer Enable Control Register |0x00000000
 
-|0x0008 |GPTMR~SITRR~ |Software Interrupt Timer Remaining Register
+|0x0008 |GPTMR_SITRR |Software Interrupt Timer Remaining Register
 |0x00000000
 
-|0x000C |GPTMR~HITRR~ |Hardware Interrupt Timer Remaining Register
+|0x000C |GPTMR_HITRR |Hardware Interrupt Timer Remaining Register
 |0x00000000
 
-|0x0010 |GPTMR~GTSR~ |Global Timer Interrupt Status Register |0x00000000
+|0x0010 |GPTMR_GTSR |Global Timer Interrupt Status Register |0x00000000
 
-|0x0014 |GPTMR~GTER~ |Global Timer Interrupt Enable Register |0x00000000
+|0x0014 |GPTMR_GTER |Global Timer Interrupt Enable Register |0x00000000
 
-|0x0020 |GPTMR~GTOCR1~ |Global Timer Output Compare Register 1
+|0x0020 |GPTMR_GTOCR1 |Global Timer Output Compare Register 1
 |0x00000000
 
-|0x0024 |GPTMR~GTOCR2~ |Global Timer Output Compare Register 2
+|0x0024 |GPTMR_GTOCR2 |Global Timer Output Compare Register 2
 |0x00000000
 
-|0x0028 |GPTMR~GTOCR3~ |Global Timer Output Compare Register 3
+|0x0028 |GPTMR_GTOCR3 |Global Timer Output Compare Register 3
 |0x00000000
 
-|0x002C |GPTMR~GTOCR4~ |Global Timer Output Compare Register 4
+|0x002C |GPTMR_GTOCR4 |Global Timer Output Compare Register 4
 |0x00000000
 
-|0x0100 |GPTMR~SITCR~ |Software Interrupt Timer Control Register
+|0x0100 |GPTMR_SITCR |Software Interrupt Timer Control Register
 |0x00000000
 
-|0x0104 |GPTMR~SITPR~ |Software Interrupt Timer Prescaler Register
+|0x0104 |GPTMR_SITPR |Software Interrupt Timer Prescaler Register
 |0x00000000
 
-|0x0108 |GPTMR~SITSR~ |Software Interrupt Timer Status Register
+|0x0108 |GPTMR_SITSR |Software Interrupt Timer Status Register
 |0x00000000
 
-|0x010C |GPTMR~SITER~ |Software Interrupt Timer Enable Register
+|0x010C |GPTMR_SITER |Software Interrupt Timer Enable Register
 |0x00000000
 
-|0x0110 |GPTMR~SITOCR1~ |Software Interrupt Timer Output Compare
+|0x0110 |GPTMR_SITOCR1 |Software Interrupt Timer Output Compare
 Register 1 |0x00000000
 
-|0x0114 |GPTMR~SITOCR2~ |Software Interrupt Timer Output Compare
+|0x0114 |GPTMR_SITOCR2 |Software Interrupt Timer Output Compare
 Register 2 |0x00000000
 
-|0x0118 |GPTMR~SITOCR3~ |Software Interrupt Timer Output Compare
+|0x0118 |GPTMR_SITOCR3 |Software Interrupt Timer Output Compare
 Register 3 |0x00000000
 
-|0x011C |GPTMR~SITOCR4~ |Software Interrupt Timer Output Compare
+|0x011C |GPTMR_SITOCR4 |Software Interrupt Timer Output Compare
 Register 4 |0x00000000
 
-|0x0120 |GPTMR~SITOCR5~ |Software Interrupt Timer Output Compare
+|0x0120 |GPTMR_SITOCR5 |Software Interrupt Timer Output Compare
 Register 5 |0x00000000
 
-|0x0124 |GPTMR~SITOCR6~ |Software Interrupt Timer Output Compare
+|0x0124 |GPTMR_SITOCR6 |Software Interrupt Timer Output Compare
 Register 6 |0x00000000
 
-|0x0128 |GPTMR~SITOCR7~ |Software Interrupt Timer Output Compare
+|0x0128 |GPTMR_SITOCR7 |Software Interrupt Timer Output Compare
 Register 7 |0x00000000
 
-|0x012C |GPTMR~SITOCR8~ |Software Interrupt Timer Output Compare
+|0x012C |GPTMR_SITOCR8 |Software Interrupt Timer Output Compare
 Register 8 |0x00000000
 
-|0x0200 |GPTMR~HITCR~ |Hardware Interrupt Timer Control Register
+|0x0200 |GPTMR_HITCR |Hardware Interrupt Timer Control Register
 |0x00000000
 
-|0x0204 |GPTMR~HITPR~ |Hardware Interrupt Timer Prescaler Register
+|0x0204 |GPTMR_HITPR |Hardware Interrupt Timer Prescaler Register
 |0x00000000
 
-|0x0210 |GPTMR~HITOCR1~ |Hardware Interrupt Timer Output Compare
+|0x0210 |GPTMR_HITOCR1 |Hardware Interrupt Timer Output Compare
 Register 1 |0x00000000
 
-|0x0214 |GPTMR~HITOCR2~ |Hardware Interrupt Timer Output Compare
+|0x0214 |GPTMR_HITOCR2 |Hardware Interrupt Timer Output Compare
 Register 2 |0x00000000
 
-|0x0218 |GPTMR~HITOCR3~ |Hardware Interrupt Timer Output Compare
+|0x0218 |GPTMR_HITOCR3 |Hardware Interrupt Timer Output Compare
 Register 3 |0x00000000
 
-|0x021C |GPTMR~HITOCR4~ |Hardware Interrupt Timer Output Compare
+|0x021C |GPTMR_HITOCR4 |Hardware Interrupt Timer Output Compare
 Register 4 |0x00000000
 
-|0x0220 |GPTMR~HITOCR5~ |Hardware Interrupt Timer Output Compare
+|0x0220 |GPTMR_HITOCR5 |Hardware Interrupt Timer Output Compare
 Register 5 |0x00000000
 
-|0x0224 |GPTMR~HITOCR6~ |Hardware Interrupt Timer Output Compare
+|0x0224 |GPTMR_HITOCR6 |Hardware Interrupt Timer Output Compare
 Register 6 |0x00000000
 
-|0x0228 |GPTMR~HITOCR7~ |Hardware Interrupt Timer Output Compare
+|0x0228 |GPTMR_HITOCR7 |Hardware Interrupt Timer Output Compare
 Register 7 |0x00000000
 
-|0x022C |GPTMR~HITOCR8~ |Hardware Interrupt Timer Output Compare
+|0x022C |GPTMR_HITOCR8 |Hardware Interrupt Timer Output Compare
 Register 8 |0x00000000
 
-|0xF000 |GPTMR~VER~ |General Purpose Timer IP Version Register |-
+|0xF000 |GPTMR_VER |General Purpose Timer IP Version Register |-
 |===
 
 ==== Global Timer Register (Offset: 0x0000)
@@ -162,7 +162,7 @@ Timerの最小時間は、0.0625秒であり、最大 268435455.9375秒(約
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:4 |GPTMR~GTINT~ |Global Timer Integer Field |Global
+|31:4 |GPTMR_GTINT |Global Timer Integer Field |Global
 Timerの整数部分を示すフィールドです。Bit 4が
 2^0秒を示します^。そのため、このフィールドは 1秒に
 1回インクリメントされます。Bit 4: 2^0^(1)秒 Bit 5: 2^1^ (2)秒 Bit 6:
@@ -170,12 +170,12 @@ Timerの整数部分を示すフィールドです。Bit 4が
 このフィールドは、システムの起動後
 ソフトウェアによって書き換える事ができます。 |R/W
 
-|3:0 |GPTMR~GTFLOAT~ |Global Timer Float Field |Global
+|3:0 |GPTMR_GTFLOAT |Global Timer Float Field |Global
 Timerの小数部分を示すフィールドです。Bit 0が
 2^-4秒を示します^。そのため、このフィールドは 0.0625秒に
 1回インクリメントされます。 Bit 3: 2^-1^ (0.5)秒　Bit 2: 2^-2^ (0.25)秒
 Bit 1: 2^-3^ (0.125)秒 Bit 0: 2^-4^ (0.0625)秒
-このフィールドは、GPTMR~GTINTフィールドに書き込みがあった時~
+このフィールドは、GPTMR_GTINTフィールドに書き込みがあった時
 "0"にクリアされます。 |RO
 |===
 
@@ -190,11 +190,11 @@ Interrupt Timerの動作を制御するレジスタです。
 |bit |Symbol |Field |Description |R/W
 |31:2 |- |Reserved |Reserved |-
 
-|1 |GPTMR~HITEN~ |Hardware Interrupt Timer Enable |Hardware Interrupt
+|1 |GPTMR_HITEN |Hardware Interrupt Timer Enable |Hardware Interrupt
 Timerの動作設定を行います。 0: Hardware Interrupt Timer 無効 (停止) 1:
 Hardware Interrupt Timer 有効 (動作) |R/W
 
-|0 |GPTMR~SITEN~ |Software Interrupt Timer Enable |Software Interrupt
+|0 |GPTMR_SITEN |Software Interrupt Timer Enable |Software Interrupt
 Timerの動作設定を行います。 0: Software Interrupt Timer 無効 (停止) 1:
 Software Interrupt Timer 有効 (動作) |R/W
 |===
@@ -211,7 +211,7 @@ Registerの設定値により決まります。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCNT~ |Software Interrupt Timer Count |Software Interrupt
+|31:0 |GPTMR_SITCNT |Software Interrupt Timer Count |Software Interrupt
 Timerの現在のカウント値を示します。 |RO
 |===
 
@@ -227,7 +227,7 @@ Registerの設定値により決まります。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCNT~ |Hardware Interrupt Timer Count |Hardware Interrupt
+|31:0 |GPTMR_HITCNT |Hardware Interrupt Timer Count |Hardware Interrupt
 Timerの現在のカウント値を示します。 |RO
 |===
 
@@ -246,31 +246,31 @@ Timerに起因する割り込みが発生した時、割り込み要因に対応
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
 
-|16 |GPTMR~GTROVSTS~ |Global Timer Rollover Flag |Global Timerの Roll
+|16 |GPTMR_GTROVSTS |Global Timer Rollover Flag |Global Timerの Roll
 Overが発生した事を示すビットです。Global Timerがカウンター動作によって
 0xFFFFFFFFから 0x0に戻ったとき "1"にセットされます。 |R/WC
 
 |15:4 |- |Reserved |Reserved |-
 
-|3 |GPTMR~GTOCF4STS~ |Global Timer Output Compare Channel 4 Flag |Global
+|3 |GPTMR_GTOCF4STS |Global Timer Output Compare Channel 4 Flag |Global
 Timer出力比較チャネル
 4の比較イベントが発生した事を示すビットです。Global
 Timerのカウンター値と Global Timer Output Compare Register
 4の値が一致したとき "1"にセットされます。 |R/WC
 
-|2 |GPTMR~GTOCF3STS~ |Global Timer Output Compare Channel 3 Flag |Global
+|2 |GPTMR_GTOCF3STS |Global Timer Output Compare Channel 3 Flag |Global
 Timer出力比較チャネル
 3の比較イベントが発生した事を示すビットです。Global
 Timerのカウンター値と Global Timer Output Compare Register
 3の値が一致したとき "1"にセットされます。 |R/WC
 
-|1 |GPTMR~GTOCF2STS~ |Global Timer Output Compare Channel 2 Flag |Global
+|1 |GPTMR_GTOCF2STS |Global Timer Output Compare Channel 2 Flag |Global
 Timer出力比較チャネル
 2の比較イベントが発生した事を示すビットです。Global
 Timerのカウンター値と Global Timer Output Compare Register
 2の値が一致したとき "1"にセットされます。 |R/WC
 
-|0 |GPTMR~GTOCF1STS~ |Global Timer Output Compare Channel 1 Flag |Global
+|0 |GPTMR_GTOCF1STS |Global Timer Output Compare Channel 1 Flag |Global
 Timer出力比較チャネル
 1の比較イベントが発生した事を示すビットです。Global
 Timerのカウンター値と Global Timer Output Compare Register
@@ -292,26 +292,26 @@ Interrupt Status Registerの対応する割り込みステータスビットが
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
 
-|16 |GPTMR~GTROVENB~ |Global Timer Rollover Flag Enable
-|GPTMR~GTROVSTSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|16 |GPTMR_GTROVENB |Global Timer Rollover Flag Enable
+|GPTMR_GTROVSTSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
 |15:4 |- |Reserved |Reserved |-
 
-|3 |GPTMR~GTOCF4ENB~ |Global Timer Output Compare Channel 4 Flag Enable
-|GPTMR~GTOCF4STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|3 |GPTMR_GTOCF4ENB |Global Timer Output Compare Channel 4 Flag Enable
+|GPTMR_GTOCF4STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|2 |GPTMR~GTOCF3ENB~ |Global Timer Output Compare Channel 3 Flag Enable
-|GPTMR~GTOCF3STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|2 |GPTMR_GTOCF3ENB |Global Timer Output Compare Channel 3 Flag Enable
+|GPTMR_GTOCF3STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|1 |GPTMR~GTOCF2ENB~ |Global Timer Output Compare Channel 2 Flag Enable
-|GPTMR~GTOCF2STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|1 |GPTMR_GTOCF2ENB |Global Timer Output Compare Channel 2 Flag Enable
+|GPTMR_GTOCF2STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|0 |GPTMR~GTOCF1ENB~ |Global Timer Output Compare Channel 1 Flag Enable
-|GPTMR~GTOCF1STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|0 |GPTMR_GTOCF1ENB |Global Timer Output Compare Channel 1 Flag Enable
+|GPTMR_GTOCF1STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 |===
 
@@ -330,7 +330,7 @@ Timerのカウント値と、本レジスタの設定値が一致したときに
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~GTCOMP1~ |Global Timer Output Compare Channel 1 Value
+|31:0 |GPTMR_GTCOMP1 |Global Timer Output Compare Channel 1 Value
 |出力比較チャネル 1の比較イベントを生成する Global
 Timerのカウント値を設定します。 |R/W
 |===
@@ -340,7 +340,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~GTCOMP2~ |Global Timer Output Compare Channel 2 Value
+|31:0 |GPTMR_GTCOMP2 |Global Timer Output Compare Channel 2 Value
 |出力比較チャネル 2の比較イベントを生成する Global
 Timerのカウント値を設定します。 |R/W
 |===
@@ -350,7 +350,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~GTCOMP3~ |Global Timer Output Compare Channel 3 Value
+|31:0 |GPTMR_GTCOMP3 |Global Timer Output Compare Channel 3 Value
 |出力比較チャネル 3の比較イベントを生成する Global
 Timerのカウント値を設定します。 |R/W
 |===
@@ -360,7 +360,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~GTCOMP4~ |Global Timer Output Compare Channel 4 Value
+|31:0 |GPTMR_GTCOMP4 |Global Timer Output Compare Channel 4 Value
 |出力比較チャネル 4の比較イベントを生成する Global
 Timerのカウント値を設定します。 |R/W
 |===
@@ -371,7 +371,7 @@ Software Interrupt Timer Control Registerは、Software Interrupt
 Timerの制御方法を指定するレジスタです。
 
 このレジスタは、Timer Enable Control Registerの
-GPTMR~SITENビットをセットする前に設定する必要があります~。
+GPTMR_SITENビットをセットする前に設定する必要があります。
 
 .Software Interrupt Timer Control Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -379,21 +379,21 @@ GPTMR~SITENビットをセットする前に設定する必要があります~�
 |bit |Symbol |Field |Description |R/W
 |31:5 |- |Reserved |Reserved |-
 
-|4 |GPTMR~SITSWR~ |Software Interrupt Timer Software Reset |Software
+|4 |GPTMR_SITSWR |Software Interrupt Timer Software Reset |Software
 Interrupt
 Timerのソフトウェアリセットを行うためのビットです。このビットに"1"を書き込むと、Software
 Interrupt Timerに関連する以下レジスタのリセットを行います。 - Software
-Interrupt Timer Remaining Register(GPTMR~SITRR~) - Software Interrupt
-Timer Control Register(GPTMR~SITCR~) - Software Interrupt Timer
-Prescaler Register(GPTMR~SITPR~) - Software Interrupt Timer Status
-Register(GPTMR~SITSR~) - Software Interrupt Timer Enable
-Register(GPTMR~SITER~) - Software Interrupt Timer Output Compare
-Register 1-8(GPTMR~SITOCR1~-8)
+Interrupt Timer Remaining Register(GPTMR_SITRR) - Software Interrupt
+Timer Control Register(GPTMR_SITCR) - Software Interrupt Timer
+Prescaler Register(GPTMR_SITPR) - Software Interrupt Timer Status
+Register(GPTMR_SITSR) - Software Interrupt Timer Enable
+Register(GPTMR_SITER) - Software Interrupt Timer Output Compare
+Register 1-8(GPTMR_SITOCR1-8)
 リセットが完了すると、このビットは"0"に戻ります。 |R/W
 
 |3:2 |- |Reserved |Reserved |-
 
-|1 |GPTMR~SITRUNMD~ |Software Interrupt Timer Run Mode Select
+|1 |GPTMR_SITRUNMD |Software Interrupt Timer Run Mode Select
 |出力比較チャネル 1で比較イベントが発生した時の Software Interrupt
 Timerの動作モードを設定します。0: Restartモード 1: Free Runモード
 Restartモードは、出力比較チャネル 1で比較イベントが発生した時、Software
@@ -405,8 +405,8 @@ Timerのカウント値をクリアせずカウントを続けるモードです
 Interrupt Timerが 0xFFFFFFFFになると、Roll Overしカウンターは
 0に戻ります。 |R/W
 
-|0 |GPTMR~SITENBMD~ |Software Interrupt Timer Enable Mode Select |Timer
-Enable Control Registerの GPTMR~SITENビットがセットされた時の~ Software
+|0 |GPTMR_SITENBMD |Software Interrupt Timer Enable Mode Select |Timer
+Enable Control Registerの GPTMR_SITENビットがセットされた時の Software
 Interrupt Timerの値を設定します。0: 前回のカウント値からカウントを再開
 1: カウント値を 0にクリアしカウントを開始 |R/W
 |===
@@ -421,7 +421,7 @@ Software Interrupt Timerは、24 MHzのクロックで動作します。
 Timerをカウントアップするための、クロックサイクル数を設定します。
 
 このレジスタは、Timer Enable Control Registerの
-GPTMR~SITENビットをセットする前に設定する必要があります~。
+GPTMR_SITENビットをセットする前に設定する必要があります。
 
 .Software Interrupt Timer Prescaler Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -429,13 +429,13 @@ GPTMR~SITENビットをセットする前に設定する必要があります~�
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
 
-|15:0 |GPTMR~SITPSC~ |Software Interrupt Timer Prescale |Software
+|15:0 |GPTMR_SITPSC |Software Interrupt Timer Prescale |Software
 Interrupt
 Timerをカウントアップするための動作クロックに対するサイクル数を設定します。
 |R/W
 |===
 
-GPTMR~SITPSCに設定する値は~、Software Interrupt
+GPTMR_SITPSCに設定する値は、Software Interrupt
 Timerの動作クロック周波数 (24
 MHz)とカウンターのカウントアップ間隔から、以下の計算で算出することができます。
 
@@ -458,56 +458,56 @@ Timerに起因する割り込みが発生した時、割り込み要因に対応
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
 
-|16 |GPTMR~SITROVSTS~ |Software Interrupt Timer Rollover Flag |Software
+|16 |GPTMR_SITROVSTS |Software Interrupt Timer Rollover Flag |Software
 Interrupt TimerのRoll Overが発生した事を示すビットです。Software
 Interrupt Timerがカウンター動作によって 0xFFFFFFFFから
 0x0に戻ったときに本ビットが"1"にセットされます。 |R/WC
 
 |15:8 |- |Reserved |Reserved |-
 
-|7 |GPTMR~SITOCF8STS~ |Software Interrupt Timer Output Compare Channel 8
+|7 |GPTMR_SITOCF8STS |Software Interrupt Timer Output Compare Channel 8
 Flag |Software Interrupt
 Timer出力比較チャネル8の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 8の値が一致したときに "1"にセットされます。 |R/WC
 
-|6 |GPTMR~SITOCF7STS~ |Software Interrupt Timer Output Compare Channel 7
+|6 |GPTMR_SITOCF7STS |Software Interrupt Timer Output Compare Channel 7
 Flag |Software Interrupt
 Timer出力比較チャネル7の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 7の値が一致したときに "1"にセットされます。 |R/WC
 
-|5 |GPTMR~SITOCF6STS~ |Software Interrupt Timer Output Compare Channel 6
+|5 |GPTMR_SITOCF6STS |Software Interrupt Timer Output Compare Channel 6
 Flag |Software Interrupt
 Timer出力比較チャネル6の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 6の値が一致したときに "1"にセットされます。 |R/WC
 
-|4 |GPTMR~SITOCF5STS~ |Software Interrupt Timer Output Compare Channel 5
+|4 |GPTMR_SITOCF5STS |Software Interrupt Timer Output Compare Channel 5
 Flag |Software Interrupt
 Timer出力比較チャネル5の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 5の値が一致したときに "1"にセットされます。 |R/WC
 
-|3 |GPTMR~SITOCF4STS~ |Software Interrupt Timer Output Compare Channel 4
+|3 |GPTMR_SITOCF4STS |Software Interrupt Timer Output Compare Channel 4
 Flag |Software Interrupt
 Timer出力比較チャネル4の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 4の値が一致したときに "1"にセットされます。 |R/WC
 
-|2 |GPTMR~SITOCF3STS~ |Software Interrupt Timer Output Compare Channel 3
+|2 |GPTMR_SITOCF3STS |Software Interrupt Timer Output Compare Channel 3
 Flag |Software Interrupt
 Timer出力比較チャネル3の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 3の値が一致したときに "1"にセットされます。 |R/WC
 
-|1 |GPTMR~SITOCF2STS~ |Software Interrupt Timer Output Compare Channel 2
+|1 |GPTMR_SITOCF2STS |Software Interrupt Timer Output Compare Channel 2
 Flag |Software Interrupt
 Timer出力比較チャネル2の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
 Register 2の値が一致したときに "1"にセットされます。 |R/WC
 
-|0 |GPTMR~SITOCF1STS~ |Software Interrupt Timer Output Compare Channel 1
+|0 |GPTMR_SITOCF1STS |Software Interrupt Timer Output Compare Channel 1
 Flag |Software Interrupt
 Timer出力比較チャネル1の比較イベントが発生した事を示すビットです。Software
 Interrupt Timerのカウンター値と Software Interrupt Timer Output Compare
@@ -529,50 +529,50 @@ Interrupt Timer Status Registerの対応する割り込みステータスビッ�
 |bit |Symbol |Field |Description |R/W
 |31:17 |- |Reserved |Reserved |-
 
-|16 |GPTMR~SITROVENB~ |Software Interrupt Timer Rollover Flag Enable
-|GPTMR~SITROVSTSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|16 |GPTMR_SITROVENB |Software Interrupt Timer Rollover Flag Enable
+|GPTMR_SITROVSTSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
 |15:8 |- |Reserved |Reserved |-
 
-|7 |GPTMR~SITOCF8ENB~ |Software Interrupt Timer Output Compare Channel 8
+|7 |GPTMR_SITOCF8ENB |Software Interrupt Timer Output Compare Channel 8
 Flag Enable
-|GPTMR~SITOCF8STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF8STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|6 |GPTMR~SITOCF7ENB~ |Software Interrupt Timer Output Compare Channel 7
+|6 |GPTMR_SITOCF7ENB |Software Interrupt Timer Output Compare Channel 7
 Flag Enable
-|GPTMR~SITOCF7STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF7STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|5 |GPTMR~SITOCF6ENB~ |Software Interrupt Timer Output Compare Channel 6
+|5 |GPTMR_SITOCF6ENB |Software Interrupt Timer Output Compare Channel 6
 Flag Enable
-|GPTMR~SITOCF6STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF6STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|4 |GPTMR~SITOCF5ENB~ |Software Interrupt Timer Output Compare Channel 5
+|4 |GPTMR_SITOCF5ENB |Software Interrupt Timer Output Compare Channel 5
 Flag Enable
-|GPTMR~SITOCF5STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF5STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|3 |GPTMR~SITOCF4ENB~ |Software Interrupt Timer Output Compare Channel 4
+|3 |GPTMR_SITOCF4ENB |Software Interrupt Timer Output Compare Channel 4
 Flag Enable
-|GPTMR~SITOCF4STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF4STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|2 |GPTMR~SITOCF3ENB~ |Software Interrupt Timer Output Compare Channel 3
+|2 |GPTMR_SITOCF3ENB |Software Interrupt Timer Output Compare Channel 3
 Flag Enable
-|GPTMR~SITOCF3STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF3STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|1 |GPTMR~SITOCF2ENB~ |Software Interrupt Timer Output Compare Channel 2
+|1 |GPTMR_SITOCF2ENB |Software Interrupt Timer Output Compare Channel 2
 Flag Enable
-|GPTMR~SITOCF2STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF2STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 
-|0 |GPTMR~SITOCF1ENB~ |Software Interrupt Timer Output Compare Channel 1
+|0 |GPTMR_SITOCF1ENB |Software Interrupt Timer Output Compare Channel 1
 Flag Enable
-|GPTMR~SITOCF1STSイベントが発生した時に~、割り込み信号を出力するかどうかを設定します。
+|GPTMR_SITOCF1STSイベントが発生した時に、割り込み信号を出力するかどうかを設定します。
 |R/W
 |===
 
@@ -593,7 +593,7 @@ Timerのカウント値と、本レジスタの設定値が一致したとき、
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP1~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP1 |Software Interrupt Timer Output Compare Channel
 1 Value |出力比較チャネル 1の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -603,7 +603,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP2~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP2 |Software Interrupt Timer Output Compare Channel
 2 Value |出力比較チャネル 2の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -613,7 +613,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP3~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP3 |Software Interrupt Timer Output Compare Channel
 3 Value |出力比較チャネル 3の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -623,7 +623,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP4~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP4 |Software Interrupt Timer Output Compare Channel
 4 Value |出力比較チャネル 4の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -633,7 +633,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP5~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP5 |Software Interrupt Timer Output Compare Channel
 5 Value |出力比較チャネル 5の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -643,7 +643,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP6~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP6 |Software Interrupt Timer Output Compare Channel
 6 Value |出力比較チャネル 6の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -653,7 +653,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP7~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP7 |Software Interrupt Timer Output Compare Channel
 7 Value |出力比較チャネル 7の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -663,7 +663,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~SITCOMP8~ |Software Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_SITCOMP8 |Software Interrupt Timer Output Compare Channel
 8 Value |出力比較チャネル 8の比較イベントを生成する Software Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -674,13 +674,13 @@ Hardware Interrupt Timer Control Registerは、Hardware Interrupt
 Timerの制御方法を指定するレジスタです。
 
 このレジスタは、Timer Enable Control Registerの
-GPTMR~HITENビットをセットする前に設定する必要があります~。
+GPTMR_HITENビットをセットする前に設定する必要があります。
 
 .Hardware Interrupt Timer Control Register ビットフィールド
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:30 |GPTMR~HITOPMD8~ |Hardware Interrupt Timer Output Compare Channel
+|31:30 |GPTMR_HITOPMD8 |Hardware Interrupt Timer Output Compare Channel
 8 Operation Mode Select |出力比較チャネル 8で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -688,7 +688,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|29:28 |GPTMR~HITOPMD7~ |Hardware Interrupt Timer Output Compare Channel
+|29:28 |GPTMR_HITOPMD7 |Hardware Interrupt Timer Output Compare Channel
 7 Operation Mode Select |出力比較チャネル 7で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -696,7 +696,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|27:26 |GPTMR~HITOPMD6~ |Hardware Interrupt Timer Output Compare Channel
+|27:26 |GPTMR_HITOPMD6 |Hardware Interrupt Timer Output Compare Channel
 6 Operation Mode Select |出力比較チャネル 6で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -704,7 +704,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|25:24 |GPTMR~HITOPMD5~ |Hardware Interrupt Timer Output Compare Channel
+|25:24 |GPTMR_HITOPMD5 |Hardware Interrupt Timer Output Compare Channel
 5 Operation Mode Select |出力比較チャネル 5で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -712,7 +712,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|23:22 |GPTMR~HITOPMD4~ |Hardware Interrupt Timer Output Compare Channel
+|23:22 |GPTMR_HITOPMD4 |Hardware Interrupt Timer Output Compare Channel
 4 Operation Mode Select |出力比較チャネル 4で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -720,7 +720,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|21:20 |GPTMR~HITOPMD3~ |Hardware Interrupt Timer Output Compare Channel
+|21:20 |GPTMR_HITOPMD3 |Hardware Interrupt Timer Output Compare Channel
 3 Operation Mode Select |出力比較チャネル 3で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -728,7 +728,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|19:18 |GPTMR~HITOPMD2~ |Hardware Interrupt Timer Output Compare Channel
+|19:18 |GPTMR_HITOPMD2 |Hardware Interrupt Timer Output Compare Channel
 2 Operation Mode Select |出力比較チャネル 2で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -736,7 +736,7 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 パルス形式の割り込みを出力します。 0b11:
 ハンドシェイク形式の割り込みを出力します。 |R/W
 
-|17:16 |GPTMR~HITOPMD1~ |Hardware Interrupt Timer Output Compare Channel
+|17:16 |GPTMR_HITOPMD1 |Hardware Interrupt Timer Output Compare Channel
 1 Operation Mode Select |出力比較チャネル 1で比較イベントが発生した時の
 Hardware Interrupt信号の動作モードを定義するフィールドです。接続相手の
 IPコア仕様に合わせ設定する必要があります。0b00: 割り込みを無効にします。
@@ -746,20 +746,20 @@ IPコア仕様に合わせ設定する必要があります。0b00: 割り込み
 
 |15:5 |- |Reserved |Reserved |-
 
-|4 |GPTMR~HITSWR~ |Hardware Interrupt Timer Hardware Reset |Hardware
+|4 |GPTMR_HITSWR |Hardware Interrupt Timer Hardware Reset |Hardware
 Interrupt
 Timerのソフトウェアリセットを行うためのビットです。このビットに
 "1"を書き込むと、Hardware Interrupt
 Timerに関連する以下のレジスタのリセットを行います。 - Hardware Interrupt
-Timer Remaining Register(GPTMR~HITRR~) - Hardware Interrupt Timer
-Control Register(GPTMR~HITCR~) - Hardware Interrupt Timer Prescaler
-Register(GPTMR~HITPR~) - Hardware Interrupt Timer Output Compare
-Register 1-8(GPTMR~HITOCR1~-8) リセットが完了すると、このビットは
+Timer Remaining Register(GPTMR_HITRR) - Hardware Interrupt Timer
+Control Register(GPTMR_HITCR) - Hardware Interrupt Timer Prescaler
+Register(GPTMR_HITPR) - Hardware Interrupt Timer Output Compare
+Register 1-8(GPTMR_HITOCR1-8) リセットが完了すると、このビットは
 "0"に戻ります。 |R/W
 
 |3:2 |- |Reserved |Reserved |-
 
-|1 |GPTMR~HITRUNMD~ |Hardware Interrupt Timer Run Mode Select
+|1 |GPTMR_HITRUNMD |Hardware Interrupt Timer Run Mode Select
 |出力比較チャネル 1で比較イベントが発生した時の Hardware Interrupt
 Timerの動作モードを設定します。0: Restartモード 1: Free Runモード
 Restartモードは、出力比較チャネル 1で比較イベントが発生した時、Hardware
@@ -771,8 +771,8 @@ Timerのカウント値をクリアせずカウントを続けるモードです
 Interrupt Timerが 0xFFFFFFFFになると、Roll Overしカウンターは
 0に戻ります。 |R/W
 
-|0 |GPTMR~HITENBMD~ |Hardware Interrupt Timer Enable Mode Select |Timer
-Enable Control Registerの GPTMR~HITENビットがセットされた時の~ Hardware
+|0 |GPTMR_HITENBMD |Hardware Interrupt Timer Enable Mode Select |Timer
+Enable Control Registerの GPTMR_HITENビットがセットされた時の Hardware
 Interrupt Timerの値を設定します。 0: 前回のカウント値からカウントを再開
 1: 値を 0にクリアしカウントを開始 |R/W
 |===
@@ -787,7 +787,7 @@ Hardware Interrupt Timerは、24 MHzのクロックで動作します。
 Timerをカウントアップするための、クロックサイクル数を設定します。
 
 このレジスタは、Timer Enable Control Registerの
-GPTMR~HITENビットをセットする前に設定する必要があります~。
+GPTMR_HITENビットをセットする前に設定する必要があります。
 
 .Hardware Interrupt Timer Prescaler Register ビットフィールド
 [cols=",,,,",options="header",]
@@ -795,13 +795,13 @@ GPTMR~HITENビットをセットする前に設定する必要があります~�
 |bit |Symbol |Field |Description |R/W
 |31:16 |- |Reserved |Reserved |-
 
-|15:0 |GPTMR~HITPSC~ |Hardware Interrupt Timer Prescale |Hardware
+|15:0 |GPTMR_HITPSC |Hardware Interrupt Timer Prescale |Hardware
 Interrupt
 Timerがカウントアップするための動作クロックに対するサイクル数を設定します。
 |R/W
 |===
 
-GPTMR~HITPSCに設定する値は~、Hardware Interrupt
+GPTMR_HITPSCに設定する値は、Hardware Interrupt
 Timerの動作クロック周波数 (24
 MHz)とカウンターのカウントアップ間隔から、以下の計算で算出することができます。
 
@@ -826,7 +826,7 @@ Timerのカウント値と、本レジスタの設定値が一致したとき、
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP1~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP1 |Hardware Interrupt Timer Output Compare Channel
 1 Value |出力比較チャネル 1の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -836,7 +836,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP2~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP2 |Hardware Interrupt Timer Output Compare Channel
 2 Value |出力比較チャネル 2の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -846,7 +846,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP3~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP3 |Hardware Interrupt Timer Output Compare Channel
 3 Value |出力比較チャネル 3の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -856,7 +856,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP4~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP4 |Hardware Interrupt Timer Output Compare Channel
 4 Value |出力比較チャネル 4の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -866,7 +866,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP5~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP5 |Hardware Interrupt Timer Output Compare Channel
 5 Value |出力比較チャネル 5の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -876,7 +876,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP6~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP6 |Hardware Interrupt Timer Output Compare Channel
 6 Value |出力比較チャネル 6の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -886,7 +886,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP7~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP7 |Hardware Interrupt Timer Output Compare Channel
 7 Value |出力比較チャネル 7の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -896,7 +896,7 @@ Timerのカウント値を設定します。 |R/W
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:0 |GPTMR~HITCOMP8~ |Hardware Interrupt Timer Output Compare Channel
+|31:0 |GPTMR_HITCOMP8 |Hardware Interrupt Timer Output Compare Channel
 8 Value |出力比較チャネル 8の比較イベントを生成する Hardware Interrupt
 Timerのカウント値を設定します。 |R/W
 |===
@@ -910,12 +910,12 @@ IPコアバージョンを示すレジスタです。
 [cols=",,,,",options="header",]
 |===
 |bit |Symbol |Field |Description |R/W
-|31:24 |GPTMR~MAJVER~ |General Purpose Timer IP Major Version |General
+|31:24 |GPTMR_MAJVER |General Purpose Timer IP Major Version |General
 Purpose TimerコアのMajor Versionを示します。 |RO
 
-|23:16 |GPTMR~MINVER~ |General Purpose Timer IP Minor Version |General
+|23:16 |GPTMR_MINVER |General Purpose Timer IP Minor Version |General
 Purpose TimerコアのMinor Versionを示します。 |RO
 
-|15:0 |GPTMR~PATVER~ |General Purpose Timer IP Patch Version |General
+|15:0 |GPTMR_PATVER |General Purpose Timer IP Patch Version |General
 Purpose TimerコアのPatch Versionを示します。 |RO
 |===
