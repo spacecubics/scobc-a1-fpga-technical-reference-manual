@@ -985,3 +985,4 @@ Registerに以下の書き込みを行います。
 .. Register Write, Address Offset: 0x0004, Write Data: 0x000002FE
 .. Register Write, Address Offset: 0x0004, Write Data: 0x000000CF
 .. Register Write, Address Offset: 0x0004, Write Data: 0x00000104
+
