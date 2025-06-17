@@ -1,7 +1,0 @@
-#+TITLE: Space Cubics OBC FPGA Technical Reference Manual
-#+SUBTITLE: 対象型番: SC-OBC-A1
-#+AUTHOR: Space Cubics
-#+DATE: December 5, 2022
-#+EMAIL:
-#+OPTIONS: ^:{}
-#+OPTIONS: H:6
