@@ -175,7 +175,7 @@ FIFOに格納されたデータが古い順に読み出されます。 |R/W
 QSPI Access Status Registerは、QSPI
 Controllerの実行ステータスを確認するためのレジスタです。
 
-QSPI Controllerは、QSPI TX Data Regsiterへの書き込み、QSPI Rx Data
+QSPI Controllerは、QSPI TX Data Registerへの書き込み、QSPI Rx Data
 Registerへの書き込み、QSPI Access Control Registerの SPI SS
 Controlレジスタの書き込み時に Busy状態となり、SPIが未使用状態になると
 Idle状態に戻ります。
