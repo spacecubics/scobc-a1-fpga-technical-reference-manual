@@ -39,7 +39,7 @@ CPUによって、ITCMENビットが "0"に書き換えられると、メモリ�
 ITCMENビットの設定値が変更された時、システム全体にリセットが発行されます。
 ITCMENビットの変更は、ITCMに書き込まれた Boot用のソフトウェアから HRMEMに書き込まれたメインのソフトウェアに遷移する時に 1度だけ制御する事を想定しています。
 
-.Code Memory Select Regsiter ビットフィールド
+.Code Memory Select Register ビットフィールド
 [cols="1,3,3,12,1",options="header",]
 |===
 |bit   |Symbol    |Field           |Description |R/W
@@ -164,7 +164,7 @@ CFGMEMOWNERビットは必ず "0"に設定し使用してください。
 ==== Boot Status Register (Offset 0x0014)
 
 SC-OBC-A1 FPGAのBoot Statusを示すレジスタです。
-このレジスタは 7シリーズ FPGAデバイスに実装されている Configuration Regsiterの Boot History Status Registerの値を読み出すことができます。
+このレジスタは 7シリーズ FPGAデバイスに実装されている Configuration Registerの Boot History Status Registerの値を読み出すことができます。
 起動後に このレジスタを読み出す事で、マルチブート機能によって Configurationした FPGAの起動状態を読み出す事ができます。
 
 .Boot Status Register ビットフィールド
