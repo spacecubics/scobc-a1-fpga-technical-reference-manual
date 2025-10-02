@@ -99,8 +99,6 @@ SPIデバイスにデータを送信する場合、QSPI TX Data Registerの SPIT
 このレジスタにデータを書き込むと、書き込みデータは TX FIFOに格納されます。 TX FIFOは送信データを最大16 Byte格納できます。
 TX FIFOに格納されたデータは、書き込まれた順番ですぐに SPIデバイスに送信されます。
 
-SPIデバイスが要求するダミーサイクルは、このレジスタに書き込みを行うことによって、SPIクロックを出力させ生成します。
-
 .QSPI TX Data Register ビットフィールド
 [cols="1,3,3,12,1",options="header",]
 |===
@@ -126,6 +124,8 @@ RX FIFOに格納されたデータを読み出す場合、QSPI RX Data Register�
 
 QSPI Data Capture Mode Setting Registerの DTCAPTビットが"1" にセットされている時、SPIRXDATAフィールドの書き込み時だけではなく、QSPI TX Data Registerの書き込み時も、RX FIFOにデータが格納されます。
 この時 RX FIFOに格納されているデータは SPITXDATAに書き込んだデータ (SPIに出力されているデータ)となります。
+
+SPIデバイスが要求するダミーサイクルは、このレジスタに書き込みを行うことによって、SPIクロックを出力させ生成します。
 
 .QSPI RX Data Register ビットフィールド
 [cols="1,3,3,12,1",options="header",]
