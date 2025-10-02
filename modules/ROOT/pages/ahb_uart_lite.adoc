@@ -22,7 +22,7 @@ AHB UARTコアは、システムに 7個実装されています。
 |===
 
 .AHB UART Lite Registerメモリマップ
-[cols=",,,",options="header",]
+[cols="4,4,10,2",options="header",]
 |===
 |Offset |Symbol        |Register                          |Initial
 |0x0000 |UARTL_RXFIFOR |Rx FIFO Register                  |0x00000000
