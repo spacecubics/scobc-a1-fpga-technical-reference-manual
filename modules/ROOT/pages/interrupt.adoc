@@ -1,12 +1,9 @@
 == Interrupt
 
-SC-OBC-A1
-FPGAは、Cortex-M3に組み込まれる割り込みコントローラの外部割り込みを使用し、IPコアの割り込みをCPUに伝えます。
-Cortex-M3の 割り込みコントローラの仕様については、ARM Cortex-M3
-Technical Reference Manualを参照してください。
+SC-OBC-A1 FPGAは、Cortex-M3に組み込まれる割り込みコントローラの外部割り込みを使用し、IPコアの割り込みをCPUに伝えます。
+Cortex-M3の 割り込みコントローラの仕様については、ARM Cortex-M3 Technical Reference Manualを参照してください。
 
-IRQ Bit [31:16]は、Mission Bus
-Systemに割り当てられた割り込みビットです。
+IRQ Bit [31:16]は、Mission Bus Systemに割り当てられた割り込みビットです。
 ユーザーが設計した回路に応じて割り当てが決定します。
 
 以下に、SC-OBC-A1 FPGAの IPコアが出力する割り込みの割り当てを示します。
@@ -15,30 +12,30 @@ IRQ Bit [31:16]は、標準イメージにて実装されている割り込み�
 .SC-OBC-A1 FPGA割り込みリスト
 [cols=",,,",options="header",]
 |===
-|Exception No. |IRQ Bit |Interrupt |Type
-|16 |[0] |UART (Console) |Pulse
-|17 |[1] |HRMEM (High-reliability Memory) |Level
-|18 |[2] |QSPI Controller (Configuration Flash Memory) |Level
-|19 |[3] |QSPI Controller (Data Store Flash Memory) |Level
-|20 |[4] |QSPI Controller (FRAM) |Level
-|21 |[5] |CAN Controller |Level
-|22 |[6] |Reserved (OBC System Interrupt Area) |-
-|23 |[7] |External I2C Controller |Level
-|24 |[8] |System Monitor (Hardware Error) |Level
-|25 |[9] |System Monitor (Board Health Monitor) |Level
-|26 |[10] |General Purpose Timer (Global Timer) |Level
-|27 |[11] |General Purpose Timer (Software Interrupt Timer) |Level
-|28 - 31 |[15:12] |Reserved (OBC System Interrupt Area) |-
-|32 - 47 |[31:16] |UDL IP Interrupt Area |-
-|32 |[16] |UART 1 |Pulse
-|33 |[17] |UART 2 |Pulse
-|34 |[18] |UART 3 |Pulse
-|35 |[19] |UART 4 |Pulse
-|36 |[20] |UART 5 |Pulse
-|37 |[21] |UART 6 |Pulse
-|38 |[22] |I2C Controller 1 |Levle
-|39 |[23] |I2C Controller 2 |Level
-|40 |[24] |AMD QSPI Controller |Level
-|41 |[25] |AMD GPIO Controller |Level
-|47 - 42 |[31:26] |Reserved (UDL IP Interrupt Area) |-
+|Exception No. |IRQ Bit |Interrupt                                        |Type
+|16            |[0]     |UART (Console)                                   |Pulse
+|17            |[1]     |HRMEM (High-reliability Memory)                  |Level
+|18            |[2]     |QSPI Controller (Configuration Flash Memory)     |Level
+|19            |[3]     |QSPI Controller (Data Store Flash Memory)        |Level
+|20            |[4]     |QSPI Controller (FRAM)                           |Level
+|21            |[5]     |CAN Controller                                   |Level
+|22            |[6]     |Reserved (OBC System Interrupt Area)             |-
+|23            |[7]     |External I2C Controller                          |Level
+|24            |[8]     |System Monitor (Hardware Error)                  |Level
+|25            |[9]     |System Monitor (Board Health Monitor)            |Level
+|26            |[10]    |General Purpose Timer (Global Timer)             |Level
+|27            |[11]    |General Purpose Timer (Software Interrupt Timer) |Level
+|28 - 31       |[15:12] |Reserved (OBC System Interrupt Area)             |-
+|32 - 47       |[31:16] |UDL IP Interrupt Area                            |-
+|32            |[16]    |UART 1                                           |Pulse
+|33            |[17]    |UART 2                                           |Pulse
+|34            |[18]    |UART 3                                           |Pulse
+|35            |[19]    |UART 4                                           |Pulse
+|36            |[20]    |UART 5                                           |Pulse
+|37            |[21]    |UART 6                                           |Pulse
+|38            |[22]    |I2C Controller 1                                 |Levle
+|39            |[23]    |I2C Controller 2                                 |Level
+|40            |[24]    |AMD QSPI Controller                              |Level
+|41            |[25]    |AMD GPIO Controller                              |Level
+|47 - 42       |[31:26] |Reserved (UDL IP Interrupt Area)                 |-
 |===

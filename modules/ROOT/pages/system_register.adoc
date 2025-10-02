@@ -8,7 +8,7 @@ FPGAのシステム制御を司るレジスタで構成されるモジュール�
 System Registerは、Base Address 0x4F00_0000に配置されています。
 
 .System Registerメモリマップ
-[cols=",,,",options="header",]
+[cols="4,4,10,2",options="header",]
 |===
 |Offset |Symbol           |Register                            |Initial
 |0x0000 |SYSREG_CODEMSEL  |Code Memory Select Register         |0x00000001
