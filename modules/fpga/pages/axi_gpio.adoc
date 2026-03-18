@@ -1,4 +1,4 @@
-== AXI GPIO LogicCORE
+= AXI GPIO LogicCORE
 AXI GPIO は、General Purpose IOコアです。
 このコアは標準イメージにおいて、ユーザーが設計する Mission Bus Systemに実装されています。
 
@@ -25,4 +25,3 @@ AXI GPIOに設定されているパラメータは以下の通りです。
 
 User IOに接続されている GPIOは 10bitですが、レジスタの制御ビットと User IOのピン番号が一致するよう設計されています。
 そのため、AXI GPIOの bit 5:0は無効です。
-

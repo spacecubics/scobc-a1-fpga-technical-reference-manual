@@ -1,4 +1,4 @@
-== AXI SPI LogicCORE
+= AXI SPI LogicCORE
 AXI SPI は、SPI転送を行うためのIPコアです。
 このコアは標準イメージにおいて、ユーザーが設計する Mission Bus Systemに実装されています。
 

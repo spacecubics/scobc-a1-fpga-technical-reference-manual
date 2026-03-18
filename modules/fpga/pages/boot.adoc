@@ -1,6 +1,6 @@
-== System Boot
+= System Boot
 
-=== NOR Flash for Configuration Memory
+== NOR Flash for Configuration Memory
 
 SC-OBC Module A1は、FPGAの Bitstreamデータと Flight Softwareを NOR Flash Memoryに格納しています。
 
@@ -27,7 +27,7 @@ image::NOR_Flash_for_Configuration.svg[NOR_Flash_for_Configuration]
 |0x1A0_0000_ - 0x1DF_FFFF |Flight Software (Update data)
 |===
 
-=== FPGA Boot Flow
+== FPGA Boot Flow
 
 FPGAの Bootには AMD 7シリーズ FPGAでサポートされている Fallback Multi Bootを活用しています。
 
