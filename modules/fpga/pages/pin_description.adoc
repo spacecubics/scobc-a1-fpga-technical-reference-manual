@@ -1,4 +1,4 @@
-== User IO Pin Description
+= User IO Pin Description
 
 SC-OBC-A1 FPGAの標準イメージにおいて、User IOに割り当てられている機能を以下に示します。
 これらの信号のアサインは、ユーザーの Mission Bus Systemの設計によって変わります。
