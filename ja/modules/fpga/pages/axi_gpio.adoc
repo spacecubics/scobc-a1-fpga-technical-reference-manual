@@ -1,4 +1,5 @@
 = AXI GPIO LogicCORE
+
 AXI GPIO は、General Purpose IOコアです。
 このコアは標準イメージにおいて、ユーザーが設計する Mission Bus Systemに実装されています。
 
