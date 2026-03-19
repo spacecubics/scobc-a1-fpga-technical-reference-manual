@@ -13,7 +13,7 @@ System Registerは、Base Address 0x4F00_0000に配置されています。
 |Offset |Symbol           |Register                            |Initial
 |0x0000 |SYSREG_CODEMSEL  |Code Memory Select Register         |0x00000001
 |0x0004 |SYSREG_SYSCLKCTL |System Clock Control Register       |0x00000001
-|0x0008 |SYSREG_PLLINFO   |PLL Infomation Register             |0x00280014
+|0x0008 |SYSREG_PLLINFO   |PLL Information Register             |0x00280014
 |0x0010 |SYSREG_CFGMEMCTL |Configuration Flash Memory Register |0x000x0000
 |0x0014 |SYSREG_BOOTSTS   |Boot Status Register                |-
 |0x0020 |SYSREG_PWRCYCLE  |Power Cycle Register                |0x00000000
@@ -87,9 +87,9 @@ CLKMODE信号の設定値と、PLLの状態 及びシステムクロック周波
 
 
 
-=== PLL Infomation Register (Offset 0x0008)
+=== PLL Information Register (Offset 0x0008)
 
-PLL Infomation Registerは、システムクロックの設定状況を示すレジスタです。
+PLL Information Registerは、システムクロックの設定状況を示すレジスタです。
 ソフトウェアはこのレジスタの値から、現在のシステムクロックの周波数を計算する事ができます。
 
 .System Clock Control Register ビットフィールド
@@ -100,7 +100,7 @@ PLL Infomation Registerは、システムクロックの設定状況を示すレ
 |15:0  |PLLDIV  |PLL Divide Rate   |システムクロックを生成するPLLの現在の分周率を示すフィールドです。 |RO
 |===
 
-システムクロック周波数は PLL Infomation Registerから読み出した値を使い以下の式で計算する事ができます。
+システムクロック周波数は PLL Information Registerから読み出した値を使い以下の式で計算する事ができます。
 
 [stem]
 ++++
